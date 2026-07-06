@@ -1,11 +1,11 @@
-# @web-ui/animated-tabs
+# @stemui/animated-tabs
 
 Animated tabs with a sliding indicator.
 
 ## Install
 
 ```bash
-npm install @web-ui/animated-tabs react
+npm install @stemui/animated-tabs react
 ```
 
 ## Scope
@@ -20,16 +20,24 @@ It does not define label, icon, badge, or count UI. Callers render those.
 
 ## API
 
-- `tabs`
-- `active`
-- `onChange`
-- `renderTab`
+- `tabs`: tab data array. Each item supports:
+  - `id`
+  - `ariaLabel`
+  - `disabled`
+- `active`: current active tab id
+- `onChange`: called with the next tab id
+- `renderTab`: render function for each tab
 - `variant`: `underline` or `pill`
+- `scrollable`: enables horizontal overflow on the underline list
+- `className`: root container class
+- `listClassName`: tab list class
+- `tabClassName`: tab class, or a function `(tab, isActive) => string`
+- `indicatorClassName`: moving indicator class
 
 ## Example
 
 ```tsx
-import { AnimatedTabs } from "@web-ui/animated-tabs";
+import { AnimatedTabs } from "@stemui/animated-tabs";
 
 const tabs = [
   { id: "all", ariaLabel: "All" },
@@ -40,6 +48,12 @@ const tabs = [
   tabs={tabs}
   active={active}
   onChange={setActive}
+  className="w-full"
+  listClassName="gap-4"
+  tabClassName={(tab, isActive) =>
+    isActive ? "px-3 py-2 text-black" : "px-3 py-2 text-neutral-500"
+  }
+  indicatorClassName="bg-blue-500"
   renderTab={(tab, isActive) => <span>{tab.id}</span>}
 />;
 ```
@@ -47,3 +61,11 @@ const tabs = [
 ## Publish Notes
 
 This package is published as ESM and builds automatically during `npm pack` and `npm publish` via the `prepack` script.
+
+From the workspace root:
+
+```bash
+npm run publish:animated-tabs
+```
+
+That script bumps the package patch version before publishing. Use the root `version:animated-tabs:*` scripts when you need a `minor` or `major` release.
