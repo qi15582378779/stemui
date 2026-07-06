@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useLayoutEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 
 export type AnimatedTabsItem<T extends string = string> = {
     id: T;
@@ -41,35 +41,46 @@ export function AnimatedTabs<
     scrollable,
     variant = "underline"
 }: AnimatedTabsProps<T, Item>) {
+    const rootRef = useRef<HTMLDivElement | null>(null);
+    const listRef = useRef<HTMLDivElement | null>(null);
     const tabRefs = useRef<Record<string, HTMLDivElement | null>>({});
     const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
 
     const enabledTabs = tabs.filter((tab) => !tab.disabled);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const updateIndicator = () => {
             const current = tabRefs.current[active];
-            if (!current) return;
+            const root = rootRef.current;
+            if (!current || !root) return;
+            const currentRect = current.getBoundingClientRect();
+            const rootRect = root.getBoundingClientRect();
             setIndicatorStyle({
-                width: current.offsetWidth,
-                left: current.offsetLeft
+                width: currentRect.width,
+                left: currentRect.left - rootRect.left
             });
         };
 
         updateIndicator();
 
-        const current = tabRefs.current[active];
-        if (!current) return;
-
         const observer = new ResizeObserver(updateIndicator);
-        observer.observe(current);
+        const list = listRef.current ?? rootRef.current;
+
+        Object.values(tabRefs.current).forEach((tab) => {
+            if (tab) observer.observe(tab);
+        });
+
+        if (list) observer.observe(list);
+
         window.addEventListener("resize", updateIndicator);
+        list?.addEventListener("scroll", updateIndicator);
 
         return () => {
             observer.disconnect();
             window.removeEventListener("resize", updateIndicator);
+            list?.removeEventListener("scroll", updateIndicator);
         };
-    }, [active, tabs]);
+    }, [active, tabs, variant]);
 
     const focusTab = (id: T) => {
         tabRefs.current[id]?.focus();
@@ -129,7 +140,11 @@ export function AnimatedTabs<
 
     if (variant === "pill") {
         return (
-            <div role="tablist" className={cn("relative inline-flex items-center gap-0.5 rounded-full bg-black/[0.04] p-[3px]", className)}>
+            <div
+                ref={rootRef}
+                role="tablist"
+                className={cn("relative inline-flex items-center gap-0.5 rounded-full bg-black/[0.04] p-[3px]", className)}
+            >
                 <div
                     aria-hidden
                     className={cn("absolute inset-y-[3px] rounded-full bg-white transition-all duration-300", indicatorClassName)}
@@ -168,8 +183,12 @@ export function AnimatedTabs<
     }
 
     return (
-        <div className={cn("relative", className)}>
-            <div role="tablist" className={cn("flex h-full items-center gap-6", scrollable && "overflow-x-auto", listClassName)}>
+        <div ref={rootRef} className={cn("relative", className)}>
+            <div
+                ref={listRef}
+                role="tablist"
+                className={cn("flex h-full items-center gap-6", scrollable && "overflow-x-auto", listClassName)}
+            >
                 {tabs.map((tab) => {
                     const isActive = tab.id === active;
                     return (
