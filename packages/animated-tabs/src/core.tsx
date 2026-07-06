@@ -143,11 +143,11 @@ export function AnimatedTabs<
             <div
                 ref={rootRef}
                 role="tablist"
-                className={cn("relative inline-flex items-center gap-0.5 rounded-full bg-black/[0.04] p-[3px]", className)}
+                className={cn("stemui-animated-tabs stemui-animated-tabs--pill", className)}
             >
                 <div
                     aria-hidden
-                    className={cn("absolute inset-y-[3px] rounded-full bg-white transition-all duration-300", indicatorClassName)}
+                    className={cn("stemui-animated-tabs__indicator stemui-animated-tabs__indicator--pill", indicatorClassName)}
                     style={{ width: indicatorStyle.width, left: indicatorStyle.left }}
                 />
                 {tabs.map((tab) => {
@@ -169,8 +169,8 @@ export function AnimatedTabs<
                             }}
                             onKeyDown={(event) => handleKeyDown(event, tab)}
                             className={cn(
-                                "relative z-10 cursor-pointer rounded-full transition-all duration-300 focus-visible:outline-none",
-                                tab.disabled && "cursor-not-allowed opacity-50",
+                                "stemui-animated-tabs__tab stemui-animated-tabs__tab--pill",
+                                tab.disabled && "stemui-animated-tabs__tab--disabled",
                                 resolveTabClassName(tab, isActive)
                             )}
                         >
@@ -183,11 +183,15 @@ export function AnimatedTabs<
     }
 
     return (
-        <div ref={rootRef} className={cn("relative", className)}>
+        <div ref={rootRef} className={cn("stemui-animated-tabs stemui-animated-tabs--underline", className)}>
             <div
                 ref={listRef}
                 role="tablist"
-                className={cn("flex h-full items-center gap-6", scrollable && "overflow-x-auto", listClassName)}
+                className={cn(
+                    "stemui-animated-tabs__list",
+                    scrollable && "stemui-animated-tabs__list--scrollable",
+                    listClassName
+                )}
             >
                 {tabs.map((tab) => {
                     const isActive = tab.id === active;
@@ -208,8 +212,8 @@ export function AnimatedTabs<
                             }}
                             onKeyDown={(event) => handleKeyDown(event, tab)}
                             className={cn(
-                                "shrink-0 cursor-pointer transition-colors focus-visible:outline-none",
-                                tab.disabled && "cursor-not-allowed opacity-50",
+                                "stemui-animated-tabs__tab stemui-animated-tabs__tab--underline",
+                                tab.disabled && "stemui-animated-tabs__tab--disabled",
                                 resolveTabClassName(tab, isActive)
                             )}
                         >
@@ -220,7 +224,10 @@ export function AnimatedTabs<
             </div>
             <span
                 aria-hidden
-                className={cn("absolute bottom-0 h-[3px] rounded-full bg-current transition-all duration-300", indicatorClassName)}
+                className={cn(
+                    "stemui-animated-tabs__indicator stemui-animated-tabs__indicator--underline",
+                    indicatorClassName
+                )}
                 style={{ width: indicatorStyle.width, transform: `translateX(${indicatorStyle.left}px)` }}
             />
         </div>

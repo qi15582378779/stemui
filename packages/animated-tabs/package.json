@@ -1,6 +1,6 @@
 {
   "name": "@stemui/animated-tabs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Animated tabs with underline and pill indicators.",
   "type": "module",
   "license": "MIT",
@@ -14,7 +14,9 @@
     "ui",
     "component"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -29,7 +31,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node ./scripts/build-css.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "prepack": "npm run build"
   },

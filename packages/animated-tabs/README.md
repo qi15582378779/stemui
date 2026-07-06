@@ -58,6 +58,8 @@ const tabs = [
 />;
 ```
 
+The package includes its base CSS automatically when you import `@stemui/animated-tabs`.
+
 ## Publish Notes
 
 This package is published as ESM and builds automatically during `npm pack` and `npm publish` via the `prepack` script.

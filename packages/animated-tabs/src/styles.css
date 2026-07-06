@@ -1,0 +1,67 @@
+.stemui-animated-tabs {
+    position: relative;
+}
+
+.stemui-animated-tabs--pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    border-radius: 9999px;
+    background: rgb(0 0 0 / 0.04);
+    padding: 3px;
+}
+
+.stemui-animated-tabs__list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.stemui-animated-tabs__list--scrollable {
+    overflow-x: auto;
+}
+
+.stemui-animated-tabs__tab {
+    cursor: pointer;
+}
+
+.stemui-animated-tabs__tab:focus-visible {
+    outline: none;
+}
+
+.stemui-animated-tabs__tab--pill {
+    position: relative;
+    z-index: 10;
+    border-radius: 9999px;
+    transition: all 300ms;
+}
+
+.stemui-animated-tabs__tab--underline {
+    flex-shrink: 0;
+    transition: color 300ms;
+}
+
+.stemui-animated-tabs__tab--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.stemui-animated-tabs__indicator {
+    transition: all 300ms;
+}
+
+.stemui-animated-tabs__indicator--pill {
+    position: absolute;
+    inset-block: 3px;
+    border-radius: 9999px;
+    background: #fff;
+}
+
+.stemui-animated-tabs__indicator--underline {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    border-radius: 9999px;
+    background: currentColor;
+}
