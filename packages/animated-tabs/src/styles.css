@@ -1,5 +1,7 @@
 .stemui-animated-tabs {
     position: relative;
+    display: flex;
+    min-width: 0;
 }
 
 .stemui-animated-tabs--pill {
@@ -11,14 +13,27 @@
     padding: 3px;
 }
 
+.stemui-animated-tabs--underline {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .stemui-animated-tabs__list {
     display: flex;
+    position: relative;
     height: 100%;
     align-items: center;
     gap: 1.5rem;
 }
 
+.stemui-animated-tabs__list--underline {
+    width: fit-content;
+    padding-bottom: 3px;
+}
+
 .stemui-animated-tabs__list--scrollable {
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
 }
 
@@ -48,7 +63,8 @@
 }
 
 .stemui-animated-tabs__indicator {
-    transition: all 300ms;
+    pointer-events: none;
+    will-change: width, transform, left;
 }
 
 .stemui-animated-tabs__indicator--pill {
@@ -56,12 +72,17 @@
     inset-block: 3px;
     border-radius: 9999px;
     background: #fff;
+    transition: width 300ms ease, left 300ms ease;
 }
 
 .stemui-animated-tabs__indicator--underline {
+    display: block;
     position: absolute;
     bottom: 0;
+    left: 0;
     height: 3px;
+    min-height: 3px;
     border-radius: 9999px;
     background: currentColor;
+    transition: width 300ms ease, transform 300ms ease;
 }

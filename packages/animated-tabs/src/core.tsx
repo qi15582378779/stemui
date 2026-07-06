@@ -51,13 +51,11 @@ export function AnimatedTabs<
     useLayoutEffect(() => {
         const updateIndicator = () => {
             const current = tabRefs.current[active];
-            const root = rootRef.current;
-            if (!current || !root) return;
-            const currentRect = current.getBoundingClientRect();
-            const rootRect = root.getBoundingClientRect();
+            const container = variant === "underline" ? listRef.current : rootRef.current;
+            if (!current || !container) return;
             setIndicatorStyle({
-                width: currentRect.width,
-                left: currentRect.left - rootRect.left
+                width: current.offsetWidth,
+                left: current.offsetLeft
             });
         };
 
@@ -188,7 +186,7 @@ export function AnimatedTabs<
                 ref={listRef}
                 role="tablist"
                 className={cn(
-                    "stemui-animated-tabs__list",
+                    "stemui-animated-tabs__list stemui-animated-tabs__list--underline",
                     scrollable && "stemui-animated-tabs__list--scrollable",
                     listClassName
                 )}
@@ -221,15 +219,15 @@ export function AnimatedTabs<
                         </div>
                     );
                 })}
+                <div
+                    aria-hidden
+                    className={cn(
+                        "stemui-animated-tabs__indicator stemui-animated-tabs__indicator--underline",
+                        indicatorClassName
+                    )}
+                    style={{ width: indicatorStyle.width, transform: `translateX(${indicatorStyle.left}px)` }}
+                />
             </div>
-            <span
-                aria-hidden
-                className={cn(
-                    "stemui-animated-tabs__indicator stemui-animated-tabs__indicator--underline",
-                    indicatorClassName
-                )}
-                style={{ width: indicatorStyle.width, transform: `translateX(${indicatorStyle.left}px)` }}
-            />
         </div>
     );
 }

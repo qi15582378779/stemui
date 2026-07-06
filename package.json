@@ -4,11 +4,15 @@
   "version": "0.1.0",
   "packageManager": "pnpm@10.4.1",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev:animated-tabs": "npm run dev --workspace animated-tabs-playground",
+    "build:animated-tabs-preview": "npm run build --workspace animated-tabs-playground",
+    "preview:animated-tabs": "npm run preview --workspace animated-tabs-playground",
     "version:animated-tabs:patch": "npm version patch --workspace @stemui/animated-tabs --no-git-tag-version",
     "version:animated-tabs:minor": "npm version minor --workspace @stemui/animated-tabs --no-git-tag-version",
     "version:animated-tabs:major": "npm version major --workspace @stemui/animated-tabs --no-git-tag-version",
