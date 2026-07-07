@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 import { AnimatedTabsPage } from "./pages/AnimatedTabsPage";
+import { IconsPage } from "./pages/IconsPage";
 
 const pages = [
     {
@@ -6,11 +9,18 @@ const pages = [
         label: "Animated Tabs",
         description: "Measure base behavior and styled integration side by side.",
         component: AnimatedTabsPage
+    },
+    {
+        id: "icons",
+        label: "Icons",
+        description: "Preview generated icon components from raw SVG sources.",
+        component: IconsPage
     }
 ];
 
 export function App() {
-    const activePage = pages[0];
+    const [activePageId, setActivePageId] = useState(pages[0].id);
+    const activePage = pages.find((page) => page.id === activePageId) ?? pages[0];
     const ActivePage = activePage.component;
 
     return (
@@ -35,6 +45,7 @@ export function App() {
                                     key={page.id}
                                     type="button"
                                     className={`page-link${page.id === activePage.id ? " is-active" : ""}`}
+                                    onClick={() => setActivePageId(page.id)}
                                 >
                                     <span>{page.label}</span>
                                     <small>{page.description}</small>

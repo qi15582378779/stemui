@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import "@stemui/animated-tabs/styles.css";
+
 import { App } from "./App";
 import "./app.css";
 

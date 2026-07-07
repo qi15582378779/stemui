@@ -215,6 +215,78 @@ input {
     border: 1px solid rgb(222 181 52 / 0.25);
 }
 
+.flow-note {
+    max-width: 720px;
+    color: #4b4034;
+    line-height: 1.7;
+}
+
+.flow-note code,
+.icon-meta code,
+.usage-block {
+    font-family: "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", monospace;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.icon-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid rgb(39 30 20 / 0.08);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at top, rgb(255 239 199 / 0.84), transparent 58%),
+        rgb(255 255 255 / 0.78);
+}
+
+.icon-stage {
+    display: grid;
+    place-items: center;
+    min-height: 110px;
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgb(255 250 237 / 0.96), rgb(255 241 202 / 0.86));
+    color: #111827;
+}
+
+.icon-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.icon-meta strong {
+    font-size: 16px;
+}
+
+.icon-meta code {
+    font-size: 13px;
+    color: #7a6a56;
+}
+
+.icon-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #6b7280;
+}
+
+.usage-block {
+    margin: 0;
+    padding: 18px;
+    overflow-x: auto;
+    border-radius: 18px;
+    background: #171717;
+    color: #f3f0eb;
+    line-height: 1.6;
+}
+
 @media (max-width: 640px) {
     .page {
         padding-inline: 14px;

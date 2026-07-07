@@ -1,0 +1,44 @@
+{
+  "name": "@stemui/icons",
+  "version": "0.1.1",
+  "description": "Stem UI icon library generated from SVG sources.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "svg",
+    "ui",
+    "component"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "svg"
+  ],
+  "scripts": {
+    "generate": "node ./scripts/build-icons.mjs",
+    "generate:incremental": "node ./scripts/build-icons.mjs --incremental",
+    "dev": "node ./scripts/build-icons.mjs --incremental --watch",
+    "watch": "npm run dev",
+    "build": "npm run generate && tsc -p tsconfig.json",
+    "build:incremental": "npm run generate:incremental && tsc -p tsconfig.json --incremental",
+    "typecheck": "npm run generate && tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "icons": {
+    "line_file_save.svg": {
+      "componentName": "LineFileSave",
+      "hash": "b80a5d538a77942b8bcc9a2215028118deeff09b34b223d7f65fa304cbd29ca3"
+    },
+    "line_horizontal_line_menu.svg": {
+      "componentName": "LineHorizontalLineMenu",
+      "hash": "57f2522c4281e55bd8ec2b71798d46ab4d6c505b4139fbabc189beb2bc0c6b9d"
+    },
+    "line_media_account.svg": {
+      "componentName": "LineMediaAccount",
+      "hash": "f72efe901389424ac33818ca862f6a7f9d2eb0629c54095653b644486b2f91b6"
+    },
+    "line_trash_delete.svg": {
+      "componentName": "LineTrashDelete",
+      "hash": "b3658cb449a8273e3e8d527341785bd3b9352e15fd4ce8e909fe0b5cf2ea0725"
+    }
+  }
+}
