@@ -1,5 +1,9 @@
 {
   "icons": {
+    "line_exclamation mark_information.svg": {
+      "componentName": "LineExclamationMarkInformation",
+      "hash": "78ecc23c32620cfc566da1cd30509099f33dafd2c25544f405ae447171bab2f5"
+    },
     "line_file_save.svg": {
       "componentName": "LineFileSave",
       "hash": "b80a5d538a77942b8bcc9a2215028118deeff09b34b223d7f65fa304cbd29ca3"
@@ -11,6 +15,10 @@
     "line_media_account.svg": {
       "componentName": "LineMediaAccount",
       "hash": "f72efe901389424ac33818ca862f6a7f9d2eb0629c54095653b644486b2f91b6"
+    },
+    "line_people_add contact.svg": {
+      "componentName": "LinePeopleAddContact",
+      "hash": "8e503a09b6580591c7ca45cfa8bde7b85918afa70e0c2a227b3513d3ae9dac92"
     },
     "line_trash_delete.svg": {
       "componentName": "LineTrashDelete",
