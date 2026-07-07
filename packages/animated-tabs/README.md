@@ -8,6 +8,12 @@ Animated tabs with a sliding indicator.
 npm install @stemui/animated-tabs react
 ```
 
+Then import the base styles once in your app entry:
+
+```ts
+import "@stemui/animated-tabs/styles.css";
+```
+
 ## Scope
 
 This package only handles:
@@ -38,6 +44,7 @@ It does not define label, icon, badge, or count UI. Callers render those.
 
 ```tsx
 import { AnimatedTabs } from "@stemui/animated-tabs";
+import "@stemui/animated-tabs/styles.css";
 
 const tabs = [
   { id: "all", ariaLabel: "All" },
@@ -58,7 +65,7 @@ const tabs = [
 />;
 ```
 
-The package includes its base CSS automatically when you import `@stemui/animated-tabs`.
+Import `@stemui/animated-tabs/styles.css` explicitly in the consuming app. Do not rely on bundlers to preserve package CSS side effects automatically.
 
 ## Publish Notes
 

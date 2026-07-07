@@ -141,7 +141,7 @@ export function AnimatedTabs<
             <div
                 ref={rootRef}
                 role="tablist"
-                className={cn("stemui-animated-tabs stemui-animated-tabs--pill", className)}
+                className={cn("stemui-animated-tabs stemui-animated-tabs--pill", className, listClassName)}
             >
                 <div
                     aria-hidden

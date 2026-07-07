@@ -1,6 +1,6 @@
 {
   "name": "@stemui/animated-tabs",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "Animated tabs with underline and pill indicators.",
   "type": "module",
   "license": "MIT",
@@ -25,7 +25,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
-    }
+    },
+    "./styles.css": "./dist/styles.css"
   },
   "files": [
     "dist"
