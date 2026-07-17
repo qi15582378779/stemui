@@ -1,3 +1,4 @@
+export { DrawImproveScoreIcon } from "./DrawImproveScoreIcon";
 export { LineExclamationMarkInformationIcon } from "./LineExclamationMarkInformationIcon";
 export { LineFileSaveIcon } from "./LineFileSaveIcon";
 export { LineHorizontalLineMenuIcon } from "./LineHorizontalLineMenuIcon";
