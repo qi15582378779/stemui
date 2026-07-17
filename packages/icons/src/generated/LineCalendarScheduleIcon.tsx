@@ -1,0 +1,20 @@
+import type { IconProps } from "../types";
+
+export function LineCalendarScheduleIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path d="M6.14005 1.80005V3.04005H9.86005V1.80005H11.1V3.04005H13.58C13.9225 3.04005 14.2 3.31764 14.2 3.66005V13.58C14.2 13.9225 13.9225 14.2 13.58 14.2H2.42005C2.07764 14.2 1.80005 13.9225 1.80005 13.58V3.66005C1.80005 3.31764 2.07764 3.04005 2.42005 3.04005H4.90005V1.80005H6.14005ZM12.96 8.00005H3.04005V12.96H12.96V8.00005ZM4.90005 4.28005H3.04005V6.76005H12.96V4.28005H11.1V5.52005H9.86005V4.28005H6.14005V5.52005H4.90005V4.28005Z" fill="#111111"/>
+        </svg>
+    );
+}

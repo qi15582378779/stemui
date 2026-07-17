@@ -1,0 +1,20 @@
+import type { IconProps } from "../types";
+
+export function LineArrowUpIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path d="M11.3629 4.17426L13.3827 6.19497L14.0491 5.52862L11.2726 2.75403C11.2028 2.68456 11.1141 2.63728 11.0175 2.61815C10.9209 2.59902 10.8209 2.6089 10.7299 2.64653C10.6389 2.68417 10.5611 2.74788 10.5063 2.82965C10.4515 2.91142 10.422 3.00758 10.4218 3.10603V13.3912H11.3629V4.17426ZM1.95117 13.3912V12.45H9.01V13.3912H1.95117ZM9.01 8.68532V7.74414H1.95117V8.68532H9.01ZM1.95117 3.97944V3.03826H9.01V3.97944H1.95117Z" fill="#111111"/>
+        </svg>
+    );
+}

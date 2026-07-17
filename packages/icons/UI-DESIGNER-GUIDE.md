@@ -35,7 +35,7 @@ packages/icons/svg/line_trash_delete.svg
 
 - 文件格式必须是 `.svg`
 - 推荐使用 `snake_case` 或 `kebab-case`
-- 不要使用空格
+- 不要使用空格；构建脚本会把空格自动转成 `_`，如果转换后和已有文件重名会报错
 - 文件名要表达图标语义
 - 同一套图标建议统一前缀，例如 `line_`
 

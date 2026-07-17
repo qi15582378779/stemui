@@ -1,0 +1,20 @@
+import type { IconProps } from "../types";
+
+export function LineTextTIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path fillRule="evenodd" clipRule="evenodd" d="M3.2 2H12.8C13.4628 2 14 2.53726 14 3.2V12.8C14 13.4628 13.4628 14 12.8 14H3.2C2.53726 14 2 13.4628 2 12.8V3.2C2 2.53726 2.53726 2 3.2 2ZM3.2 3.2V12.8H12.8V3.2H3.2ZM8.6 6.2V9.8H9.2V11H6.8V9.8H7.4V6.2H6.2V6.8H5V5H11V6.8H9.8V6.2H8.6Z" fill="#111111"/>
+        </svg>
+    );
+}

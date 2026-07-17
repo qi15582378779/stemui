@@ -85,7 +85,7 @@ npm run publish:icons:manual
 
 - Keep source files in SVG format.
 - Prefer snake_case or kebab-case file names.
-- Avoid spaces in file names.
+- Avoid spaces in file names. The build script normalizes spaces to `_`, and fails if that target name already exists.
 
 Examples:
 - `line_file_save.svg` -> `LineFileSaveIcon`

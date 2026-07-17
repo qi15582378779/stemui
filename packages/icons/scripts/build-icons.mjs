@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -12,6 +12,7 @@ const cacheDir = path.join(packageRoot, ".cache");
 const manifestFile = path.join(cacheDir, "icons-manifest.json");
 const scriptMode = process.argv.includes("--incremental") ? "incremental" : "full";
 const watchMode = process.argv.includes("--watch");
+const generatorVersion = "2";
 
 const ATTRIBUTE_MAP = new Map([
     ["clip-rule", "clipRule"],
@@ -41,6 +42,23 @@ const normalizeAttributes = (markup) =>
         return `${normalized}=`;
     });
 
+const normalizeInlineStyles = (markup) =>
+    markup.replace(/\sstyle="([^"]*)"/g, (_, style) => {
+        const declarations = style
+            .split(";")
+            .map((declaration) => declaration.trim())
+            .filter(Boolean)
+            .map((declaration) => {
+                const separatorIndex = declaration.indexOf(":");
+                const name = declaration.slice(0, separatorIndex).trim();
+                const value = declaration.slice(separatorIndex + 1).trim();
+                const normalizedName = name.replace(/-([a-z])/g, (_, char) => char.toUpperCase());
+                return `${normalizedName}: ${JSON.stringify(value)}`;
+            });
+
+        return declarations.length > 0 ? ` style={{ ${declarations.join(", ")} }}` : "";
+    });
+
 const extractSvgParts = (source) => {
     const cleanSource = source
         .replace(/<\?xml[\s\S]*?\?>/g, "")
@@ -54,7 +72,7 @@ const extractSvgParts = (source) => {
     const attrs = match[1];
     const body = match[2].trim();
     const viewBox = attrs.match(/viewBox="([^"]+)"/i)?.[1] ?? "0 0 24 24";
-    return { viewBox, body: normalizeAttributes(body) };
+    return { viewBox, body: normalizeAttributes(normalizeInlineStyles(body)) };
 };
 
 const createComponentSource = (componentName, viewBox, body) => `import type { IconProps } from "../types";
@@ -108,11 +126,56 @@ const exists = async (filePath) => {
     }
 };
 
+const normalizeSvgFileName = (file) => file.replace(/\s+/g, "_");
+
+const readNormalizedSvgFiles = async () => {
+    const files = (await readdir(svgDir)).filter((file) => file.endsWith(".svg")).sort();
+    const fileSet = new Set(files);
+    const renameTargets = new Map();
+    const duplicateFiles = new Map();
+
+    for (const file of files) {
+        const normalizedFile = normalizeSvgFileName(file);
+        if (normalizedFile === file) {
+            continue;
+        }
+
+        if (fileSet.has(normalizedFile)) {
+            const source = await readFile(path.join(svgDir, file), "utf8");
+            const target = await readFile(path.join(svgDir, normalizedFile), "utf8");
+            if (source === target) {
+                duplicateFiles.set(file, normalizedFile);
+                continue;
+            }
+
+            throw new Error(`Cannot normalize "${file}" to "${normalizedFile}" because the target name already exists.`);
+        }
+
+        if (renameTargets.has(normalizedFile)) {
+            throw new Error(`Cannot normalize "${file}" to "${normalizedFile}" because another SVG has the same target name.`);
+        }
+
+        renameTargets.set(normalizedFile, file);
+    }
+
+    for (const [file, normalizedFile] of duplicateFiles) {
+        await rm(path.join(svgDir, file), { force: true });
+        console.log(`[icons:normalize] removed duplicate "${file}" already covered by "${normalizedFile}"`);
+    }
+
+    for (const [normalizedFile, file] of renameTargets) {
+        await rename(path.join(svgDir, file), path.join(svgDir, normalizedFile));
+        console.log(`[icons:normalize] renamed "${file}" to "${normalizedFile}"`);
+    }
+
+    return (await readdir(svgDir)).filter((file) => file.endsWith(".svg")).sort();
+};
+
 const runBuild = async () => {
     await mkdir(generatedDir, { recursive: true });
     await mkdir(cacheDir, { recursive: true });
 
-    const svgFiles = (await readdir(svgDir)).filter((file) => file.endsWith(".svg")).sort();
+    const svgFiles = await readNormalizedSvgFiles();
     const rootExports = [];
     const generatedExports = [];
     const previousManifest = (await readJson(manifestFile)) ?? { icons: {} };
@@ -135,7 +198,7 @@ const runBuild = async () => {
         const svgSource = await readFile(path.join(svgDir, file), "utf8");
         const { viewBox, body } = extractSvgParts(svgSource);
         const outputFile = path.join(generatedDir, `${componentName}Icon.tsx`);
-        const sourceHash = createHashValue(svgSource);
+        const sourceHash = createHashValue(`${generatorVersion}\n${svgSource}`);
         const nextComponentSource = createComponentSource(componentName, viewBox, body);
         const previousEntry = previousManifest.icons[file];
         const previousOutputFile = previousEntry

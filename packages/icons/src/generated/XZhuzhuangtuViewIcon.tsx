@@ -1,0 +1,20 @@
+import type { IconProps } from "../types";
+
+export function XZhuzhuangtuViewIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path d="M5.96875 13.25V2H7.21875V13.25H5.96875ZM11.75 13.25V5.4375H13V13.25H11.75ZM3 13.25L3.0025 7H4.2525L4.25 13.25H3ZM8.78 13.25V8.875H10.03V13.25H8.78Z" fill="#111111"/>
+        </svg>
+    );
+}
