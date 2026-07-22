@@ -44,6 +44,7 @@ packages/icons/svg/line_trash_delete.svg
 - `line_file_save.svg` -> `LineFileSaveIcon`
 - `line-trash-delete.svg` -> `LineTrashDeleteIcon`
 - `line_media_account.svg` -> `LineMediaAccountIcon`
+- `fill_star_favorite.svg` -> `FillStarFavoriteIcon`
 
 不推荐：
 
@@ -65,6 +66,22 @@ packages/icons/svg/line_trash_delete.svg
 - 优先做成单色 icon，颜色交给前端控制
 
 一句话：导出的应该是“干净的 icon 源文件”，不是设计稿切片。
+
+## 颜色规则
+
+构建脚本会根据 SVG 文件名前缀决定是否把颜色转换成 `currentColor`。
+
+- `line_*`：线性图标，描边或单色路径会转成 `currentColor`
+- `fill_*`：填充型图标，填充色会转成 `currentColor`
+- 其他前缀：保留 SVG 文件本身的颜色，不做颜色接管
+
+示例：
+
+- `line_file_save.svg`：前端可通过 `color` 改颜色
+- `fill_star_favorite.svg`：前端可通过 `color` 改颜色
+- `x_bubble_message.svg`：保留 SVG 原本颜色
+
+如果你的图标希望由前端统一换色，请使用 `line_` 或 `fill_` 前缀；如果希望保留品牌色、平台色或插画色，请不要使用这两个前缀。
 
 ## SVG 如何变成 Icon
 

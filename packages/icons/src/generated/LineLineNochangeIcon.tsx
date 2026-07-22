@@ -14,7 +14,7 @@ export function LineLineNochangeIcon({ size = 24, color = "currentColor", title,
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <path d="M13.3337 7.25V8.75H2.66675V7.25H13.3337Z" fill="#111111"/>
+            <path d="M13.3337 7.25V8.75H2.66675V7.25H13.3337Z" fill="currentColor"/>
         </svg>
     );
 }

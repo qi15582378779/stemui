@@ -12,7 +12,7 @@ const cacheDir = path.join(packageRoot, ".cache");
 const manifestFile = path.join(cacheDir, "icons-manifest.json");
 const scriptMode = process.argv.includes("--incremental") ? "incremental" : "full";
 const watchMode = process.argv.includes("--watch");
-const generatorVersion = "2";
+const generatorVersion = "3";
 
 const ATTRIBUTE_MAP = new Map([
     ["clip-rule", "clipRule"],
@@ -59,7 +59,56 @@ const normalizeInlineStyles = (markup) =>
         return declarations.length > 0 ? ` style={{ ${declarations.join(", ")} }}` : "";
     });
 
-const extractSvgParts = (source) => {
+const COLOR_ATTR_PATTERN = /\s(fill|stroke)="([^"]+)"/gi;
+const HEX_COLOR_PATTERN = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i;
+const RGB_COLOR_PATTERN = /^rgba?\(/i;
+const HSL_COLOR_PATTERN = /^hsla?\(/i;
+
+const isLiteralPaintColor = (value) => {
+    const normalized = value.trim().toLowerCase();
+
+    if (
+        normalized === "none" ||
+        normalized === "currentcolor" ||
+        normalized === "transparent" ||
+        normalized === "white" ||
+        normalized === "#fff" ||
+        normalized === "#ffffff" ||
+        normalized.startsWith("url(")
+    ) {
+        return false;
+    }
+
+    return (
+        HEX_COLOR_PATTERN.test(normalized) ||
+        RGB_COLOR_PATTERN.test(normalized) ||
+        HSL_COLOR_PATTERN.test(normalized) ||
+        normalized === "black" ||
+        normalized === "#000" ||
+        normalized === "#000000"
+    );
+};
+
+const replaceMonochromePaintWithCurrentColor = (markup) => {
+    const matches = Array.from(markup.matchAll(COLOR_ATTR_PATTERN));
+    const colors = new Set(
+        matches
+            .map(([, , value]) => value.trim().toLowerCase())
+            .filter((value) => isLiteralPaintColor(value))
+    );
+
+    if (colors.size !== 1) {
+        return markup;
+    }
+
+    return markup.replace(COLOR_ATTR_PATTERN, (match, attr, value) =>
+        isLiteralPaintColor(value) ? ` ${attr}="currentColor"` : match
+    );
+};
+
+const shouldUseCurrentColor = (fileName) => /^(line|fill)_/i.test(fileName);
+
+const extractSvgParts = (source, fileName) => {
     const cleanSource = source
         .replace(/<\?xml[\s\S]*?\?>/g, "")
         .replace(/<!DOCTYPE[\s\S]*?>/gi, "")
@@ -70,7 +119,10 @@ const extractSvgParts = (source) => {
     }
 
     const attrs = match[1];
-    const body = match[2].trim();
+    const rawBody = match[2].trim();
+    const body = shouldUseCurrentColor(fileName)
+        ? replaceMonochromePaintWithCurrentColor(rawBody)
+        : rawBody;
     const viewBox = attrs.match(/viewBox="([^"]+)"/i)?.[1] ?? "0 0 24 24";
     return { viewBox, body: normalizeAttributes(normalizeInlineStyles(body)) };
 };
@@ -196,7 +248,7 @@ const runBuild = async () => {
         seenComponents.set(componentName, file);
 
         const svgSource = await readFile(path.join(svgDir, file), "utf8");
-        const { viewBox, body } = extractSvgParts(svgSource);
+        const { viewBox, body } = extractSvgParts(svgSource, file);
         const outputFile = path.join(generatedDir, `${componentName}Icon.tsx`);
         const sourceHash = createHashValue(`${generatorVersion}\n${svgSource}`);
         const nextComponentSource = createComponentSource(componentName, viewBox, body);

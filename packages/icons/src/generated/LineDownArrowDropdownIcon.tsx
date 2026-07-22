@@ -14,7 +14,7 @@ export function LineDownArrowDropdownIcon({ size = 24, color = "currentColor", t
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <path d="M8 10.6666L4 6.66663H12L8 10.6666Z" fill="#111111"/>
+            <path d="M8 10.6666L4 6.66663H12L8 10.6666Z" fill="currentColor"/>
         </svg>
     );
 }

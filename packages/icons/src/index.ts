@@ -1,4 +1,5 @@
 export { AiIcon } from "./generated/AiIcon";
+export { DrawImproveScoreIcon } from "./generated/DrawImproveScoreIcon";
 export { IconDotMoreIcon } from "./generated/IconDotMoreIcon";
 export { LineArrowComparisonIcon } from "./generated/LineArrowComparisonIcon";
 export { LineArrowConnectIcon } from "./generated/LineArrowConnectIcon";
