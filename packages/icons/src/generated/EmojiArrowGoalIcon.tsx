@@ -1,0 +1,41 @@
+import type { IconProps } from "../types";
+
+export function EmojiArrowGoalIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <rect width="16" height="16" rx="2" fill="#6785A0"/>
+<rect x="0.800049" y="0.799561" width="14.4" height="14.4" rx="2" fill="url(#paint0_linear_4687_28907)"/>
+<g filter="url(#filter0_d_4687_28907)">
+<rect x="3.91919" y="6.85547" width="5.73828" height="2.96" rx="0.266667" fill="white"/>
+<path d="M9.08398 5.31054C9.08398 5.07296 9.37122 4.95399 9.53921 5.12198L12.6667 8.24942C12.7708 8.35356 12.7708 8.52241 12.6667 8.62655L9.53921 11.754C9.37122 11.922 9.08398 11.803 9.08398 11.5654V5.31054Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_4687_28907" x="3.65252" y="4.91012" width="9.35902" height="7.3224" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="0.133333"/>
+<feGaussianBlur stdDeviation="0.133333"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4687_28907"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4687_28907" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_4687_28907" x1="8.00005" y1="0.799561" x2="8.00005" y2="11.4282" gradientUnits="userSpaceOnUse">
+<stop stopColor="#C4D5E4"/>
+<stop offset="1" stopColor="#C4D5E4" stopOpacity="0"/>
+</linearGradient>
+</defs>
+        </svg>
+    );
+}
