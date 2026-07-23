@@ -108,6 +108,10 @@
       "componentName": "DrawListTaskHistory",
       "hash": "c4ef4a7ea3e41ed0c46a46857132057fe2f642a46d0f45a919fb1c498bd1cc00"
     },
+    "draw_list_task_score.svg": {
+      "componentName": "DrawListTaskScore",
+      "hash": "9c5af6c22f222dea48514a2031fd94d061d53add4bdc855dd8c8650dc4d81f2e"
+    },
     "draw_lock_pro2.svg": {
       "componentName": "DrawLockPro2",
       "hash": "26b06096b291339204fe63286eaf26b1862190e52296c9578ea72ab8feb52c0c"
@@ -183,6 +187,50 @@
     "emoji_wrong_failed.svg": {
       "componentName": "EmojiWrongFailed",
       "hash": "255c8d42f6d6ce57c1994e786a697164a7b041f310552f9cf552fd3437a0a20c"
+    },
+    "event=bound,_feature=analysis.svg": {
+      "componentName": "EventBoundFeatureAnalysis",
+      "hash": "1bc393c332ddbd95ef51f38b1b63b8bb79aae4fc753ba9493ec2f4cd5562c7d2"
+    },
+    "event=free_use,_feature=post_agent.svg": {
+      "componentName": "EventFreeUseFeaturePostAgent",
+      "hash": "97f06e1cfaff91a1885cb1185f613179b08c142c4f0cda3ecd37a0260a6d43e4"
+    },
+    "event=link,_feature=yellow.svg": {
+      "componentName": "EventLinkFeatureYellow",
+      "hash": "65ea7b812cc03973541131adee5b6d14907fde0677e8706a6d56863e7689208f"
+    },
+    "event=no_account,_feature=yellow.svg": {
+      "componentName": "EventNoAccountFeatureYellow",
+      "hash": "f2206753f595d03f6ab9eecdc575e3155a0a6f4833b8966df9835a3f31ee1167"
+    },
+    "event=no_credit,_feature=credit.svg": {
+      "componentName": "EventNoCreditFeatureCredit",
+      "hash": "8e2b659baf0e96f954777a58354f1f07303d63f5c7667aeac213fa7e3cdca2e1"
+    },
+    "event=no_event,_feature=yellow.svg": {
+      "componentName": "EventNoEventFeatureYellow",
+      "hash": "6a1f794a14e8c2f37886017fc2834e88256555b82fddfb3e1054d6d7a9d04662"
+    },
+    "event=no_media,_feature=yellow.svg": {
+      "componentName": "EventNoMediaFeatureYellow",
+      "hash": "2c3fd39944e103de4907e7d99890f6600747bdc89ebb097813304c314e7b056c"
+    },
+    "event=no_report,_feature=analysis.svg": {
+      "componentName": "EventNoReportFeatureAnalysis",
+      "hash": "f5546a0de813f83d9d7e00648701eef6fd06d49a25a688e0ad9673755010bd19"
+    },
+    "event=no_time_slot,_feature=yellow.svg": {
+      "componentName": "EventNoTimeSlotFeatureYellow",
+      "hash": "67d15507e83c4773a779467eefeadd1f1cd35a0ce50b1b26bf7357f3416679fe"
+    },
+    "event=nobody,_feature=yellow.svg": {
+      "componentName": "EventNobodyFeatureYellow",
+      "hash": "ee146949913af6e129f9fc58c6641a257f83367a93257a5cb05c573dfb82d1ea"
+    },
+    "event=nothing,_feature=analysis.svg": {
+      "componentName": "EventNothingFeatureAnalysis",
+      "hash": "8e47fbde4dc8c6e5676a0a52619fde42727d6bfcb021d13fa2a3dafa86c9d326"
     },
     "fill__question_mark_information.svg": {
       "componentName": "FillQuestionMarkInformation",
@@ -823,6 +871,22 @@
     "line_youtube_thumb_like.svg": {
       "componentName": "LineYoutubeThumbLike",
       "hash": "6a31d56a8e30895e580361ba4e1cc32e9874b1082aae5da8ed523ed54aadcd50"
+    },
+    "no_task_blue.svg": {
+      "componentName": "NoTaskBlue",
+      "hash": "325ed8944335dd0a03677c946dc77b564d5facb42fa912d3a90509f19bb0e892"
+    },
+    "no_task_green.svg": {
+      "componentName": "NoTaskGreen",
+      "hash": "a5030e703236ddbee1d3ec31af967c6e5f187ff166494f806aa01222236a3077"
+    },
+    "no_task_red.svg": {
+      "componentName": "NoTaskRed",
+      "hash": "73cddaa50d164743b6acb810c167825828ff4f8e52a2292690f98713a10eff5d"
+    },
+    "no_task_yellow.svg": {
+      "componentName": "NoTaskYellow",
+      "hash": "586d027704bd6ea277033d958d5ddd92a20155ad5cc579c4135625dd25d78f7c"
     }
   }
 }
