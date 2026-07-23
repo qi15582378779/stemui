@@ -204,4 +204,5 @@ export { LineYoutubeArrowShareIcon } from "./generated/LineYoutubeArrowShareIcon
 export { LineYoutubeBubbleCommentIcon } from "./generated/LineYoutubeBubbleCommentIcon";
 export { LineYoutubeThumbDislikeIcon } from "./generated/LineYoutubeThumbDislikeIcon";
 export { LineYoutubeThumbLikeIcon } from "./generated/LineYoutubeThumbLikeIcon";
+export { recentIconIds } from "./recent-icons";
 export type { IconProps } from "./types";

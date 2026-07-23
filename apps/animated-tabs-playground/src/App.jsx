@@ -5,16 +5,16 @@ import { IconsPage } from "./pages/IconsPage";
 
 const pages = [
     {
-        id: "animated-tabs",
-        label: "Animated Tabs",
-        description: "Measure base behavior and styled integration side by side.",
-        component: AnimatedTabsPage
-    },
-    {
         id: "icons",
         label: "Icons",
         description: "Preview generated icon components from raw SVG sources.",
         component: IconsPage
+    },
+    {
+        id: "animated-tabs",
+        label: "Animated Tabs",
+        description: "Measure base behavior and styled integration side by side.",
+        component: AnimatedTabsPage
     }
 ];
 

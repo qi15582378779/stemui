@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 
 import * as Icons from "@stemui/icons";
 
+const recentIconIdSet = new Set(Icons.recentIconIds ?? []);
+
 const previewSwatches = [
     { id: "ink", name: "Ink", color: "#111827" },
     { id: "amber", name: "Amber", color: "#d97706" },
@@ -47,9 +49,14 @@ export function IconsPage() {
                     displayName: toDisplayName(name),
                     sourceFileName: toSourceFileName(name),
                     prefixGroup: getPrefixGroup(name),
+                    isNew: recentIconIdSet.has(name),
                     component
                 }))
-                .sort((left, right) => left.label.localeCompare(right.label)),
+                .sort(
+                    (left, right) =>
+                        Number(right.isNew) - Number(left.isNew) ||
+                        left.label.localeCompare(right.label)
+                ),
         []
     );
     const prefixFilters = useMemo(() => {
@@ -163,6 +170,13 @@ export function IconsPage() {
                                     <span className="icon-tile-stage icon-tile-stage--compact">
                                         <Icon size={24} title={icon.label} />
                                     </span>
+                                    {icon.isNew ? (
+                                        <span
+                                            className="icon-new-dot"
+                                            aria-label="New icon"
+                                            title="New"
+                                        />
+                                    ) : null}
                                 </button>
                             );
                         })}

@@ -364,6 +364,7 @@ input {
 }
 
 .icon-tile {
+    position: relative;
     display: grid;
     place-items: center;
     min-width: 0;
@@ -378,6 +379,18 @@ input {
         transform 140ms ease,
         border-color 140ms ease,
         box-shadow 140ms ease;
+}
+
+.icon-new-dot {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #e53935;
+    box-shadow: 0 1px 4px rgb(160 20 20 / 0.28);
 }
 
 .icon-tile:hover {

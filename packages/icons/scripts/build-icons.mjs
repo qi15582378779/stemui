@@ -8,6 +8,7 @@ const packageRoot = path.resolve(__dirname, "..");
 const svgDir = path.join(packageRoot, "svg");
 const generatedDir = path.join(packageRoot, "src", "generated");
 const indexFile = path.join(packageRoot, "src", "index.ts");
+const recentIconsFile = path.join(packageRoot, "src", "recent-icons.ts");
 const cacheDir = path.join(packageRoot, ".cache");
 const manifestFile = path.join(cacheDir, "icons-manifest.json");
 const scriptMode = process.argv.includes("--incremental") ? "incremental" : "full";
@@ -149,6 +150,11 @@ export function ${componentName}Icon({ size = 24, color = "currentColor", title,
 }
 `;
 
+const createRecentIconsSource = (componentNames) => `export const recentIconIds = [
+${componentNames.map((componentName) => `    "${componentName}Icon"`).join(",\n")}
+] as const;
+`;
+
 const createHashValue = (value) => createHash("sha256").update(value).digest("hex");
 
 const readJson = async (filePath) => {
@@ -234,6 +240,7 @@ const runBuild = async () => {
     const nextManifest = { icons: {} };
     const seenComponents = new Map();
     const changedIcons = [];
+    const recentlyChangedComponentNames = [];
     const removedIcons = [];
     const activeComponentNames = new Set();
     let indexTouched = false;
@@ -253,6 +260,10 @@ const runBuild = async () => {
         const sourceHash = createHashValue(`${generatorVersion}\n${svgSource}`);
         const nextComponentSource = createComponentSource(componentName, viewBox, body);
         const previousEntry = previousManifest.icons[file];
+        const sourceChanged =
+            !previousEntry ||
+            previousEntry.componentName !== componentName ||
+            previousEntry.hash !== sourceHash;
         const previousOutputFile = previousEntry
             ? path.join(generatedDir, `${previousEntry.componentName}Icon.tsx`)
             : null;
@@ -268,6 +279,10 @@ const runBuild = async () => {
             if (written || scriptMode === "incremental") {
                 changedIcons.push(file);
             }
+        }
+
+        if (sourceChanged) {
+            recentlyChangedComponentNames.push(componentName);
         }
 
         if (previousOutputFile && previousOutputFile !== outputFile) {
@@ -300,8 +315,17 @@ const runBuild = async () => {
     indexTouched =
         (await writeIfChanged(path.join(generatedDir, "index.ts"), `${generatedExports.join("\n")}\n`)) ||
         indexTouched;
+    if (recentlyChangedComponentNames.length > 0 || !(await exists(recentIconsFile))) {
+        await writeIfChanged(
+            recentIconsFile,
+            createRecentIconsSource(recentlyChangedComponentNames)
+        );
+    }
     indexTouched =
-        (await writeIfChanged(indexFile, `${rootExports.join("\n")}\nexport type { IconProps } from "./types";\n`)) ||
+        (await writeIfChanged(
+            indexFile,
+            `${rootExports.join("\n")}\nexport { recentIconIds } from "./recent-icons";\nexport type { IconProps } from "./types";\n`
+        )) ||
         indexTouched;
 
     await writeIfChanged(`${manifestFile}`, `${JSON.stringify(nextManifest, null, 2)}\n`);
