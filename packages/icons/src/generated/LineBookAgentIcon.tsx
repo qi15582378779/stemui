@@ -1,0 +1,29 @@
+import type { IconProps } from "../types";
+
+export function LineBookAgentIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <g clipPath="url(#clip0_8516_88770)">
+<path d="M3.5 12.2187V3.78125C3.5 3.40829 3.64816 3.0506 3.91188 2.78688C4.1756 2.52316 4.53329 2.375 4.90625 2.375H11.9375C12.0867 2.375 12.2298 2.43426 12.3352 2.53975C12.4407 2.64524 12.5 2.78832 12.5 2.9375V13.0625C12.5 13.2117 12.4407 13.3548 12.3352 13.4602C12.2298 13.5657 12.0867 13.625 11.9375 13.625H4.90625C4.53329 13.625 4.1756 13.4768 3.91188 13.2131C3.64816 12.9494 3.5 12.5917 3.5 12.2187ZM3.5 12.2187C3.5 11.8458 3.64816 11.4881 3.91188 11.2244C4.1756 10.9607 4.53329 10.8125 4.90625 10.8125H12.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M5.75 7.4375H10.25" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M5.75 5.1875H9.125" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_8516_88770">
+<rect width="13.5" height="13.5" fill="white" transform="translate(1.25 1.25)"/>
+</clipPath>
+</defs>
+        </svg>
+    );
+}

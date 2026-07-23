@@ -1,0 +1,20 @@
+import type { IconProps } from "../types";
+
+export function LinePuzzlePluginIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path d="M11.576 13.2585V9.68259L12.1407 9.77674C13.1665 9.94763 14.1001 9.15669 14.1001 8.11685V7.88281C14.1001 6.84297 13.1665 6.05201 12.1407 6.22295L11.576 6.31707V2.74121H8.19787L8.25899 3.37546C8.34574 4.27577 7.63799 5.055 6.73351 5.055C5.83232 5.055 5.12567 4.2812 5.20726 3.3837L5.26566 2.74121H1.90015V13.2585H11.576Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+        </svg>
+    );
+}

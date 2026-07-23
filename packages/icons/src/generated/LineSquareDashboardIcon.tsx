@@ -1,0 +1,23 @@
+import type { IconProps } from "../types";
+
+export function LineSquareDashboardIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path d="M6.3125 2.9375H3.5C3.18934 2.9375 2.9375 3.18934 2.9375 3.5V7.4375C2.9375 7.74816 3.18934 8 3.5 8H6.3125C6.62316 8 6.875 7.74816 6.875 7.4375V3.5C6.875 3.18934 6.62316 2.9375 6.3125 2.9375Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M12.5 2.9375H9.6875C9.37684 2.9375 9.125 3.18934 9.125 3.5V5.1875C9.125 5.49816 9.37684 5.75 9.6875 5.75H12.5C12.8107 5.75 13.0625 5.49816 13.0625 5.1875V3.5C13.0625 3.18934 12.8107 2.9375 12.5 2.9375Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M12.5 8H9.6875C9.37684 8 9.125 8.25184 9.125 8.5625V12.5C9.125 12.8107 9.37684 13.0625 9.6875 13.0625H12.5C12.8107 13.0625 13.0625 12.8107 13.0625 12.5V8.5625C13.0625 8.25184 12.8107 8 12.5 8Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M6.3125 10.25H3.5C3.18934 10.25 2.9375 10.5018 2.9375 10.8125V12.5C2.9375 12.8107 3.18934 13.0625 3.5 13.0625H6.3125C6.62316 13.0625 6.875 12.8107 6.875 12.5V10.8125C6.875 10.5018 6.62316 10.25 6.3125 10.25Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    );
+}

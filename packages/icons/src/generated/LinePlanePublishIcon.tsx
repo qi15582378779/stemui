@@ -1,0 +1,20 @@
+import type { IconProps } from "../types";
+
+export function LinePlanePublishIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <path d="M5.72025 8.64246L1.76011 7.87968C1.29567 7.79023 1.23081 7.15202 1.66777 6.97096L13.9041 1.90066C14.1156 1.81302 14.3392 1.99695 14.2941 2.22139L12.0397 13.4264C11.9677 13.784 11.5373 13.9317 11.2609 13.6936L8.34889 11.1842M5.72025 8.64246V12.7394C5.72025 13.169 6.24387 13.3795 6.54124 13.0694L8.34889 11.1842M5.72025 8.64246L8.34889 11.1842M5.72025 8.64246L13.8221 2.61017" stroke="currentColor" strokeWidth="1.2"/>
+        </svg>
+    );
+}
