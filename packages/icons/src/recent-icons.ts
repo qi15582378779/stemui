@@ -1,3 +1,5 @@
 export const recentIconIds = [
-    "LineGearSetIcon"
+    "LineHorizontalLineMenuIcon",
+    "LineMenuFilterIcon",
+    "LineThreelineSortIcon"
 ] as const;
