@@ -84,6 +84,7 @@ export { LineArrowJumpIcon } from "./generated/LineArrowJumpIcon";
 export { LineArrowLogoutIcon } from "./generated/LineArrowLogoutIcon";
 export { LineArrowLoopIcon } from "./generated/LineArrowLoopIcon";
 export { LineArrowRefreshIcon } from "./generated/LineArrowRefreshIcon";
+export { LineArrowRescanIcon } from "./generated/LineArrowRescanIcon";
 export { LineArrowShareIcon } from "./generated/LineArrowShareIcon";
 export { LineArrowUp1Icon } from "./generated/LineArrowUp1Icon";
 export { LineArrowUpIcon } from "./generated/LineArrowUpIcon";
