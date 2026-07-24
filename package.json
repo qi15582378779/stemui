@@ -23,13 +23,13 @@
     "version:icons:patch": "npm version patch --workspace @stemui/icons --no-git-tag-version",
     "version:icons:minor": "npm version minor --workspace @stemui/icons --no-git-tag-version",
     "version:icons:major": "npm version major --workspace @stemui/icons --no-git-tag-version",
-    "publish:icons": "npm run version:icons:patch && npm publish --workspace @stemui/icons --access public",
-    "publish:icons:manual": "npm publish --workspace @stemui/icons --access public",
+    "publish:icons": "node ./scripts/publish-workspace.mjs @stemui/icons --bump patch",
+    "publish:icons:manual": "node ./scripts/publish-workspace.mjs @stemui/icons --manual",
     "version:animated-tabs:patch": "npm version patch --workspace @stemui/animated-tabs --no-git-tag-version",
     "version:animated-tabs:minor": "npm version minor --workspace @stemui/animated-tabs --no-git-tag-version",
     "version:animated-tabs:major": "npm version major --workspace @stemui/animated-tabs --no-git-tag-version",
-    "publish:animated-tabs": "npm run version:animated-tabs:patch && npm publish --workspace @stemui/animated-tabs --access public",
-    "publish:animated-tabs:manual": "npm publish --workspace @stemui/animated-tabs --access public"
+    "publish:animated-tabs": "node ./scripts/publish-workspace.mjs @stemui/animated-tabs --bump patch",
+    "publish:animated-tabs:manual": "node ./scripts/publish-workspace.mjs @stemui/animated-tabs --manual"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",
