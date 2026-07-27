@@ -1,0 +1,64 @@
+name: Playground CI
+
+on:
+  pull_request:
+    paths:
+      - "apps/animated-tabs-playground/**"
+      - "packages/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/playground.yml"
+  push:
+    branches: [main]
+    paths:
+      - "apps/animated-tabs-playground/**"
+      - "packages/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/playground.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: playground-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Build playground
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build:playground
+
+      - name: Upload deployment package
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: animated-tabs-playground-dist-${{ github.sha }}
+          path: apps/animated-tabs-playground/dist
+          if-no-files-found: error
+
+  production:
+    name: Approve production release
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Release approved
+        run: echo "Production package validated and approved. Deploy it through Sites."
