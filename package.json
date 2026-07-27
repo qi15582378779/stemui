@@ -17,6 +17,7 @@
     "preview:playground": "npm run preview --workspace animated-tabs-playground",
     "dev:animated-tabs": "npm run dev:playground",
     "build:animated-tabs-preview": "npm run build:playground",
+    "publish:playground": "node ./scripts/publish-playground.mjs",
     "preview:animated-tabs": "npm run preview:playground",
     "build:icons": "npm run build --workspace @stemui/icons",
     "build:icons:incremental": "npm run build:incremental --workspace @stemui/icons",
