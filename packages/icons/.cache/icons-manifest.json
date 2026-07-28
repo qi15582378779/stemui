@@ -16,17 +16,13 @@
       "componentName": "DrawBulbCreate",
       "hash": "3434a89b2c4b713118805299738f1fba95807f580ce7698cbc46a9aac680bbdc"
     },
-    "draw_calendar_plan.svg": {
-      "componentName": "DrawCalendarPlan",
-      "hash": "0785c60b0c715816d4bc1c0de9451f5dece9d22a21c8d698fc4a28cfb01ad3b2"
-    },
     "draw_calendar_schedule.svg": {
       "componentName": "DrawCalendarSchedule",
-      "hash": "fddf02702a2222b79508a5c275616ae260724d798d87ffd9d5acf593595a0e28"
+      "hash": "ef3b29e4108286cccec124b1b9f9500aa132931756ec2fc5e6a3ba63179e649f"
     },
     "draw_computer_add.svg": {
       "componentName": "DrawComputerAdd",
-      "hash": "46cd532c82aaa3fd77348986fba0e47b345a306722d4eae6963d4470c85ea477"
+      "hash": "5c4a4bb2c56e5c099327875c6f9f1230c86feeca30a61cf8dba3198e6d2b178f"
     },
     "draw_dev_plan_c_analysis.svg": {
       "componentName": "DrawDevPlanCAnalysis",
@@ -46,7 +42,7 @@
     },
     "draw_eye_new.svg": {
       "componentName": "DrawEyeNew",
-      "hash": "335137b899c980f83eae5ce583402dd12599ad7acb56d93a8c08e2a35d3d0617"
+      "hash": "e13fe06dd60af3771c3fbb0fc0c0d1eec425fa5a534afe91c0b4a6c01fb7b143"
     },
     "draw_file_post.svg": {
       "componentName": "DrawFilePost",
@@ -154,7 +150,7 @@
     },
     "draw_upvote👍_analysis.svg": {
       "componentName": "DrawUpvoteAnalysis",
-      "hash": "5b6f79f5be71b062c7db1c090c6dbdc1eee28ac9c247d14a0b9a475fb60a6a2a"
+      "hash": "edb4c11d1a3186adaa682feaf0a6546dc131828c769a93699c51ccc031c85bcf"
     },
     "emoji_arrow_goal.svg": {
       "componentName": "EmojiArrowGoal",

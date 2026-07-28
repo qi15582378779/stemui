@@ -2,7 +2,6 @@ export { DrawArrowVerifyIcon } from "./DrawArrowVerifyIcon";
 export { DrawBellNoticeIcon } from "./DrawBellNoticeIcon";
 export { DrawBubbleEngageIcon } from "./DrawBubbleEngageIcon";
 export { DrawBulbCreateIcon } from "./DrawBulbCreateIcon";
-export { DrawCalendarPlanIcon } from "./DrawCalendarPlanIcon";
 export { DrawCalendarScheduleIcon } from "./DrawCalendarScheduleIcon";
 export { DrawComputerAddIcon } from "./DrawComputerAddIcon";
 export { DrawDevPlanCAnalysisIcon } from "./DrawDevPlanCAnalysisIcon";
