@@ -20,6 +20,7 @@ export { DrawImageMediaIcon } from "./generated/DrawImageMediaIcon";
 export { DrawImgAiImageIcon } from "./generated/DrawImgAiImageIcon";
 export { DrawImgAnalysisIcon } from "./generated/DrawImgAnalysisIcon";
 export { DrawImgChatIcon } from "./generated/DrawImgChatIcon";
+export { DrawImgMediaIcon } from "./generated/DrawImgMediaIcon";
 export { DrawLayoutPostIcon } from "./generated/DrawLayoutPostIcon";
 export { DrawLightFastIcon } from "./generated/DrawLightFastIcon";
 export { DrawLinkConnectIcon } from "./generated/DrawLinkConnectIcon";

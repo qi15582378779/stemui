@@ -88,6 +88,10 @@
       "componentName": "DrawImgChat",
       "hash": "35b265147075ddf229ffeb419f12f84d192a4afbf0bdcba5f7cd721d9c6de83d"
     },
+    "draw_img_media.svg": {
+      "componentName": "DrawImgMedia",
+      "hash": "4a11d25af98462df399ba06fdb1a380b6e07f73852e9e1780b455d0cf73227d0"
+    },
     "draw_layout_post.svg": {
       "componentName": "DrawLayoutPost",
       "hash": "67def280ae65848f25a8e438504570c00121b6fbf4474568de0dba4063dd2fc8"
