@@ -887,6 +887,70 @@
     "no_task_yellow.svg": {
       "componentName": "NoTaskYellow",
       "hash": "586d027704bd6ea277033d958d5ddd92a20155ad5cc579c4135625dd25d78f7c"
+    },
+    "platform=Coingecko.svg": {
+      "componentName": "PlatformCoingecko",
+      "hash": "45a09f5e01b2f8b7412b3261c3997e22f9517ba1dfa7daf2aa6ece03ee12d396"
+    },
+    "platform=Wikipedia.svg": {
+      "componentName": "PlatformWikipedia",
+      "hash": "f903132012b2b5cfa5b8932d6ba9d574dc6ea3d76dc2166e3d3a8f5f4a53875f"
+    },
+    "platform=dev.to.svg": {
+      "componentName": "PlatformDevTo",
+      "hash": "35ab0e5662f982040237779f9f886626d0ac1d3f5203c562a4245ef1b109db7e"
+    },
+    "platform=github.svg": {
+      "componentName": "PlatformGithub",
+      "hash": "e1548dba1f98d46f2a117969ea87b355bfc7957c2678da0a9aeafcdfd4139301"
+    },
+    "platform=google.svg": {
+      "componentName": "PlatformGoogle",
+      "hash": "ce0d7ef18ac49c80a6d60835c69872f3712bcdd3fec48faaea7c6e3b2605ef24"
+    },
+    "platform=hacker_news.svg": {
+      "componentName": "PlatformHackerNews",
+      "hash": "04679c55adf85027187ea8aaeeae5c48830aeb18711b41c7c5abc2f5f16dd127"
+    },
+    "platform=linkdle.svg": {
+      "componentName": "PlatformLinkdle",
+      "hash": "878afbcd56a4c8733fd212079c49c22a11e86892086f31b34dcb6d8900677164"
+    },
+    "platform=medium.svg": {
+      "componentName": "PlatformMedium",
+      "hash": "0a8770195e3cabf9a468d0ef820e14b2d0f6e748fac9bd774109107e49d2c245"
+    },
+    "platform=official.svg": {
+      "componentName": "PlatformOfficial",
+      "hash": "b78cd78be30664cb5dc6578e4ac5b0df023da7bf0984dd0967f28860ee188346"
+    },
+    "platform=quora.svg": {
+      "componentName": "PlatformQuora",
+      "hash": "61fdb72b25ddd9d26f016ecb91db898e2568fe6244e6e767669916b0e7bce209"
+    },
+    "platform=reddit.svg": {
+      "componentName": "PlatformReddit",
+      "hash": "b59749663f6abc816241f17de3442c09218a911116af7f94ad270b3fb0871f92"
+    },
+    "platform=telegram.svg": {
+      "componentName": "PlatformTelegram",
+      "hash": "862782def0eba27ff2c6ec48d498c5ca6bfd37de286cd9bd5e15ff12d9299162"
+    },
+    "platform=tiktolk.svg": {
+      "componentName": "PlatformTiktolk",
+      "hash": "1ee8cbd167cc927a81d4c0391b4453ef8f4477b2f0eb170f23cd6311349fac1c"
+    },
+    "platform=unsplash.svg": {
+      "componentName": "PlatformUnsplash",
+      "hash": "be3866847249d5d57092f9cafd11e51cdb31ba06640c2af093ae1971baf101a1"
+    },
+    "platform=x.svg": {
+      "componentName": "PlatformX",
+      "hash": "179247737e65599eb182c0faba8149008fdfb8ee713001093797306100941bfa"
+    },
+    "platform=youtube.svg": {
+      "componentName": "PlatformYoutube",
+      "hash": "47ecc18a8ec617950bcef0d6e8dacfbb9c858e08d545106bbcfd9e3f0f048687"
     }
   }
 }
