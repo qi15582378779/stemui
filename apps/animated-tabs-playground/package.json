@@ -9,6 +9,7 @@
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort"
   },
   "dependencies": {
+    "@stemui/animated-icons": "*",
     "@stemui/animated-tabs": "*",
     "@stemui/icons": "*",
     "react": "^19.1.0",

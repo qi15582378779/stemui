@@ -172,6 +172,65 @@ input {
     padding-bottom: 6px;
 }
 
+.animated-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 220px));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.animated-category-tabs {
+    width: fit-content;
+}
+
+.animated-category-tab {
+    padding: 9px 14px;
+    border-radius: 6px;
+    color: #685c4d;
+    line-height: 1;
+}
+
+.animated-category-tab.is-active {
+    color: #171717;
+}
+
+.animated-category-indicator {
+    border: 1px solid rgb(222 181 52 / 0.3);
+    border-radius: 6px;
+    background: #fff0bc;
+}
+
+.animated-icon-card {
+    display: grid;
+    grid-template-rows: 96px minmax(38px, auto);
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgb(39 30 20 / 0.1);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.animated-icon-stage {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    min-height: 0;
+    color: #111827;
+}
+
+.animated-icon-card code {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    padding: 8px 10px;
+    border-top: 1px solid rgb(39 30 20 / 0.08);
+    color: #4b4034;
+    font-family: "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", monospace;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
 .toggle {
     display: inline-flex;
     gap: 10px;

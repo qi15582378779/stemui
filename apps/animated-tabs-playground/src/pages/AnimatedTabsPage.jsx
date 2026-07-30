@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+import {
+    AnimatedLineArrowUpIcon,
+    AnimatedLineLinkAttachmentIcon
+} from "@stemui/animated-icons";
 import { AnimatedTabs } from "@stemui/animated-tabs";
 
 const tabs = [
@@ -10,12 +14,43 @@ const tabs = [
     { id: "analytics", ariaLabel: "Analytics" }
 ];
 
+const animatedIconGroups = [
+    {
+        id: "growth",
+        ariaLabel: "Growth",
+        icons: [
+            {
+                id: "line-arrow-up",
+                label: "LineArrowUpIcon",
+                ariaLabel: "Animated line arrow up icon",
+                component: AnimatedLineArrowUpIcon
+            }
+        ]
+    },
+    {
+        id: "general",
+        ariaLabel: "General",
+        icons: [
+            {
+                id: "line-link-attachment",
+                label: "LineLinkAttachmentIcon",
+                ariaLabel: "Animated line link attachment icon",
+                component: AnimatedLineLinkAttachmentIcon
+            }
+        ]
+    }
+];
+
 export function AnimatedTabsPage() {
+    const [animatedIconGroup, setAnimatedIconGroup] = useState("growth");
     const [underlineActive, setUnderlineActive] = useState("post");
     const [baseUnderlineActive, setBaseUnderlineActive] = useState("engage");
     const [pillActive, setPillActive] = useState("engage");
     const [basePillActive, setBasePillActive] = useState("post");
     const [scrollable, setScrollable] = useState(false);
+    const activeAnimatedIconGroup =
+        animatedIconGroups.find((group) => group.id === animatedIconGroup) ??
+        animatedIconGroups[0];
 
     return (
         <div className="page-stack">
@@ -28,6 +63,36 @@ export function AnimatedTabsPage() {
                     />
                     <span>Enable scrollable underline list</span>
                 </label>
+            </section>
+
+            <section className="card">
+                <div className="section-label">Animated Icons</div>
+                <AnimatedTabs
+                    tabs={animatedIconGroups}
+                    active={animatedIconGroup}
+                    onChange={setAnimatedIconGroup}
+                    variant="pill"
+                    className="animated-category-tabs"
+                    tabClassName={(tab, isActive) =>
+                        `animated-category-tab${isActive ? " is-active" : ""}`
+                    }
+                    indicatorClassName="animated-category-indicator"
+                    renderTab={(tab) => tab.ariaLabel}
+                />
+                <div className="animated-icon-grid">
+                    {activeAnimatedIconGroup.icons.map((icon) => {
+                        const Icon = icon.component;
+
+                        return (
+                            <div className="animated-icon-card" key={icon.id}>
+                                <div className="animated-icon-stage">
+                                    <Icon size={56} aria-label={icon.ariaLabel} />
+                                </div>
+                                <code>{icon.label}</code>
+                            </div>
+                        );
+                    })}
+                </div>
             </section>
 
             <section className="card">
