@@ -1,0 +1,45 @@
+import type { IconProps } from "../types";
+
+export function AvatarDapp016Icon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <g clipPath="url(#clip0_377_4729)">
+<rect width="24" height="24" fill="#111111"/>
+<mask id="mask0_377_4729" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<path d="M0 6C0 2.68629 2.68629 0 6 0H18C21.3137 0 24 2.68629 24 6V24H0V6Z" fill="#C9FE12"/>
+</mask>
+<g mask="url(#mask0_377_4729)">
+<path d="M0 14C0 7.37258 5.37258 2 12 2C18.6274 2 24 7.37258 24 14V26H0V14Z" fill="#FF88B5"/>
+<mask id="mask1_377_4729" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="5" y="6" width="14" height="7">
+<g clipPath="url(#clip1_377_4729)">
+<path d="M5.1626 9.55396C9.71765 5.52368 14.2727 5.52368 18.8278 9.55396C14.2727 13.5842 9.71765 13.5842 5.1626 9.55396Z" fill="black"/>
+</g>
+</mask>
+<g mask="url(#mask1_377_4729)">
+<rect width="13.6595" height="6.06619" transform="translate(5.1626 6.53125)" fill="white"/>
+<rect x="13.4023" y="7.44141" width="6.11909" height="6.06619" rx="3.0331" fill="#111111"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_377_4729">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+<clipPath id="clip1_377_4729">
+<rect width="13.6595" height="6.06619" fill="white" transform="translate(5.1626 6.53125)"/>
+</clipPath>
+</defs>
+        </svg>
+    );
+}

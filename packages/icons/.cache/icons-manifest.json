@@ -1,5 +1,189 @@
 {
   "icons": {
+    "avatar_dapp_001.svg": {
+      "componentName": "AvatarDapp001",
+      "hash": "8b1f5cf510ff46d4c7b6093cb46ea12a9d2ef58ba6dc9d2d51021d22dda53d9d"
+    },
+    "avatar_dapp_002.svg": {
+      "componentName": "AvatarDapp002",
+      "hash": "03ff6da62c93de44a880dbe7bb3a95ba7b5414dcf46b8ffe1945bc00d32af6fb"
+    },
+    "avatar_dapp_003.svg": {
+      "componentName": "AvatarDapp003",
+      "hash": "93de7b80e20cb8fa5c30c0d95fdb7c39ef1c5242cd2a637e4867a2fef1cd11f5"
+    },
+    "avatar_dapp_004.svg": {
+      "componentName": "AvatarDapp004",
+      "hash": "b66c240f9785c7cea2bdb07d25905ef09c3a85278df020379d7f639005e83866"
+    },
+    "avatar_dapp_005.svg": {
+      "componentName": "AvatarDapp005",
+      "hash": "43c287970934c07dbd4e8976ce2d299fffb25a3ef8129b64564ebbc45e5c0ff1"
+    },
+    "avatar_dapp_006.svg": {
+      "componentName": "AvatarDapp006",
+      "hash": "01a3fcba3e5a22db87b19e75b1f00c583a8bbb59ca5ba1eb87cc3281dea82cb4"
+    },
+    "avatar_dapp_007.svg": {
+      "componentName": "AvatarDapp007",
+      "hash": "424fe13304424bede0bbe83c98b23f7ad77d5736a788f44c7c1538ffc96b676d"
+    },
+    "avatar_dapp_008.svg": {
+      "componentName": "AvatarDapp008",
+      "hash": "ae8612828b5cb41fd1af6971357778235633cd4d5540ab85d83391ed0359042d"
+    },
+    "avatar_dapp_009.svg": {
+      "componentName": "AvatarDapp009",
+      "hash": "2e023dac87906a48262f8412e1f8cd37c633871328989af83e0001f19f4307b0"
+    },
+    "avatar_dapp_010.svg": {
+      "componentName": "AvatarDapp010",
+      "hash": "8998de64ec29f49b7d7f25f9d2c49010f0436ccd2357ba8eeb76daea7a21fd74"
+    },
+    "avatar_dapp_011.svg": {
+      "componentName": "AvatarDapp011",
+      "hash": "5a97e2c12942f3f3065b361ed595ba11542607b4264fd453dd32203b26e5eaaa"
+    },
+    "avatar_dapp_012.svg": {
+      "componentName": "AvatarDapp012",
+      "hash": "bd45105a76c653839ca77150ed2bb90ee64ab1b7f08b5997894ef7815c571001"
+    },
+    "avatar_dapp_013.svg": {
+      "componentName": "AvatarDapp013",
+      "hash": "ab3878fdc9cb0136e79a75151ff2c548968b7f995190894bcf35f5fb9bb34026"
+    },
+    "avatar_dapp_014.svg": {
+      "componentName": "AvatarDapp014",
+      "hash": "88d37ad78b463613438f41f249b3b9eaad760789dbdbf04fd1121a4652fac036"
+    },
+    "avatar_dapp_015.svg": {
+      "componentName": "AvatarDapp015",
+      "hash": "d82bb6ac65cfbeca341d2a5965871290b3cfa66d635ee15b007def945afeeff8"
+    },
+    "avatar_dapp_016.svg": {
+      "componentName": "AvatarDapp016",
+      "hash": "2adcab66d876a222f03145b5b618891f86c3afc52ed97315ed109341938b7bec"
+    },
+    "avatar_dapp_017.svg": {
+      "componentName": "AvatarDapp017",
+      "hash": "f4c50807a49fb0f0f08466c420800f04e8b66e2ceffed4938cec424d10bea2f1"
+    },
+    "avatar_dapp_018.svg": {
+      "componentName": "AvatarDapp018",
+      "hash": "2a428d88966893ae089e0be90cc5cedbaf6e42de765c81f08426173a0d60babb"
+    },
+    "avatar_dapp_019.svg": {
+      "componentName": "AvatarDapp019",
+      "hash": "d9513503ba6e7e1d93bec857b282264a34d081a4bdcd7e55cf15ae5e6e1353fc"
+    },
+    "avatar_dapp_020.svg": {
+      "componentName": "AvatarDapp020",
+      "hash": "35b7ce6e04cf77765929ceaf8ffd2923359595aa2379ccceaf9036b32595fd23"
+    },
+    "avatar_dapp_021.svg": {
+      "componentName": "AvatarDapp021",
+      "hash": "4e21f090ce99dd2a82d6076a56fcb9b5f1f1dc2b30eb38c41b1b20eabd436674"
+    },
+    "avatar_dapp_022.svg": {
+      "componentName": "AvatarDapp022",
+      "hash": "494def3b4a9c3b24d968da34986e1637e70ebb0b1c7d39c4f56f3fb432061a60"
+    },
+    "avatar_social_1.svg": {
+      "componentName": "AvatarSocial1",
+      "hash": "2106799b0e67b5bea83f5fe850681e13d977c99ce60d90d623c4389cdfe1b0b0"
+    },
+    "avatar_social_10.svg": {
+      "componentName": "AvatarSocial10",
+      "hash": "99a1cc18c8b5b4e0703e759fdb6763903173f70d1d8b16bda0f891e36bdd22c1"
+    },
+    "avatar_social_11.svg": {
+      "componentName": "AvatarSocial11",
+      "hash": "96ca7708800b97be34f4b2310004501bde0e2584aac2138ef3363ef5fa5bc21f"
+    },
+    "avatar_social_12.svg": {
+      "componentName": "AvatarSocial12",
+      "hash": "6984bfee91a6907760dffdc0dcf25f6b80102cd3260442516cfb43a912dd2b1a"
+    },
+    "avatar_social_13.svg": {
+      "componentName": "AvatarSocial13",
+      "hash": "c5b7a9a27d78ff49a1c3727ebc330de8dc758360720fc10e5834434ba1f5a0f9"
+    },
+    "avatar_social_14.svg": {
+      "componentName": "AvatarSocial14",
+      "hash": "ce111836e8a0ee4cf023955b7a360cba0698c039b59a63d25dc14cae5f811889"
+    },
+    "avatar_social_15.svg": {
+      "componentName": "AvatarSocial15",
+      "hash": "feb23cef78f1d2c3bb1596ac27b88077454d3c131adbf6441d1984453de234cd"
+    },
+    "avatar_social_16.svg": {
+      "componentName": "AvatarSocial16",
+      "hash": "da366a5519abdb66712bc3fcb5f97f7e6dae28eb2ab23afd7f8763ac9edc229b"
+    },
+    "avatar_social_17.svg": {
+      "componentName": "AvatarSocial17",
+      "hash": "72898da976dce5f832056daa0c2c62bc27ed4e5266c79a514001cd3885f75370"
+    },
+    "avatar_social_18.svg": {
+      "componentName": "AvatarSocial18",
+      "hash": "fcb639b36a803c4672c70c10ea41ead81c00f97915a5e77697f02866a1e42d63"
+    },
+    "avatar_social_19.svg": {
+      "componentName": "AvatarSocial19",
+      "hash": "60f2e793453eee098798d5b795ace1fa0dacbfe69be148920e7d56240d1f8a4c"
+    },
+    "avatar_social_2.svg": {
+      "componentName": "AvatarSocial2",
+      "hash": "04f1e6a9dc36ef1a17e43a7efd4feb26a7a14168ae817234fa2ed4ec8bf649e6"
+    },
+    "avatar_social_20.svg": {
+      "componentName": "AvatarSocial20",
+      "hash": "072ec90dab7c01d5ba71871c6dce215fc45ecd08cdfac7abe40ca01de042e830"
+    },
+    "avatar_social_21.svg": {
+      "componentName": "AvatarSocial21",
+      "hash": "fdef12273e68bacf1f4fb04d0574791107999ecb06e0fe45b63f01010235e4a4"
+    },
+    "avatar_social_22.svg": {
+      "componentName": "AvatarSocial22",
+      "hash": "fe1148d245e903b581da08898901815589a0e42665127c7e165d8f0dfb24d005"
+    },
+    "avatar_social_23.svg": {
+      "componentName": "AvatarSocial23",
+      "hash": "999f91a10793b0b2e661d75a9ddfd03f4669c716163cd90bbca31636e1a7b686"
+    },
+    "avatar_social_24.svg": {
+      "componentName": "AvatarSocial24",
+      "hash": "4b1b0ceb171cd4f69854d5c13631c10cf4f87dc2b1ac8f18ff25d549efd62541"
+    },
+    "avatar_social_3.svg": {
+      "componentName": "AvatarSocial3",
+      "hash": "4bf345145fdb75f11c6188b8f4df990ad16411fb968352698fd9bf8e5c2575c4"
+    },
+    "avatar_social_4.svg": {
+      "componentName": "AvatarSocial4",
+      "hash": "d90de9076d184efe4223ea5ad5dbdc2614196613d0787eec4a0cdfd843abb754"
+    },
+    "avatar_social_5.svg": {
+      "componentName": "AvatarSocial5",
+      "hash": "313cb153ba34ebbd4ce3f6eb85f39f015d061c02d717b25ee7403872935d42aa"
+    },
+    "avatar_social_6.svg": {
+      "componentName": "AvatarSocial6",
+      "hash": "11ea1ce9a7976757cce0b35323e961bd345cf899babad154e375d9d82c5c9a5b"
+    },
+    "avatar_social_7.svg": {
+      "componentName": "AvatarSocial7",
+      "hash": "e1fd4b9bd50b9eadccb510c8bc56997e190d5db1a00f02e0026ef17c3b624109"
+    },
+    "avatar_social_8.svg": {
+      "componentName": "AvatarSocial8",
+      "hash": "cf853afc304c42cbd40588c310c0e99ba8d159291025b6fb2354c774016978ce"
+    },
+    "avatar_social_9.svg": {
+      "componentName": "AvatarSocial9",
+      "hash": "66dc09e7879f387bc1ccec2dcd89533010d3fa2d3e66c66ad026a738095e7307"
+    },
     "draw_arrow_verify.svg": {
       "componentName": "DrawArrowVerify",
       "hash": "afe950d4fcc589670f71ab5a7a97e01a52b6d41b801b6de824d251573dd6d99b"
@@ -231,6 +415,10 @@
     "event=nothing,_feature=analysis.svg": {
       "componentName": "EventNothingFeatureAnalysis",
       "hash": "8e47fbde4dc8c6e5676a0a52619fde42727d6bfcb021d13fa2a3dafa86c9d326"
+    },
+    "event=plugin,_feature=yellow.svg": {
+      "componentName": "EventPluginFeatureYellow",
+      "hash": "17039f7058f8cfafecdfd76c96554cf461c10b66087d9432f83535dcfb0a7d6b"
     },
     "fill__question_mark_information.svg": {
       "componentName": "FillQuestionMarkInformation",
