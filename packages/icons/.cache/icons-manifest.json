@@ -912,9 +912,9 @@
       "componentName": "PlatformHackernews",
       "hash": "04679c55adf85027187ea8aaeeae5c48830aeb18711b41c7c5abc2f5f16dd127"
     },
-    "platform=linkdle.svg": {
-      "componentName": "PlatformLinkdle",
-      "hash": "878afbcd56a4c8733fd212079c49c22a11e86892086f31b34dcb6d8900677164"
+    "platform=linkedin.svg": {
+      "componentName": "PlatformLinkedin",
+      "hash": "d6f60c11076bbb9db80d8aabc967474ee9857116324d470b08f128a28b681336"
     },
     "platform=medium.svg": {
       "componentName": "PlatformMedium",
@@ -936,9 +936,9 @@
       "componentName": "PlatformTelegram",
       "hash": "862782def0eba27ff2c6ec48d498c5ca6bfd37de286cd9bd5e15ff12d9299162"
     },
-    "platform=tiktolk.svg": {
-      "componentName": "PlatformTiktolk",
-      "hash": "1ee8cbd167cc927a81d4c0391b4453ef8f4477b2f0eb170f23cd6311349fac1c"
+    "platform=tiktok.svg": {
+      "componentName": "PlatformTiktok",
+      "hash": "48cb0ba22b0a2319b0e7f604c92676d2110d16bbb2af2f6820c8145df6928cd9"
     },
     "platform=unsplash.svg": {
       "componentName": "PlatformUnsplash",

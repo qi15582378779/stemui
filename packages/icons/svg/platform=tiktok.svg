@@ -1,22 +1,7 @@
-import type { IconProps } from "../types";
-
-export function PlatformTiktolkIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
-    return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="0 0 12 12"
-            fill="none"
-            color={color}
-            aria-hidden={title ? undefined : true}
-            role={title ? "img" : "presentation"}
-            focusable="false"
-            {...props}
-        >
-            {title ? <title>{title}</title> : null}
-            <circle cx="6" cy="6" r="5.7" fill="white" stroke="#111111" strokeWidth="0.6"/>
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="6" cy="6" r="5.7" fill="white" stroke="#111111" stroke-width="0.6"/>
 <circle cx="6.00029" cy="5.99999" r="4.7" fill="#111111"/>
-<g clipPath="url(#clip0_3848_103628)">
+<g clip-path="url(#clip0_3848_103628)">
 <path d="M5.43164 5.3838V5.15743C5.35368 5.14681 5.27456 5.14026 5.19383 5.14026C4.22086 5.14026 3.4292 5.92922 3.4292 6.89901C3.4292 7.49404 3.72744 8.02055 4.18261 8.33886C3.8889 8.02462 3.70876 7.60373 3.70876 7.14139C3.70876 6.18556 4.47794 5.40606 5.43179 5.3838H5.43164Z" fill="#69C9D0"/>
 <path d="M5.4731 7.94461C5.90725 7.94461 6.2614 7.6004 6.27746 7.17166L6.27906 3.34253H6.98095C6.96635 3.26382 6.95832 3.18293 6.95832 3.10001H5.99965L5.99805 6.92914C5.98199 7.35788 5.62784 7.70209 5.19369 7.70209C5.0588 7.70209 4.93165 7.66849 4.81982 7.60986C4.96624 7.81222 5.2042 7.94461 5.4731 7.94461Z" fill="#69C9D0"/>
 <path d="M8.29184 4.64212V4.42927C8.02411 4.42927 7.77462 4.34999 7.56543 4.21396C7.7517 4.42709 8.00469 4.58087 8.29184 4.64212Z" fill="#69C9D0"/>
@@ -30,6 +15,5 @@ export function PlatformTiktolkIcon({ size = 24, color = "currentColor", title, 
 <rect width="5.14267" height="5.8" fill="white" transform="translate(3.4292 3.10001)"/>
 </clipPath>
 </defs>
-        </svg>
-    );
-}
+</svg>
+
