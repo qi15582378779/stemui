@@ -500,6 +500,18 @@
       "componentName": "FillLockPro",
       "hash": "657d6145050fd448c59ed438451b2736e2dfeb7c85569f6770f1b1b13fafe539"
     },
+    "fill_medium_bubble_responses.svg": {
+      "componentName": "FillMediumBubbleResponses",
+      "hash": "7f46a6d5acb8626b6fec5a589517ed0518bcd01f7d9b5acd8b4d75a7de4ace06"
+    },
+    "fill_medium_hand_clap.svg": {
+      "componentName": "FillMediumHandClap",
+      "hash": "9afc9cec09a201a87ae3bf08d552ea98a550f05f04139c1d9cd02daa394d8041"
+    },
+    "fill_medium_star_member_only_story.svg": {
+      "componentName": "FillMediumStarMemberOnlyStory",
+      "hash": "e0b9869b1aa344657b9558ba678eeb751c08fd125f1a10f6b9797b0db5bc81b6"
+    },
     "fill_pencile_edit.svg": {
       "componentName": "FillPencileEdit",
       "hash": "86dbaefd6e3d2e21dff1653fec9bf1e7f3b9d70235734939d662dc00b2c3681f"
@@ -859,6 +871,18 @@
     "line_media_channel.svg": {
       "componentName": "LineMediaChannel",
       "hash": "31827083e74a06ab9fb3f828aa9e0aeb5a15e378fb5a44074d4c10f0803c66f8"
+    },
+    "line_medium_arrow_report.svg": {
+      "componentName": "LineMediumArrowReport",
+      "hash": "1beafdffe553e132673c97a7a98faacb2948caac812677f47bbbdaf146679e04"
+    },
+    "line_medium_tag_save.svg": {
+      "componentName": "LineMediumTagSave",
+      "hash": "7466c81bbe2a6fcbd689782a0dc40f22bb530c9e57454ba766b6d4f3fa3d0139"
+    },
+    "line_medium_thumb_not_interested.svg": {
+      "componentName": "LineMediumThumbNotInterested",
+      "hash": "e3d8d7abf5e0b86efa4b6d3df4139e7ee813c74252b9ffcced6dd601f59835cf"
     },
     "line_menu_filter.svg": {
       "componentName": "LineMenuFilter",
