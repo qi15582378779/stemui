@@ -36,6 +36,16 @@ const pascalCase = (value) =>
         .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
         .join("");
 
+const componentNameForFile = (file) => {
+    const platformMatch = file.match(/^platform=(.*)\.svg$/i);
+    if (platformMatch) {
+        const platformName = platformMatch[1].replace(/[^a-zA-Z0-9]/g, "");
+        return pascalCase(`platform_${platformName}`);
+    }
+
+    return pascalCase(file);
+};
+
 const normalizeAttributes = (markup) =>
     markup.replace(/([:@a-zA-Z0-9-]+)=/g, (match, name) => {
         const normalized =
@@ -246,7 +256,7 @@ const runBuild = async () => {
     let indexTouched = false;
 
     for (const file of svgFiles) {
-        const componentName = pascalCase(file);
+        const componentName = componentNameForFile(file);
         if (seenComponents.has(componentName)) {
             throw new Error(
                 `Duplicate icon component name "${componentName}Icon" from "${seenComponents.get(componentName)}" and "${file}".`

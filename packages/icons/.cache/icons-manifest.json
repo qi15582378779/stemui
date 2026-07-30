@@ -897,7 +897,7 @@
       "hash": "f903132012b2b5cfa5b8932d6ba9d574dc6ea3d76dc2166e3d3a8f5f4a53875f"
     },
     "platform=dev.to.svg": {
-      "componentName": "PlatformDevTo",
+      "componentName": "PlatformDevto",
       "hash": "35ab0e5662f982040237779f9f886626d0ac1d3f5203c562a4245ef1b109db7e"
     },
     "platform=github.svg": {
@@ -909,7 +909,7 @@
       "hash": "ce0d7ef18ac49c80a6d60835c69872f3712bcdd3fec48faaea7c6e3b2605ef24"
     },
     "platform=hacker_news.svg": {
-      "componentName": "PlatformHackerNews",
+      "componentName": "PlatformHackernews",
       "hash": "04679c55adf85027187ea8aaeeae5c48830aeb18711b41c7c5abc2f5f16dd127"
     },
     "platform=linkdle.svg": {

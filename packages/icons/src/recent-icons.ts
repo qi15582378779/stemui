@@ -1,10 +1,10 @@
 export const recentIconIds = [
     "PlatformCoingeckoIcon",
     "PlatformWikipediaIcon",
-    "PlatformDevToIcon",
+    "PlatformDevtoIcon",
     "PlatformGithubIcon",
     "PlatformGoogleIcon",
-    "PlatformHackerNewsIcon",
+    "PlatformHackernewsIcon",
     "PlatformLinkdleIcon",
     "PlatformMediumIcon",
     "PlatformOfficialIcon",

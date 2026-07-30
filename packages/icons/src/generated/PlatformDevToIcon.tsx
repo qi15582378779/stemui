@@ -1,6 +1,6 @@
 import type { IconProps } from "../types";
 
-export function PlatformDevToIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+export function PlatformDevtoIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
     return (
         <svg
             width={size}

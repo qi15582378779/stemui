@@ -38,6 +38,7 @@ packages/icons/svg/line_trash_delete.svg
 - 不要使用空格；构建脚本会把空格自动转成 `_`，如果转换后和已有文件重名会报错
 - 文件名要表达图标语义
 - 同一套图标建议统一前缀，例如 `line_`
+- `platform=` 图标的名称按单个平台标识生成；例如 `platform=hacker_news.svg` -> `PlatformHackernewsIcon`
 
 示例：
 
