@@ -33,7 +33,7 @@
     "generate:incremental": "node ./scripts/build-icons.mjs --incremental",
     "dev": "node ./scripts/build-icons.mjs --incremental --watch",
     "watch": "npm run dev",
-    "build": "npm run generate && tsc -p tsconfig.json",
+    "build": "npm run generate && node ./scripts/clean-dist.mjs && tsc -p tsconfig.json",
     "build:incremental": "npm run generate:incremental && tsc -p tsconfig.json --incremental",
     "typecheck": "npm run generate && tsc -p tsconfig.json --noEmit",
     "prepack": "npm run build"
