@@ -272,6 +272,10 @@
       "componentName": "DrawImgMedia",
       "hash": "4a11d25af98462df399ba06fdb1a380b6e07f73852e9e1780b455d0cf73227d0"
     },
+    "draw_img_upload_img.svg": {
+      "componentName": "DrawImgUploadImg",
+      "hash": "f18860d23e2568d9842a5bc5395c779a92397146fe26cb6b943abe1c328c84f7"
+    },
     "draw_layout_post.svg": {
       "componentName": "DrawLayoutPost",
       "hash": "67def280ae65848f25a8e438504570c00121b6fbf4474568de0dba4063dd2fc8"
@@ -311,6 +315,10 @@
     "draw_money_receipt.svg": {
       "componentName": "DrawMoneyReceipt",
       "hash": "e4f33b0e177305c43d346ce0d19675a72007fc988d8fb4d42a6ef7e990319cfe"
+    },
+    "draw_pencil_quote.svg": {
+      "componentName": "DrawPencilQuote",
+      "hash": "9fd557e5aec3e2f91ebe3d0a418e3ab71b9292606e44e9b46cbb8fc6b657caeb"
     },
     "draw_pro_plan_c_analysis.svg": {
       "componentName": "DrawProPlanCAnalysis",
