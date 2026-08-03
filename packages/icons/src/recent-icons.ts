@@ -1,22 +1,4 @@
 export const recentIconIds = [
-    "PlatformCoingeckoIcon",
-    "PlatformWikipediaIcon",
-    "PlatformDevtoIcon",
-    "PlatformGithubIcon",
-    "PlatformGoogleIcon",
-    "PlatformHackernewsIcon",
-    "PlatformLinkedinIcon",
-    "PlatformMediumIcon",
-    "PlatformOfficialIcon",
-    "PlatformQuoraIcon",
-    "PlatformRedditIcon",
-    "PlatformTelegramIcon",
-    "PlatformTiktokIcon",
-    "PlatformUnsplashIcon",
-    "PlatformXIcon",
-    "PlatformYoutubeIcon",
-    "LineQuoraArrowDownvoteIcon",
-    "LineQuoraArrowShareIcon",
-    "LineQuoraArrowUpvoteIcon",
-    "LineQuoraBubbleCommentIcon"
+    "DrawImgUploadImgIcon",
+    "DrawPencilQuoteIcon"
 ] as const;
