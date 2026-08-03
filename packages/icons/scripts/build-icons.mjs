@@ -14,6 +14,7 @@ const manifestFile = path.join(cacheDir, "icons-manifest.json");
 const scriptMode = process.argv.includes("--incremental") ? "incremental" : "full";
 const watchMode = process.argv.includes("--watch");
 const generatorVersion = "3";
+const platformGeneratorVersion = "1";
 
 const ATTRIBUTE_MAP = new Map([
     ["clip-rule", "clipRule"],
@@ -118,6 +119,41 @@ const replaceMonochromePaintWithCurrentColor = (markup) => {
 };
 
 const shouldUseCurrentColor = (fileName) => /^(line|fill)_/i.test(fileName);
+const isPlatformFile = (fileName) => /^platform=/i.test(fileName);
+
+const bindPlatformBorderProps = (body, fileName) => {
+    if (!isPlatformFile(fileName)) {
+        return body;
+    }
+
+    let borderBound = false;
+    const nextBody = body.replace(/<(?:circle|path)\b[^>]*>/i, (element) => {
+        if (!element.includes('stroke="#111111"') || !element.includes('stroke-width="0.6"')) {
+            return element;
+        }
+
+        borderBound = true;
+        const withColor = element.replace('stroke="#111111"', "stroke={borderColor}");
+
+        if (withColor.includes("stroke-dasharray=")) {
+            return withColor.replace(
+                /stroke-dasharray="[^"]*"/,
+                'stroke-dasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}'
+            );
+        }
+
+        return withColor.replace(
+            'stroke-width="0.6"',
+            'stroke-width="0.6" stroke-dasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}'
+        );
+    });
+
+    if (!borderBound) {
+        throw new Error(`Platform border not found in "${fileName}"`);
+    }
+
+    return nextBody;
+};
 
 const extractSvgParts = (source, fileName) => {
     const cleanSource = source
@@ -131,16 +167,24 @@ const extractSvgParts = (source, fileName) => {
 
     const attrs = match[1];
     const rawBody = match[2].trim();
-    const body = shouldUseCurrentColor(fileName)
+    const colorNormalizedBody = shouldUseCurrentColor(fileName)
         ? replaceMonochromePaintWithCurrentColor(rawBody)
         : rawBody;
+    const body = bindPlatformBorderProps(colorNormalizedBody, fileName);
     const viewBox = attrs.match(/viewBox="([^"]+)"/i)?.[1] ?? "0 0 24 24";
     return { viewBox, body: normalizeAttributes(normalizeInlineStyles(body)) };
 };
 
-const createComponentSource = (componentName, viewBox, body) => `import type { IconProps } from "../types";
+const createComponentSource = (componentName, viewBox, body, fileName) => {
+    const platformIcon = isPlatformFile(fileName);
+    const propsType = platformIcon ? "PlatformIconProps" : "IconProps";
+    const platformProps = platformIcon
+        ? ', borderStyle = "solid", borderColor = "#111111"'
+        : "";
 
-export function ${componentName}Icon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return `import type { ${propsType} } from "../types";
+
+export function ${componentName}Icon({ size = 24, color = "currentColor", title${platformProps}, ...props }: ${propsType}) {
     return (
         <svg
             width={size}
@@ -159,6 +203,7 @@ export function ${componentName}Icon({ size = 24, color = "currentColor", title,
     );
 }
 `;
+};
 
 const createRecentIconsSource = (componentNames) => `export const recentIconIds = [
 ${componentNames.map((componentName) => `    "${componentName}Icon"`).join(",\n")}
@@ -267,8 +312,11 @@ const runBuild = async () => {
         const svgSource = await readFile(path.join(svgDir, file), "utf8");
         const { viewBox, body } = extractSvgParts(svgSource, file);
         const outputFile = path.join(generatedDir, `${componentName}Icon.tsx`);
-        const sourceHash = createHashValue(`${generatorVersion}\n${svgSource}`);
-        const nextComponentSource = createComponentSource(componentName, viewBox, body);
+        const generatorSignature = isPlatformFile(file)
+            ? `${generatorVersion}:platform-${platformGeneratorVersion}`
+            : generatorVersion;
+        const sourceHash = createHashValue(`${generatorSignature}\n${svgSource}`);
+        const nextComponentSource = createComponentSource(componentName, viewBox, body, file);
         const previousEntry = previousManifest.icons[file];
         const sourceChanged =
             !previousEntry ||
@@ -334,7 +382,7 @@ const runBuild = async () => {
     indexTouched =
         (await writeIfChanged(
             indexFile,
-            `${rootExports.join("\n")}\nexport { recentIconIds } from "./recent-icons";\nexport type { IconProps } from "./types";\n`
+            `${rootExports.join("\n")}\nexport { recentIconIds } from "./recent-icons";\nexport type { IconProps, PlatformBorderStyle, PlatformIconProps } from "./types";\n`
         )) ||
         indexTouched;
 

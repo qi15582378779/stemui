@@ -576,6 +576,104 @@ input {
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.62);
 }
 
+.icon-platform-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 16px;
+    border-top: 1px solid rgb(39 30 20 / 0.08);
+}
+
+.icon-platform-control-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.icon-segmented-control {
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(72px, 1fr));
+    padding: 3px;
+    border: 1px solid rgb(39 30 20 / 0.1);
+    border-radius: 8px;
+    background: rgb(246 243 237 / 0.9);
+}
+
+.icon-segmented-control button {
+    min-height: 30px;
+    padding: 4px 12px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #756858;
+    cursor: pointer;
+}
+
+.icon-segmented-control button.is-active {
+    background: #fff;
+    color: #28211a;
+    box-shadow: 0 1px 4px rgb(54 42 28 / 0.12);
+}
+
+.icon-border-color-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+}
+
+.icon-border-color {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.icon-border-color span {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(39 30 20 / 0.14);
+}
+
+.icon-border-color.is-active {
+    border-color: rgb(211 161 33 / 0.72);
+}
+
+.icon-custom-color {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    border: 1px solid rgb(39 30 20 / 0.14);
+    border-radius: 50%;
+    background: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    cursor: pointer;
+}
+
+.icon-custom-color input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icon-border-color-list code {
+    min-width: 62px;
+    color: #756858;
+    font-size: 11px;
+}
+
 .icon-size-strip {
     display: flex;
     align-items: center;

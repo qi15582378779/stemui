@@ -1,6 +1,6 @@
-import type { IconProps } from "../types";
+import type { PlatformIconProps } from "../types";
 
-export function PlatformXIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+export function PlatformXIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", ...props }: PlatformIconProps) {
     return (
         <svg
             width={size}
@@ -14,7 +14,7 @@ export function PlatformXIcon({ size = 24, color = "currentColor", title, ...pro
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <circle cx="6" cy="6" r="5.7" fill="white" stroke="#111111" strokeWidth="0.6"/>
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth="0.6" strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
 <circle cx="5.9998" cy="5.99999" r="4.7" fill="#111111"/>
 <path d="M6.53612 5.55583L8.63401 3.09998H8.13644L6.3158 5.23179L4.86093 3.09998H3.18262L5.38267 6.3248L3.18262 8.89998H3.67979L5.60299 6.64806L7.13936 8.89998H8.81767L6.53612 5.55583ZM5.85528 6.35287L5.63223 6.03195L3.85917 3.47666H4.62267L6.05376 5.53867L6.27681 5.85999L8.13722 8.54045H7.37372L5.85567 6.35287H5.85528Z" fill="white"/>
         </svg>

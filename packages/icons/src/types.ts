@@ -5,3 +5,10 @@ export type IconProps = Omit<SVGProps<SVGSVGElement>, "color"> & {
     color?: string;
     title?: string;
 };
+
+export type PlatformBorderStyle = "solid" | "dashed";
+
+export type PlatformIconProps = IconProps & {
+    borderStyle?: PlatformBorderStyle;
+    borderColor?: string;
+};

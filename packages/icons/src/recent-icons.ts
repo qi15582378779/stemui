@@ -1,8 +1,22 @@
 export const recentIconIds = [
-    "FillMediumBubbleResponsesIcon",
-    "FillMediumHandClapIcon",
-    "FillMediumStarMemberOnlyStoryIcon",
-    "LineMediumArrowReportIcon",
-    "LineMediumTagSaveIcon",
-    "LineMediumThumbNotInterestedIcon"
+    "PlatformCoingeckoIcon",
+    "PlatformWikipediaIcon",
+    "PlatformDevtoIcon",
+    "PlatformGithubIcon",
+    "PlatformGoogleIcon",
+    "PlatformHackernewsIcon",
+    "PlatformLinkedinIcon",
+    "PlatformMediumIcon",
+    "PlatformOfficialIcon",
+    "PlatformQuoraIcon",
+    "PlatformRedditIcon",
+    "PlatformTelegramIcon",
+    "PlatformTiktokIcon",
+    "PlatformUnsplashIcon",
+    "PlatformXIcon",
+    "PlatformYoutubeIcon",
+    "LineQuoraArrowDownvoteIcon",
+    "LineQuoraArrowShareIcon",
+    "LineQuoraArrowUpvoteIcon",
+    "LineQuoraBubbleCommentIcon"
 ] as const;

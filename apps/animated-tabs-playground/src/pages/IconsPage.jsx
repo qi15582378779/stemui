@@ -12,6 +12,14 @@ const previewSwatches = [
     { id: "violet", name: "Violet", color: "#7c3aed" }
 ];
 
+const platformBorderColors = [
+    { id: "ink", name: "Ink", color: "#111111" },
+    { id: "gray", name: "Gray", color: "#6b7280" },
+    { id: "red", name: "Red", color: "#dc2626" },
+    { id: "blue", name: "Blue", color: "#2563eb" },
+    { id: "green", name: "Green", color: "#16a34a" }
+];
+
 const toLabel = (componentName) => componentName.replace(/Icon$/, "");
 
 const toSourceFileName = (componentName) =>
@@ -39,6 +47,8 @@ export function IconsPage() {
     const [selectedIconId, setSelectedIconId] = useState(null);
     const [activeSwatchId, setActiveSwatchId] = useState(previewSwatches[0].id);
     const [activePrefixFilter, setActivePrefixFilter] = useState("all");
+    const [platformBorderStyle, setPlatformBorderStyle] = useState("solid");
+    const [platformBorderColor, setPlatformBorderColor] = useState("#111111");
     const icons = useMemo(
         () =>
             Object.entries(Icons)
@@ -98,6 +108,13 @@ export function IconsPage() {
     const usageIconId = selectedIcon?.id ?? "YourIcon";
     const activeSwatch =
         previewSwatches.find((swatch) => swatch.id === activeSwatchId) ?? previewSwatches[0];
+    const isPlatformIcon = selectedIcon?.prefixGroup === "platform";
+    const platformPreviewProps = isPlatformIcon
+        ? { borderStyle: platformBorderStyle, borderColor: platformBorderColor }
+        : {};
+    const usageProps = isPlatformIcon
+        ? `size={18} borderStyle="${platformBorderStyle}" borderColor="${platformBorderColor}"`
+        : 'size={18} color="currentColor"';
 
     return (
         <div className="page-stack">
@@ -188,7 +205,11 @@ export function IconsPage() {
                                 className="icon-detail-stage"
                                 style={{ color: activeSwatch.color }}
                             >
-                                <selectedIcon.component size={52} title={selectedIcon.label} />
+                                <selectedIcon.component
+                                    size={52}
+                                    title={selectedIcon.label}
+                                    {...platformPreviewProps}
+                                />
                             </div>
                             <div className="icon-detail-copy">
                                 <p className="icon-detail-label">{selectedIcon.displayName}</p>
@@ -221,6 +242,67 @@ export function IconsPage() {
                                     })}
                                 </div>
                             </div>
+                            {isPlatformIcon ? (
+                                <div className="icon-platform-controls">
+                                    <div className="icon-platform-control-row">
+                                        <span className="icon-row-label">Border style</span>
+                                        <div
+                                            className="icon-segmented-control"
+                                            role="group"
+                                            aria-label="Platform border style"
+                                        >
+                                            {["solid", "dashed"].map((styleOption) => {
+                                                const isActive = platformBorderStyle === styleOption;
+
+                                                return (
+                                                    <button
+                                                        key={styleOption}
+                                                        type="button"
+                                                        className={isActive ? "is-active" : ""}
+                                                        onClick={() => setPlatformBorderStyle(styleOption)}
+                                                        aria-pressed={isActive}
+                                                    >
+                                                        {styleOption === "solid" ? "Solid" : "Dashed"}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className="icon-platform-control-row">
+                                        <span className="icon-row-label">Border color</span>
+                                        <div className="icon-border-color-list" role="list">
+                                            {platformBorderColors.map((option) => {
+                                                const isActive = platformBorderColor === option.color;
+
+                                                return (
+                                                    <button
+                                                        key={option.id}
+                                                        type="button"
+                                                        className={`icon-border-color${isActive ? " is-active" : ""}`}
+                                                        onClick={() => setPlatformBorderColor(option.color)}
+                                                        aria-pressed={isActive}
+                                                        aria-label={`${option.name} border ${option.color}`}
+                                                        title={`${option.name} ${option.color}`}
+                                                    >
+                                                        <span style={{ backgroundColor: option.color }} />
+                                                    </button>
+                                                );
+                                            })}
+                                            <label className="icon-custom-color" title="Custom border color">
+                                                <input
+                                                    type="color"
+                                                    value={platformBorderColor}
+                                                    onChange={(event) =>
+                                                        setPlatformBorderColor(event.target.value)
+                                                    }
+                                                    aria-label="Custom platform border color"
+                                                />
+                                            </label>
+                                            <code>{platformBorderColor.toUpperCase()}</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : null}
                             <div className="icon-size-strip">
                                 <span className="icon-row-label">Sizes</span>
                                 <span>
@@ -228,6 +310,7 @@ export function IconsPage() {
                                     <selectedIcon.component
                                         size={16}
                                         color={activeSwatch.color}
+                                        {...platformPreviewProps}
                                     />
                                 </span>
                                 <span>
@@ -235,6 +318,7 @@ export function IconsPage() {
                                     <selectedIcon.component
                                         size={20}
                                         color={activeSwatch.color}
+                                        {...platformPreviewProps}
                                     />
                                 </span>
                                 <span>
@@ -242,6 +326,7 @@ export function IconsPage() {
                                     <selectedIcon.component
                                         size={24}
                                         color={activeSwatch.color}
+                                        {...platformPreviewProps}
                                     />
                                 </span>
                             </div>
@@ -258,7 +343,7 @@ export function IconsPage() {
                 <pre className="usage-block">{`import { ${usageIconId} } from "@stemui/icons";
 
 function Example() {
-    return <${usageIconId} size={18} color="currentColor" />;
+    return <${usageIconId} ${usageProps} />;
 }`}</pre>
             </section>
         </div>
