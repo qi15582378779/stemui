@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { AnimatedTabsPage } from "./pages/AnimatedTabsPage";
+import { AnimatedIconsPage } from "./pages/AnimatedIconsPage";
 import { IconsPage } from "./pages/IconsPage";
 
 const pages = [
@@ -15,6 +16,12 @@ const pages = [
         label: "Animated Tabs",
         description: "Measure base behavior and styled integration side by side.",
         component: AnimatedTabsPage
+    },
+    {
+        id: "animated-icons",
+        label: "Animated Icons",
+        description: "Preview hover-driven icon motion independently.",
+        component: AnimatedIconsPage
     }
 ];
 

@@ -296,4 +296,5 @@ export { PlatformUnsplashIcon } from "./generated/PlatformUnsplashIcon";
 export { PlatformXIcon } from "./generated/PlatformXIcon";
 export { PlatformYoutubeIcon } from "./generated/PlatformYoutubeIcon";
 export { recentIconIds } from "./recent-icons";
+export { colorIconIds } from "./color-icons";
 export type { IconProps, PlatformBorderStyle, PlatformIconProps } from "./types";
