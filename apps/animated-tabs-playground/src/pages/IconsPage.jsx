@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import * as Icons from "@stemui/icons";
 
 const recentIconIdSet = new Set(Icons.recentIconIds ?? []);
+const colorIconIdSet = new Set(Icons.colorIconIds ?? []);
 
 const previewSwatches = [
     { id: "ink", name: "Ink", color: "#111827" },
@@ -62,6 +63,7 @@ export function IconsPage() {
                     sourceFileName: toSourceFileName(name),
                     prefixGroup: getPrefixGroup(name),
                     isNew: recentIconIdSet.has(name),
+                    supportsColor: colorIconIdSet.has(name),
                     component
                 }))
                 .sort(
@@ -108,6 +110,7 @@ export function IconsPage() {
     const selectedIcon =
         filteredIcons.find((icon) => icon.id === selectedIconId) ?? filteredIcons[0] ?? icons[0];
     const usageIconId = selectedIcon?.id ?? "YourIcon";
+    const supportsColor = selectedIcon?.supportsColor ?? false;
     const activeSwatch =
         previewSwatches.find((swatch) => swatch.id === activeSwatchId) ?? previewSwatches[0];
     const isPlatformIcon = selectedIcon?.prefixGroup === "platform";
@@ -155,7 +158,9 @@ export function IconsPage() {
         ? `size={18} borderStyle="${platformBorderStyle}" borderColor="${platformBorderColor}" borderWidth={${platformBorderWidth}}`
         : isModelIcon
           ? `size={18} borderWidth={${modelBorderWidth}}`
-          : 'size={18} color="currentColor"';
+          : supportsColor
+            ? 'size={18} color="currentColor"'
+            : "size={18}";
 
     return (
         <div className="page-stack">
@@ -244,7 +249,7 @@ export function IconsPage() {
                         <article className="icon-detail">
                             <div
                                 className="icon-detail-stage"
-                                style={{ color: activeSwatch.color }}
+                                style={supportsColor ? { color: activeSwatch.color } : undefined}
                             >
                                 <selectedIcon.component
                                     size={52}
@@ -257,32 +262,34 @@ export function IconsPage() {
                                 <h2>{selectedIcon.id}</h2>
                                 <code>{selectedIcon.sourceFileName}.svg</code>
                             </div>
-                            <div className="icon-swatch-strip" aria-label="Preview icon colors">
-                                <span className="icon-row-label">Color test</span>
-                                <div className="icon-swatch-list" role="list">
-                                    {previewSwatches.map((swatch) => {
-                                        const isActive = swatch.id === activeSwatch.id;
+                            {supportsColor ? (
+                                <div className="icon-swatch-strip" aria-label="Preview icon colors">
+                                    <span className="icon-row-label">Color test</span>
+                                    <div className="icon-swatch-list" role="list">
+                                        {previewSwatches.map((swatch) => {
+                                            const isActive = swatch.id === activeSwatch.id;
 
-                                        return (
-                                            <button
-                                                key={swatch.id}
-                                                type="button"
-                                                className={`icon-swatch${isActive ? " is-active" : ""}`}
-                                                onClick={() => setActiveSwatchId(swatch.id)}
-                                                aria-pressed={isActive}
-                                                aria-label={`Preview ${selectedIcon.id} with ${swatch.name}`}
-                                                title={`${swatch.name} ${swatch.color}`}
-                                            >
-                                                <span
-                                                    className="icon-swatch-chip"
-                                                    style={{ backgroundColor: swatch.color }}
-                                                />
-                                                <span>{swatch.name}</span>
-                                            </button>
-                                        );
-                                    })}
+                                            return (
+                                                <button
+                                                    key={swatch.id}
+                                                    type="button"
+                                                    className={`icon-swatch${isActive ? " is-active" : ""}`}
+                                                    onClick={() => setActiveSwatchId(swatch.id)}
+                                                    aria-pressed={isActive}
+                                                    aria-label={`Preview ${selectedIcon.id} with ${swatch.name}`}
+                                                    title={`${swatch.name} ${swatch.color}`}
+                                                >
+                                                    <span
+                                                        className="icon-swatch-chip"
+                                                        style={{ backgroundColor: swatch.color }}
+                                                    />
+                                                    <span>{swatch.name}</span>
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
+                            ) : null}
                             {isPlatformIcon ? (
                                 <div className="icon-platform-controls">
                                     <div className="icon-platform-control-row">
@@ -354,7 +361,7 @@ export function IconsPage() {
                                     16{" "}
                                     <selectedIcon.component
                                         size={16}
-                                        color={activeSwatch.color}
+                                        color={supportsColor ? activeSwatch.color : undefined}
                                         {...borderPreviewProps}
                                     />
                                 </span>
@@ -362,7 +369,7 @@ export function IconsPage() {
                                     20{" "}
                                     <selectedIcon.component
                                         size={20}
-                                        color={activeSwatch.color}
+                                        color={supportsColor ? activeSwatch.color : undefined}
                                         {...borderPreviewProps}
                                     />
                                 </span>
@@ -370,7 +377,7 @@ export function IconsPage() {
                                     24{" "}
                                     <selectedIcon.component
                                         size={24}
-                                        color={activeSwatch.color}
+                                        color={supportsColor ? activeSwatch.color : undefined}
                                         {...borderPreviewProps}
                                     />
                                 </span>

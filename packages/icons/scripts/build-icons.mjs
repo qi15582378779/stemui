@@ -248,6 +248,11 @@ ${componentNames.map((componentName) => `    "${componentName}Icon"`).join(",\n"
 ] as const;
 `;
 
+const createColorIconsSource = (componentNames) => `export const colorIconIds = [
+${componentNames.map((componentName) => `    "${componentName}Icon"`).join(",\n")}
+] as const;
+`;
+
 const createHashValue = (value) => createHash("sha256").update(value).digest("hex");
 
 const readJson = async (filePath) => {
@@ -334,6 +339,7 @@ const runBuild = async () => {
     const seenComponents = new Map();
     const changedIcons = [];
     const recentlyChangedComponentNames = [];
+    const colorComponentNames = [];
     const removedIcons = [];
     const activeComponentNames = new Set();
     let indexTouched = false;
@@ -349,6 +355,9 @@ const runBuild = async () => {
 
         const svgSource = await readFile(path.join(svgDir, file), "utf8");
         const { viewBox, body } = extractSvgParts(svgSource, file);
+        if (body.includes('"currentColor"')) {
+            colorComponentNames.push(componentName);
+        }
         const outputFile = path.join(generatedDir, `${componentName}Icon.tsx`);
         const generatorSignature = isPlatformFile(file)
             ? `${generatorVersion}:platform-${platformGeneratorVersion}`
@@ -417,10 +426,14 @@ const runBuild = async () => {
             createRecentIconsSource(recentlyChangedComponentNames)
         );
     }
+    await writeIfChanged(
+        path.join(packageRoot, "src", "color-icons.ts"),
+        createColorIconsSource(colorComponentNames)
+    );
     indexTouched =
         (await writeIfChanged(
             indexFile,
-            `${rootExports.join("\n")}\nexport { recentIconIds } from "./recent-icons";\nexport type { IconProps, PlatformBorderStyle, PlatformIconProps } from "./types";\n`
+            `${rootExports.join("\n")}\nexport { recentIconIds } from "./recent-icons";\nexport { colorIconIds } from "./color-icons";\nexport type { IconProps, PlatformBorderStyle, PlatformIconProps } from "./types";\n`
         )) ||
         indexTouched;
 
