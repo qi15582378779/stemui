@@ -1108,24 +1108,24 @@
       "componentName": "LineYoutubeThumbLike",
       "hash": "9ac6fddb92b144f37726cbfdd313008ffc60d62fe5b8d073bdd00e48a0372017"
     },
-    "model=Sonar.svg": {
-      "componentName": "ModelSonar",
-      "hash": "7d124f11a9aa7fad74e710970f53ce338624691288ec622acc47962466974bef"
-    },
-    "model=chatgpt.svg": {
-      "componentName": "ModelChatgpt",
-      "hash": "3a1531cc9f45f81822067163393dec53242a1edace3a31fc4424dd7d3069a3d0"
-    },
-    "model=claude.svg": {
-      "componentName": "ModelClaude",
+    "model=anthropic.svg": {
+      "componentName": "ModelAnthropic",
       "hash": "9eae13b366049c62466556cb2705897ec71375677e81661f9a67b41664ae13e3"
     },
-    "model=gemini.svg": {
-      "componentName": "ModelGemini",
+    "model=google.svg": {
+      "componentName": "ModelGoogle",
       "hash": "06ac88bcddc82c5a779897b6d521431a45a990f2cb8c20f3fa530fcf129f24f2"
     },
-    "model=grok.svg": {
-      "componentName": "ModelGrok",
+    "model=openai.svg": {
+      "componentName": "ModelOpenai",
+      "hash": "3a1531cc9f45f81822067163393dec53242a1edace3a31fc4424dd7d3069a3d0"
+    },
+    "model=perplexity.svg": {
+      "componentName": "ModelPerplexity",
+      "hash": "7d124f11a9aa7fad74e710970f53ce338624691288ec622acc47962466974bef"
+    },
+    "model=xai.svg": {
+      "componentName": "ModelXai",
       "hash": "78a68260c9dbf441209bb9ce1aa6749859307629f815627d96e6d9ad030d8f2c"
     },
     "no_task_blue.svg": {

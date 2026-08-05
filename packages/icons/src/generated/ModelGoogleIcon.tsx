@@ -1,6 +1,6 @@
 import type { ModelIconProps } from "../types";
 
-export function ModelGeminiIcon({ size = 24, color = "currentColor", title, borderWidth = 1.2, ...props }: ModelIconProps) {
+export function ModelGoogleIcon({ size = 24, color = "currentColor", title, borderWidth = 1.2, ...props }: ModelIconProps) {
     return (
         <svg
             width={size}

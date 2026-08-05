@@ -1,6 +1,6 @@
 import type { ModelIconProps } from "../types";
 
-export function ModelClaudeIcon({ size = 24, color = "currentColor", title, borderWidth = 1.2, ...props }: ModelIconProps) {
+export function ModelAnthropicIcon({ size = 24, color = "currentColor", title, borderWidth = 1.2, ...props }: ModelIconProps) {
     return (
         <svg
             width={size}
