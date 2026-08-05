@@ -275,6 +275,11 @@ export { LineYoutubeArrowShareIcon } from "./generated/LineYoutubeArrowShareIcon
 export { LineYoutubeBubbleCommentIcon } from "./generated/LineYoutubeBubbleCommentIcon";
 export { LineYoutubeThumbDislikeIcon } from "./generated/LineYoutubeThumbDislikeIcon";
 export { LineYoutubeThumbLikeIcon } from "./generated/LineYoutubeThumbLikeIcon";
+export { ModelSonarIcon } from "./generated/ModelSonarIcon";
+export { ModelChatgptIcon } from "./generated/ModelChatgptIcon";
+export { ModelClaudeIcon } from "./generated/ModelClaudeIcon";
+export { ModelGeminiIcon } from "./generated/ModelGeminiIcon";
+export { ModelGrokIcon } from "./generated/ModelGrokIcon";
 export { NoTaskBlueIcon } from "./generated/NoTaskBlueIcon";
 export { NoTaskGreenIcon } from "./generated/NoTaskGreenIcon";
 export { NoTaskRedIcon } from "./generated/NoTaskRedIcon";

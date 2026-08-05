@@ -49,6 +49,8 @@ export function IconsPage() {
     const [activePrefixFilter, setActivePrefixFilter] = useState("all");
     const [platformBorderStyle, setPlatformBorderStyle] = useState("solid");
     const [platformBorderColor, setPlatformBorderColor] = useState("#111111");
+    const [platformBorderWidth, setPlatformBorderWidth] = useState(0.6);
+    const [modelBorderWidth, setModelBorderWidth] = useState(1.2);
     const icons = useMemo(
         () =>
             Object.entries(Icons)
@@ -109,12 +111,51 @@ export function IconsPage() {
     const activeSwatch =
         previewSwatches.find((swatch) => swatch.id === activeSwatchId) ?? previewSwatches[0];
     const isPlatformIcon = selectedIcon?.prefixGroup === "platform";
-    const platformPreviewProps = isPlatformIcon
-        ? { borderStyle: platformBorderStyle, borderColor: platformBorderColor }
-        : {};
+    const isModelIcon = selectedIcon?.prefixGroup === "model";
+    const activeBorderWidth = isModelIcon ? modelBorderWidth : platformBorderWidth;
+    const borderPreviewProps = isPlatformIcon
+        ? {
+              borderStyle: platformBorderStyle,
+              borderColor: platformBorderColor,
+              borderWidth: platformBorderWidth
+          }
+        : isModelIcon
+          ? { borderWidth: modelBorderWidth }
+          : {};
+    const borderWidthInputId = isModelIcon ? "model-border-width" : "platform-border-width";
+    const borderWidthLabel = isModelIcon ? "Model border width" : "Platform border width";
+    const borderWidthControl = (
+        <div className="icon-platform-control-row icon-platform-control-row--width">
+            <label className="icon-row-label" htmlFor={borderWidthInputId}>
+                Border width
+            </label>
+            <div className="icon-border-width-control">
+                <input
+                    id={borderWidthInputId}
+                    type="range"
+                    min="0.2"
+                    max="2"
+                    step="0.1"
+                    value={activeBorderWidth}
+                    onChange={(event) => {
+                        const nextWidth = Number(event.target.value);
+                        if (isModelIcon) {
+                            setModelBorderWidth(nextWidth);
+                        } else {
+                            setPlatformBorderWidth(nextWidth);
+                        }
+                    }}
+                    aria-label={borderWidthLabel}
+                />
+                <output htmlFor={borderWidthInputId}>{activeBorderWidth.toFixed(1)}</output>
+            </div>
+        </div>
+    );
     const usageProps = isPlatformIcon
-        ? `size={18} borderStyle="${platformBorderStyle}" borderColor="${platformBorderColor}"`
-        : 'size={18} color="currentColor"';
+        ? `size={18} borderStyle="${platformBorderStyle}" borderColor="${platformBorderColor}" borderWidth={${platformBorderWidth}}`
+        : isModelIcon
+          ? `size={18} borderWidth={${modelBorderWidth}}`
+          : 'size={18} color="currentColor"';
 
     return (
         <div className="page-stack">
@@ -208,7 +249,7 @@ export function IconsPage() {
                                 <selectedIcon.component
                                     size={52}
                                     title={selectedIcon.label}
-                                    {...platformPreviewProps}
+                                    {...borderPreviewProps}
                                 />
                             </div>
                             <div className="icon-detail-copy">
@@ -301,7 +342,11 @@ export function IconsPage() {
                                             <code>{platformBorderColor.toUpperCase()}</code>
                                         </div>
                                     </div>
+                                    {borderWidthControl}
                                 </div>
+                            ) : null}
+                            {isModelIcon ? (
+                                <div className="icon-platform-controls">{borderWidthControl}</div>
                             ) : null}
                             <div className="icon-size-strip">
                                 <span className="icon-row-label">Sizes</span>
@@ -310,7 +355,7 @@ export function IconsPage() {
                                     <selectedIcon.component
                                         size={16}
                                         color={activeSwatch.color}
-                                        {...platformPreviewProps}
+                                        {...borderPreviewProps}
                                     />
                                 </span>
                                 <span>
@@ -318,7 +363,7 @@ export function IconsPage() {
                                     <selectedIcon.component
                                         size={20}
                                         color={activeSwatch.color}
-                                        {...platformPreviewProps}
+                                        {...borderPreviewProps}
                                     />
                                 </span>
                                 <span>
@@ -326,7 +371,7 @@ export function IconsPage() {
                                     <selectedIcon.component
                                         size={24}
                                         color={activeSwatch.color}
-                                        {...platformPreviewProps}
+                                        {...borderPreviewProps}
                                     />
                                 </span>
                             </div>

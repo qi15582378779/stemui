@@ -13,7 +13,7 @@ const cacheDir = path.join(packageRoot, ".cache");
 const manifestFile = path.join(cacheDir, "icons-manifest.json");
 const scriptMode = process.argv.includes("--incremental") ? "incremental" : "full";
 const watchMode = process.argv.includes("--watch");
-const generatorVersion = "3";
+const generatorVersion = "9";
 const platformGeneratorVersion = "1";
 
 const ATTRIBUTE_MAP = new Map([
@@ -26,7 +26,8 @@ const ATTRIBUTE_MAP = new Map([
     ["stroke-width", "strokeWidth"],
     ["stroke-miterlimit", "strokeMiterlimit"],
     ["stroke-opacity", "strokeOpacity"],
-    ["class", "className"]
+    ["class", "className"],
+    ["xlink:href", "xlinkHref"]
 ]);
 
 const pascalCase = (value) =>
@@ -120,6 +121,7 @@ const replaceMonochromePaintWithCurrentColor = (markup) => {
 
 const shouldUseCurrentColor = (fileName) => /^(line|fill)_/i.test(fileName);
 const isPlatformFile = (fileName) => /^platform=/i.test(fileName);
+const isModelFile = (fileName) => /^model=/i.test(fileName);
 
 const bindPlatformBorderProps = (body, fileName) => {
     if (!isPlatformFile(fileName)) {
@@ -136,15 +138,17 @@ const bindPlatformBorderProps = (body, fileName) => {
         const withColor = element.replace('stroke="#111111"', "stroke={borderColor}");
 
         if (withColor.includes("stroke-dasharray=")) {
-            return withColor.replace(
+            return withColor
+                .replace('stroke-width="0.6"', "stroke-width={borderWidth}")
+                .replace(
                 /stroke-dasharray="[^"]*"/,
                 'stroke-dasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}'
-            );
+                );
         }
 
         return withColor.replace(
             'stroke-width="0.6"',
-            'stroke-width="0.6" stroke-dasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}'
+            'stroke-width={borderWidth} stroke-dasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}'
         );
     });
 
@@ -153,6 +157,36 @@ const bindPlatformBorderProps = (body, fileName) => {
     }
 
     return nextBody;
+};
+
+const bindModelBorderProps = (body, fileName) => {
+    if (!isModelFile(fileName)) {
+        return body;
+    }
+
+    let borderBound = false;
+    const nextBody = body.replace(/<(?:circle|path|rect)\b[^>]*>/i, (element) => {
+        if (!element.includes('stroke="#111111"') || !element.includes('stroke-width="1.2"')) {
+            return element;
+        }
+
+        borderBound = true;
+        return element.replace('stroke-width="1.2"', "stroke-width={borderWidth}");
+    });
+
+    if (!borderBound) {
+        throw new Error(`Model border not found in "${fileName}"`);
+    }
+
+    return nextBody;
+};
+
+const bindBorderProps = (body, fileName) => {
+    if (isPlatformFile(fileName)) {
+        return bindPlatformBorderProps(body, fileName);
+    }
+
+    return isModelFile(fileName) ? bindModelBorderProps(body, fileName) : body;
 };
 
 const extractSvgParts = (source, fileName) => {
@@ -170,28 +204,32 @@ const extractSvgParts = (source, fileName) => {
     const colorNormalizedBody = shouldUseCurrentColor(fileName)
         ? replaceMonochromePaintWithCurrentColor(rawBody)
         : rawBody;
-    const body = bindPlatformBorderProps(colorNormalizedBody, fileName);
+    const body = bindBorderProps(colorNormalizedBody, fileName);
     const viewBox = attrs.match(/viewBox="([^"]+)"/i)?.[1] ?? "0 0 24 24";
     return { viewBox, body: normalizeAttributes(normalizeInlineStyles(body)) };
 };
 
 const createComponentSource = (componentName, viewBox, body, fileName) => {
     const platformIcon = isPlatformFile(fileName);
-    const propsType = platformIcon ? "PlatformIconProps" : "IconProps";
-    const platformProps = platformIcon
-        ? ', borderStyle = "solid", borderColor = "#111111"'
-        : "";
+    const modelIcon = isModelFile(fileName);
+    const propsType = platformIcon ? "PlatformIconProps" : modelIcon ? "ModelIconProps" : "IconProps";
+    const borderProps = platformIcon
+        ? ', borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6'
+        : modelIcon
+          ? ", borderWidth = 1.2"
+          : "";
+    const overflowAttribute = platformIcon || modelIcon ? '            overflow="visible"\n' : "";
 
     return `import type { ${propsType} } from "../types";
 
-export function ${componentName}Icon({ size = 24, color = "currentColor", title${platformProps}, ...props }: ${propsType}) {
+export function ${componentName}Icon({ size = 24, color = "currentColor", title${borderProps}, ...props }: ${propsType}) {
     return (
         <svg
             width={size}
             height={size}
             viewBox="${viewBox}"
             fill="none"
-            color={color}
+${overflowAttribute}            color={color}
             aria-hidden={title ? undefined : true}
             role={title ? "img" : "presentation"}
             focusable="false"

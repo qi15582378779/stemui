@@ -1,12 +1,13 @@
 import type { PlatformIconProps } from "../types";
 
-export function PlatformTiktokIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", ...props }: PlatformIconProps) {
+export function PlatformTiktokIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6, ...props }: PlatformIconProps) {
     return (
         <svg
             width={size}
             height={size}
             viewBox="0 0 12 12"
             fill="none"
+            overflow="visible"
             color={color}
             aria-hidden={title ? undefined : true}
             role={title ? "img" : "presentation"}
@@ -14,7 +15,7 @@ export function PlatformTiktokIcon({ size = 24, color = "currentColor", title, b
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth="0.6" strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth={borderWidth} strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
 <circle cx="6.00029" cy="5.99999" r="4.7" fill="#111111"/>
 <g clipPath="url(#clip0_3848_103628)">
 <path d="M5.43164 5.3838V5.15743C5.35368 5.14681 5.27456 5.14026 5.19383 5.14026C4.22086 5.14026 3.4292 5.92922 3.4292 6.89901C3.4292 7.49404 3.72744 8.02055 4.18261 8.33886C3.8889 8.02462 3.70876 7.60373 3.70876 7.14139C3.70876 6.18556 4.47794 5.40606 5.43179 5.3838H5.43164Z" fill="#69C9D0"/>

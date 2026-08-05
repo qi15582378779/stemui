@@ -1,12 +1,13 @@
 import type { PlatformIconProps } from "../types";
 
-export function PlatformYoutubeIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", ...props }: PlatformIconProps) {
+export function PlatformYoutubeIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6, ...props }: PlatformIconProps) {
     return (
         <svg
             width={size}
             height={size}
             viewBox="0 0 12 12"
             fill="none"
+            overflow="visible"
             color={color}
             aria-hidden={title ? undefined : true}
             role={title ? "img" : "presentation"}
@@ -14,7 +15,7 @@ export function PlatformYoutubeIcon({ size = 24, color = "currentColor", title, 
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth="0.6" strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth={borderWidth} strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
 <path d="M10.2081 3.88193C10.1064 3.5035 9.80703 3.20414 9.4286 3.10247C8.74516 2.91608 5.99445 2.91608 5.99445 2.91608C5.99445 2.91608 3.24374 2.92172 2.5603 3.10812C2.18187 3.20979 1.88251 3.50914 1.78084 3.88758C1.6001 4.57102 1.6001 6.00003 1.6001 6.00003C1.6001 6.00003 1.6001 7.42904 1.78649 8.11813C1.88816 8.49656 2.18752 8.79592 2.56595 8.89759C3.24939 9.08398 6.0001 9.08398 6.0001 9.08398C6.0001 9.08398 8.7508 9.08398 9.43424 8.89759C9.81268 8.79592 10.112 8.49656 10.2137 8.11813C10.4001 7.43469 10.4001 6.00003 10.4001 6.00003C10.4001 6.00003 10.3945 4.57102 10.2081 3.88193Z" fill="#FF0000"/>
 <path d="M5.11914 7.32173L7.40104 6.00004L5.11914 4.67834V7.32173Z" fill="white"/>
         </svg>

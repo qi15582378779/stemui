@@ -1,12 +1,13 @@
 import type { PlatformIconProps } from "../types";
 
-export function PlatformGoogleIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", ...props }: PlatformIconProps) {
+export function PlatformGoogleIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6, ...props }: PlatformIconProps) {
     return (
         <svg
             width={size}
             height={size}
             viewBox="0 0 12 12"
             fill="none"
+            overflow="visible"
             color={color}
             aria-hidden={title ? undefined : true}
             role={title ? "img" : "presentation"}
@@ -14,7 +15,7 @@ export function PlatformGoogleIcon({ size = 24, color = "currentColor", title, b
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth="0.6" strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth={borderWidth} strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
 <circle cx="5.9998" cy="5.99999" r="4.7" fill="white"/>
 <mask id="mask0_4431_202715" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="2" y="2" width="8" height="8">
 <path d="M9.70029 2.30002H2.30029V9.70002H9.70029V2.30002Z" fill="white"/>

@@ -11,4 +11,9 @@ export type PlatformBorderStyle = "solid" | "dashed";
 export type PlatformIconProps = IconProps & {
     borderStyle?: PlatformBorderStyle;
     borderColor?: string;
+    borderWidth?: number;
+};
+
+export type ModelIconProps = IconProps & {
+    borderWidth?: number;
 };

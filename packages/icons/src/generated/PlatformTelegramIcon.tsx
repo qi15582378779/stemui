@@ -1,12 +1,13 @@
 import type { PlatformIconProps } from "../types";
 
-export function PlatformTelegramIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", ...props }: PlatformIconProps) {
+export function PlatformTelegramIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6, ...props }: PlatformIconProps) {
     return (
         <svg
             width={size}
             height={size}
             viewBox="0 0 12 12"
             fill="none"
+            overflow="visible"
             color={color}
             aria-hidden={title ? undefined : true}
             role={title ? "img" : "presentation"}
@@ -14,7 +15,7 @@ export function PlatformTelegramIcon({ size = 24, color = "currentColor", title,
             {...props}
         >
             {title ? <title>{title}</title> : null}
-            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth="0.6" strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth={borderWidth} strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
 <circle cx="5.9998" cy="5.99999" r="4.7" fill="#6191F3"/>
 <path fillRule="evenodd" clipRule="evenodd" d="M8.29068 3.38846C8.36599 3.35676 8.44842 3.34583 8.52937 3.3568C8.61034 3.36777 8.6869 3.40024 8.75105 3.45084C8.81524 3.50144 8.86467 3.5683 8.8942 3.64449C8.92376 3.72067 8.93235 3.80338 8.9191 3.884L8.2279 8.07662C8.16085 8.48104 7.71712 8.71297 7.34622 8.51152C7.03597 8.34298 6.57517 8.08333 6.1607 7.81239C5.95346 7.67677 5.31863 7.24249 5.39665 6.93346C5.46369 6.66923 6.53037 5.67631 7.1399 5.08599C7.37914 4.85406 7.27003 4.72027 6.98752 4.9336C6.28596 5.46328 5.15954 6.26877 4.78712 6.49552C4.45859 6.69544 4.28731 6.72958 4.08251 6.69544C3.70887 6.63327 3.36236 6.53697 3.07954 6.41963C2.69737 6.26115 2.71596 5.73574 3.07924 5.58275L8.29068 3.38846Z" fill="#111111"/>
         </svg>
