@@ -204,9 +204,21 @@
       "componentName": "DrawCalendarSchedule",
       "hash": "15f3d9bafb1e26c95ac6af041317ab399c0ed622f55b7f2bcb4c99d5ed487c68"
     },
+    "draw_card_subscription.svg": {
+      "componentName": "DrawCardSubscription",
+      "hash": "1f0f0ef5c97060811ffc364ba4be8daf0141159ba655db2ab41822efb8ef20c1"
+    },
     "draw_computer_add.svg": {
       "componentName": "DrawComputerAdd",
       "hash": "70d64846d5defc6be15d5d79ad67292d88c0fc57f96eae4d063ddb1be0f8a8a6"
+    },
+    "draw_computer_project.svg": {
+      "componentName": "DrawComputerProject",
+      "hash": "ed818bd86cb6f3627b47a899d0ba77890ce304a9799ac28e144bf65ad809a5b0"
+    },
+    "draw_cursor_quick.svg": {
+      "componentName": "DrawCursorQuick",
+      "hash": "eccbfba696b6667dbeeae08a4be546a1001a8033200b5c14401ba5166ffc7fca"
     },
     "draw_dev_plan_c_analysis.svg": {
       "componentName": "DrawDevPlanCAnalysis",
@@ -331,6 +343,10 @@
     "draw_shake_welcome.svg": {
       "componentName": "DrawShakeWelcome",
       "hash": "fa5fc938d7b4dc576009272994477065ea9b3ba7f2e260945920c79acbaba99b"
+    },
+    "draw_star_credit.svg": {
+      "componentName": "DrawStarCredit",
+      "hash": "34f1fbe5b5bed285ee47c64f124c27f2a920a577815eab4eef09d625ec0a0e47"
     },
     "draw_starter_plan_c_analysis.svg": {
       "componentName": "DrawStarterPlanCAnalysis",
@@ -1156,6 +1172,14 @@
       "componentName": "PlatformDevto",
       "hash": "70eaf87372a394e413238d6c3537217144538cd249598cd5113a6601c4861ffd"
     },
+    "platform=facebook.svg": {
+      "componentName": "PlatformFacebook",
+      "hash": "d7a73d8ec0c5f9e50da936f4813d775ccbcd44b76a69ef4796e001f33d43f263"
+    },
+    "platform=fandom.svg": {
+      "componentName": "PlatformFandom",
+      "hash": "471ec0057c0acea0d64686f47a09b7e004a354c4acb768c401861887126fba3a"
+    },
     "platform=github.svg": {
       "componentName": "PlatformGithub",
       "hash": "cbd48082c9f652fe82d02a92a966776a203237c1afd82c5f1d9f7ad58c3dc30f"
@@ -1167,6 +1191,18 @@
     "platform=hacker_news.svg": {
       "componentName": "PlatformHackernews",
       "hash": "185afd48c70d6a4c1e2cd43bbdf52a9571732057786dc77affb2cb4dd020b71e"
+    },
+    "platform=hashnode.svg": {
+      "componentName": "PlatformHashnode",
+      "hash": "1d636eb743a99a0df63d8546c5123d439502c6a1ca0717cb8645c8d46800791a"
+    },
+    "platform=indiehackers.svg": {
+      "componentName": "PlatformIndiehackers",
+      "hash": "bf4ae58f6c36500613e3cffd3120ec843f7c209eb9d31e23a0ce08e87e4664b5"
+    },
+    "platform=instagram.svg": {
+      "componentName": "PlatformInstagram",
+      "hash": "6e939f0f93402fbefd7b7f6e116963d66f92c3e33ae452c99f13576d71dada61"
     },
     "platform=linkedin.svg": {
       "componentName": "PlatformLinkedin",
@@ -1180,6 +1216,14 @@
       "componentName": "PlatformOfficial",
       "hash": "bf7330a055091a57fd945af8a98d11aa04f47cfc832fac9fd1e2cb3d79420b1f"
     },
+    "platform=pinterest.svg": {
+      "componentName": "PlatformPinterest",
+      "hash": "50c35aa61dab03ba42901372bafb88fed9604ae48210140919e60eafc8e183c2"
+    },
+    "platform=producthunt.svg": {
+      "componentName": "PlatformProducthunt",
+      "hash": "5ce33e44768fcd992f92de3fca10974aef13552b7acb738254b08108549f34e6"
+    },
     "platform=quora.svg": {
       "componentName": "PlatformQuora",
       "hash": "193c300161669f3338c179452169e5d66a99c1fe94d567369b753d4718a87223"
@@ -1188,17 +1232,33 @@
       "componentName": "PlatformReddit",
       "hash": "e8c4c70511a1e94ce239004d63de6e20fe59dc01fc162707091873db4e5ac580"
     },
+    "platform=substack.svg": {
+      "componentName": "PlatformSubstack",
+      "hash": "0a4a7a0cf0abe5be488ca52749f75181b432a81f252ca3afbea7479cfa14b244"
+    },
     "platform=telegram.svg": {
       "componentName": "PlatformTelegram",
       "hash": "56ebd3f4a5d49551746eb5b299a1ac1ebb389604b17007a8ca9aa7c032ae9b7e"
+    },
+    "platform=thread.svg": {
+      "componentName": "PlatformThread",
+      "hash": "6b7583362b419d187c14b2d9499dc12e2057bebdc1bf5726bb94e8b4a2b9c8aa"
     },
     "platform=tiktok.svg": {
       "componentName": "PlatformTiktok",
       "hash": "0ac543d04454fda2a3d4b34c852d91660e1f7a635a3b07820f7dc35e66ad2689"
     },
+    "platform=tumblr.svg": {
+      "componentName": "PlatformTumblr",
+      "hash": "8759a2f5fce383c338c2c617223d289ac69b876b5c948a3eb1be51973d662291"
+    },
     "platform=unsplash.svg": {
       "componentName": "PlatformUnsplash",
       "hash": "28d2829fcc8621bb2c8726738c408ee8b87a11e59896e0aac0f23e892f39ca35"
+    },
+    "platform=wikidata.svg": {
+      "componentName": "PlatformWikidata",
+      "hash": "9978eec0409b01b492f8b00c91dd98cd300fc839b07953d6a8ce1f3ef52de3f2"
     },
     "platform=x.svg": {
       "componentName": "PlatformX",

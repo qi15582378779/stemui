@@ -1,0 +1,32 @@
+import type { PlatformIconProps } from "../types";
+
+export function PlatformWikidataIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6, ...props }: PlatformIconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 12 12"
+            fill="none"
+            overflow="visible"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth={borderWidth} strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
+<circle cx="5.9998" cy="5.99999" r="4.7" fill="white"/>
+<g clipPath="url(#clip0_9730_438692)">
+<path d="M2.40039 8.27044H2.65887V3.84H2.40039V8.27044ZM2.93463 8.27044H3.72692V3.84H2.93463V8.27044ZM3.98525 3.84V8.2703H4.77783V3.84H3.98525Z" fill="#990000"/>
+<path d="M8.77619 8.27088H9.03482V3.84H8.77619V8.27088ZM9.31043 3.84V8.27088H9.56891V3.84H9.31043ZM5.04443 8.27088H5.30291V3.84H5.04443V8.27088ZM5.57867 3.84V8.27059H5.83715V3.84H5.57867Z" fill="#339966"/>
+<path d="M6.104 8.27088H6.89658V3.84H6.104V8.27088ZM7.15506 8.27088H7.43068V3.84H7.15506V8.27088ZM7.68901 3.84V8.27059H8.48144V3.84H7.68901Z" fill="#006699"/>
+</g>
+<defs>
+<clipPath id="clip0_9730_438692">
+<rect width="7.2" height="7.2" fill="white" transform="translate(2.40039 2.40002)"/>
+</clipPath>
+</defs>
+        </svg>
+    );
+}

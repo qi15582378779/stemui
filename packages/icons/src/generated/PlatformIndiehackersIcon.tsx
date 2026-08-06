@@ -1,0 +1,26 @@
+import type { PlatformIconProps } from "../types";
+
+export function PlatformIndiehackersIcon({ size = 24, color = "currentColor", title, borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6, ...props }: PlatformIconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 12 12"
+            fill="none"
+            overflow="visible"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <circle cx="6" cy="6" r="5.7" fill="white" stroke={borderColor} strokeWidth={borderWidth} strokeDasharray={borderStyle === "dashed" ? "1.2 1.2" : undefined}/>
+<circle cx="5.9998" cy="5.99999" r="4.7" fill="#0E2439"/>
+<path d="M4.06131 3.59995H2.95361V8.39995H4.06131V3.59995Z" fill="white"/>
+<path d="M6.27713 3.59995H5.16943V8.39995H6.27713V3.59995Z" fill="white"/>
+<path d="M8.12354 5.44614H6.09277V6.55383H8.12354V5.44614Z" fill="white"/>
+<path d="M9.04617 3.59995H7.93848V8.39995H9.04617V3.59995Z" fill="white"/>
+        </svg>
+    );
+}
