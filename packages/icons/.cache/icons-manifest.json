@@ -296,6 +296,10 @@
       "componentName": "DrawLightFast",
       "hash": "616cdb16d0501ba2832dc91a1c20c44867688d009bb903b648d561f3efd363b9"
     },
+    "draw_light_fast_yellow.svg": {
+      "componentName": "DrawLightFastYellow",
+      "hash": "c33b01971df7a13be1cd224c17687358443460039cc2cfb4a2475286d2ef3a1a"
+    },
     "draw_link_connect.svg": {
       "componentName": "DrawLinkConnect",
       "hash": "d5286ed2054d1bb50a1381abfeb29eddb527bb3a672a09aaf0494576e277bc23"
