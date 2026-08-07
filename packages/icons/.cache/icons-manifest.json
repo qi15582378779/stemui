@@ -320,6 +320,10 @@
       "componentName": "DrawLockPro2",
       "hash": "b232b7bdde205e52b0a790ef66fee9c95837b4d6c94a46b4e7eb49cdc14c2bfd"
     },
+    "draw_lock_unlock.svg": {
+      "componentName": "DrawLockUnlock",
+      "hash": "c56427288c182174eca42dba01aefb04cb7e1178ba720fab85b831dae7ea9844"
+    },
     "draw_media_ai_video.svg": {
       "componentName": "DrawMediaAiVideo",
       "hash": "0c8132a2364ed5c8822ecaf30132f7b707cd425dbd46c0368bc43b57f9ee1e0b"
@@ -447,6 +451,10 @@
     "event=plugin,_feature=yellow.svg": {
       "componentName": "EventPluginFeatureYellow",
       "hash": "88897fc39840fe5fec8e62d4a85b941bc82515984d198ac02bb0a409b58c7153"
+    },
+    "event=unlock,_feature=subscription.svg": {
+      "componentName": "EventUnlockFeatureSubscription",
+      "hash": "f1302655e5017ec7b1745fc16f3cc9ff34f751a2205606166a5eb57bf2aeaa9c"
     },
     "fill__question_mark_information.svg": {
       "componentName": "FillQuestionMarkInformation",
@@ -587,6 +595,10 @@
     "flat_star_like.svg": {
       "componentName": "FlatStarLike",
       "hash": "388a11bffb9baaddcbfad255700c04a0eb86ef80f5893a265193f7f75494f345"
+    },
+    "flat_stars_credit.svg": {
+      "componentName": "FlatStarsCredit",
+      "hash": "bdf76708900f2e03b5fa1d2eb55688cf93a0413b6f933f88bc57b871a40f0142"
     },
     "line_arrow_comparison.svg": {
       "componentName": "LineArrowComparison",
