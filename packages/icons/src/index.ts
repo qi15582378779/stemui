@@ -73,6 +73,7 @@ export { DrawImgUploadImgIcon } from "./generated/DrawImgUploadImgIcon";
 export { DrawLayoutPostIcon } from "./generated/DrawLayoutPostIcon";
 export { DrawLightFastIcon } from "./generated/DrawLightFastIcon";
 export { DrawLightFastYellowIcon } from "./generated/DrawLightFastYellowIcon";
+export { DrawLinkBrokenIcon } from "./generated/DrawLinkBrokenIcon";
 export { DrawLinkConnectIcon } from "./generated/DrawLinkConnectIcon";
 export { DrawListTaskIcon } from "./generated/DrawListTaskIcon";
 export { DrawListTaskHistoryIcon } from "./generated/DrawListTaskHistoryIcon";
