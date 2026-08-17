@@ -14,3 +14,7 @@ export {
     AnimatedDashboardIcon,
     type AnimatedDashboardIconProps
 } from "./AnimatedDashboardIcon";
+export {
+    BlinkingEyeIcon,
+    type BlinkingEyeIconProps
+} from "./BlinkingEyeIcon";

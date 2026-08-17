@@ -4,7 +4,8 @@ import {
     AnimatedDashboardIcon,
     AnimatedLineArrowUpIcon,
     AnimatedLineLinkAttachmentIcon,
-    AnimatedLineListTaskIcon
+    AnimatedLineListTaskIcon,
+    BlinkingEyeIcon
 } from "@stemui/animated-icons";
 
 const previewSwatches = [
@@ -21,47 +22,64 @@ const animatedIcons = [
         label: "Dashboard",
         fileName: "AnimatedDashboardIcon.tsx",
         description: "Hover to drop the dashboard blocks into place.",
-        component: AnimatedDashboardIcon,
-        supportsTriggerSelection: true
+        component: AnimatedDashboardIcon
     },
     {
         id: "AnimatedLineArrowUpIcon",
         label: "Line Arrow Up",
         fileName: "AnimatedLineArrowUpIcon.tsx",
         description: "Hover to launch the arrow and reveal the sparkle.",
-        component: AnimatedLineArrowUpIcon,
-        supportsTriggerSelection: false
+        component: AnimatedLineArrowUpIcon
     },
     {
         id: "AnimatedLineLinkAttachmentIcon",
         label: "Line Link Attachment",
         fileName: "AnimatedLineLinkAttachmentIcon.tsx",
         description: "Hover to bring the two link pieces together.",
-        component: AnimatedLineLinkAttachmentIcon,
-        supportsTriggerSelection: false
+        component: AnimatedLineLinkAttachmentIcon
     },
     {
         id: "AnimatedLineListTaskIcon",
         label: "Line List Task",
         fileName: "AnimatedLineListTaskIcon.tsx",
         description: "Hover to scroll the list and reveal the next task state.",
-        component: AnimatedLineListTaskIcon,
-        supportsTriggerSelection: true
+        component: AnimatedLineListTaskIcon
+    },
+    {
+        id: "BlinkingEyeIcon",
+        label: "Blinking Eye",
+        fileName: "BlinkingEyeIcon.tsx",
+        description: "Blink, look left, look right, then return to center.",
+        component: BlinkingEyeIcon,
+        isBlinkingEye: true
     }
 ];
 
 export function AnimatedIconsPage() {
     const [selectedIconId, setSelectedIconId] = useState(animatedIcons[0].id);
     const [activeSwatchId, setActiveSwatchId] = useState(previewSwatches[0].id);
-    const [activeTrigger, setActiveTrigger] = useState("hover");
+    const [loopEnabled, setLoopEnabled] = useState(false);
     const selectedIcon =
         animatedIcons.find((icon) => icon.id === selectedIconId) ?? animatedIcons[0];
     const activeSwatch =
         previewSwatches.find((swatch) => swatch.id === activeSwatchId) ?? previewSwatches[0];
     const Icon = selectedIcon.component;
-    const triggerProps = selectedIcon.supportsTriggerSelection
-        ? { trigger: activeTrigger }
-        : {};
+    const selectedIconProps = selectedIcon.isBlinkingEye
+        ? {
+              eyeColor: "#fff",
+              pupilColor: activeSwatch.color,
+              trigger: "hover",
+              loop: loopEnabled
+          }
+        : { trigger: "hover", loop: loopEnabled };
+    const staticIconProps = selectedIcon.isBlinkingEye
+        ? {
+              eyeColor: "#fff",
+              pupilColor: activeSwatch.color,
+              trigger: "hover",
+              loop: false
+          }
+        : { trigger: "hover", loop: false };
 
     return (
         <div className="page-stack">
@@ -71,7 +89,7 @@ export function AnimatedIconsPage() {
                     <div className="icon-toolbar-copy">
                         <div className="icon-stats">
                             <strong>{animatedIcons.length}</strong>
-                            <span>animated icon ready to preview</span>
+                            <span>animated icons ready to preview</span>
                         </div>
                         <p className="icon-toolbar-note">
                             Select an icon on the left and hover the large preview on the right.
@@ -94,8 +112,22 @@ export function AnimatedIconsPage() {
                                     aria-label={icon.id}
                                     title={icon.id}
                                 >
-                                    <span className="icon-tile-stage animated-icon-tile-stage">
-                                        <TileIcon size={36} color="#111827" aria-hidden="true" />
+                                    <span
+                                        className={`icon-tile-stage animated-icon-tile-stage${icon.isBlinkingEye ? " animated-icon-tile-stage--eye" : ""}`}
+                                    >
+                                        <TileIcon
+                                            size={36}
+                                            color="#111827"
+                                            {...(icon.isBlinkingEye
+                                                ? {
+                                                      eyeColor: "#fff",
+                                                      pupilColor: "#111827",
+                                                      trigger: "hover",
+                                                      loop: false
+                                                  }
+                                                : { trigger: "hover", loop: false })}
+                                            aria-hidden="true"
+                                        />
                                     </span>
                                 </button>
                             );
@@ -103,11 +135,13 @@ export function AnimatedIconsPage() {
                     </div>
 
                     <article className="icon-detail">
-                        <div className="icon-detail-stage animated-icon-detail-stage">
+                        <div
+                            className={`icon-detail-stage animated-icon-detail-stage${selectedIcon.isBlinkingEye ? " animated-icon-detail-stage--eye" : ""}`}
+                        >
                             <Icon
                                 size={96}
                                 color={activeSwatch.color}
-                                {...triggerProps}
+                                {...selectedIconProps}
                                 aria-label={selectedIcon.label}
                             />
                         </div>
@@ -121,12 +155,20 @@ export function AnimatedIconsPage() {
                             <span className="icon-row-label">Sizes</span>
                             {[16, 24, 32].map((size) => (
                                 <span key={size}>
-                                    {size} <Icon size={size} color={activeSwatch.color} aria-hidden="true" />
+                                    {size}{" "}
+                                    <Icon
+                                        size={size}
+                                        color={activeSwatch.color}
+                                        {...staticIconProps}
+                                        aria-hidden="true"
+                                    />
                                 </span>
                             ))}
                         </div>
                         <div className="icon-swatch-strip" aria-label="Preview animated icon colors">
-                            <span className="icon-row-label">Color test</span>
+                            <span className="icon-row-label">
+                                {selectedIcon.isBlinkingEye ? "Pupil color" : "Color test"}
+                            </span>
                             <div className="icon-swatch-list" role="list">
                                 {previewSwatches.map((swatch) => {
                                     const isActive = swatch.id === activeSwatch.id;
@@ -154,28 +196,25 @@ export function AnimatedIconsPage() {
                         <div className="animated-icon-trigger-strip" aria-label="Animated icon triggers">
                             <span className="icon-row-label">Triggers</span>
                             <div className="animated-icon-trigger-list">
-                                {(selectedIcon.supportsTriggerSelection
-                                    ? [
-                                          ["hover", "Hover"],
-                                          ["click", "Click"]
-                                      ]
-                                    : [["hover", "Hover"]]
-                                ).map(([trigger, label]) => (
+                                {[
+                                    ["hover", "Hover"],
+                                    ["loop", "Loop"]
+                                ].map(([trigger, label]) => (
                                     <button
                                         key={trigger}
                                         type="button"
-                                        className={`animated-icon-trigger-chip${activeTrigger === trigger ? " is-active" : ""}`}
-                                        onClick={() => setActiveTrigger(trigger)}
-                                        aria-pressed={activeTrigger === trigger}
+                                        className={`animated-icon-trigger-chip${(trigger === "loop") === loopEnabled ? " is-active" : ""}`}
+                                        onClick={() => setLoopEnabled(trigger === "loop")}
+                                        aria-pressed={(trigger === "loop") === loopEnabled}
                                     >
                                         {label}
                                     </button>
                                 ))}
                             </div>
                             <p>
-                                {selectedIcon.supportsTriggerSelection
-                                    ? "Select a trigger, then operate the large preview above to test it."
-                                    : "This icon currently plays when the icon itself is hovered."}
+                                {loopEnabled
+                                    ? "Loop is on. The selected icon will play automatically."
+                                    : "Hover is active. Move onto the large icon to play it once."}
                             </p>
                         </div>
                     </article>
@@ -184,7 +223,20 @@ export function AnimatedIconsPage() {
 
             <section className="card">
                 <div className="section-label">Usage</div>
-                <pre className="usage-block">{`import { useState } from "react";
+                <pre className="usage-block">{selectedIcon.isBlinkingEye
+                    ? `import { BlinkingEyeIcon } from "@stemui/animated-icons";
+
+<BlinkingEyeIcon loop />
+
+<BlinkingEyeIcon />
+
+<BlinkingEyeIcon
+    size={24}
+    duration={3.2}
+    eyeColor="#fff"
+    pupilColor="#333"
+/>`
+                    : `import { useState } from "react";
 import { AnimatedLineListTaskIcon } from "@stemui/animated-icons";
 
 function Example() {

@@ -202,7 +202,11 @@
     },
     "draw_calendar_schedule.svg": {
       "componentName": "DrawCalendarSchedule",
-      "hash": "15f3d9bafb1e26c95ac6af041317ab399c0ed622f55b7f2bcb4c99d5ed487c68"
+      "hash": "843a4a757c646d019b0045eaa9c4a63db0ea4bfd1ad39d17eac9d37a753c509f"
+    },
+    "draw_calendar_schedule_reply.svg": {
+      "componentName": "DrawCalendarScheduleReply",
+      "hash": "8d000e548c906adc4f217912431c722eda02aa90b9196634bd772841a1735c21"
     },
     "draw_card_subscription.svg": {
       "componentName": "DrawCardSubscription",
@@ -219,6 +223,10 @@
     "draw_cursor_quick.svg": {
       "componentName": "DrawCursorQuick",
       "hash": "eccbfba696b6667dbeeae08a4be546a1001a8033200b5c14401ba5166ffc7fca"
+    },
+    "draw_data_console.svg": {
+      "componentName": "DrawDataConsole",
+      "hash": "00eb6738c50575a698d0f8b6063302b812c474e25c03ef48ee7abed988ce9165"
     },
     "draw_dev_plan_c_analysis.svg": {
       "componentName": "DrawDevPlanCAnalysis",
