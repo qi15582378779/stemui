@@ -15,9 +15,9 @@ export interface AnimatedLineListTaskIconProps
 export function AnimatedLineListTaskIcon({
     size = 24,
     color = "currentColor",
-    duration = 0.9,
+    duration = 1.15,
     loop = false,
-    trigger = "all",
+    trigger = "hover",
     active,
     className,
     style,
@@ -29,6 +29,10 @@ export function AnimatedLineListTaskIcon({
     const [internalActive, setInternalActive] = useState(false);
     const isControlled = active !== undefined;
     const isActive = active ?? internalActive;
+    const supportsClick =
+        trigger === "all" || trigger === "click" || trigger === "keyboard";
+    const isInteractive = isControlled || supportsClick;
+    const isFocusable = isInteractive || trigger === "focus";
     const suffix = useId().replace(/[^a-zA-Z0-9_-]/g, "");
     const root = `task-list-${suffix}`;
     const belt = `task-list-belt-${suffix}`;
@@ -56,6 +60,7 @@ export function AnimatedLineListTaskIcon({
         .filter(Boolean)
         .map((selector) => `${selector} .task-list-r2-check`)
         .join(",\n");
+    const animationMode = loop ? "infinite" : "forwards";
 
     const css = `
         .${root} { overflow: hidden; }
@@ -64,15 +69,15 @@ export function AnimatedLineListTaskIcon({
         .${root} .task-list-check { transform-box: fill-box; transform-origin: center; }
         ${activationSelectors},
         .${root}.task-list-loop .task-list-belt {
-            animation: ${belt} ${safeDuration}s cubic-bezier(.66,0,.34,1) forwards;
+            animation: ${belt} ${safeDuration}s cubic-bezier(.66,0,.34,1) ${animationMode};
         }
         ${lineSelectors},
         .${root}.task-list-loop .task-list-r2-line {
-            animation: ${line} ${safeDuration}s cubic-bezier(.4,0,.2,1) forwards;
+            animation: ${line} ${safeDuration}s cubic-bezier(.4,0,.2,1) ${animationMode};
         }
         ${checkSelectors},
         .${root}.task-list-loop .task-list-r2-check {
-            animation: ${check} ${safeDuration}s ease-out forwards;
+            animation: ${check} ${safeDuration}s ease-out ${animationMode};
         }
         @keyframes ${belt} {
             0%, 22% { transform: translateY(0); }
@@ -113,18 +118,21 @@ export function AnimatedLineListTaskIcon({
                 strokeWidth="1.2"
                 strokeLinecap="square"
                 xmlns="http://www.w3.org/2000/svg"
-                role="button"
-                tabIndex={tabIndex ?? 0}
-                aria-pressed={isActive}
+                role={isInteractive ? "button" : props.role}
+                tabIndex={tabIndex ?? (isFocusable ? 0 : undefined)}
+                aria-pressed={isInteractive ? isActive : undefined}
                 className={`${root}${loop ? " task-list-loop" : ""}${isActive ? " task-list-active" : ""}${className ? ` ${className}` : ""}`}
                 onClick={(event) => {
-                    if (!isControlled) {
+                    if (!isControlled && supportsClick) {
                         setInternalActive((current) => !current);
                     }
                     onClick?.(event);
                 }}
                 onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
+                    if (
+                        supportsClick &&
+                        (event.key === "Enter" || event.key === " ")
+                    ) {
                         event.preventDefault();
                         if (!isControlled) {
                             setInternalActive((current) => !current);
@@ -132,7 +140,11 @@ export function AnimatedLineListTaskIcon({
                     }
                     onKeyDown?.(event);
                 }}
-                style={{ cursor: "pointer", overflow: "hidden", ...style }}
+                style={{
+                    cursor: isInteractive ? "pointer" : undefined,
+                    overflow: "hidden",
+                    ...style
+                }}
             >
                 <g className="task-list-belt">
                     <path d="M2.32 3.947L3.267 4.894L5.162 3" />

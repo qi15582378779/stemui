@@ -15,7 +15,7 @@ export interface AnimatedDashboardIconProps
 export function AnimatedDashboardIcon({
     size = 18,
     color = "#3D3D3A",
-    duration = 0.85,
+    duration = 1.1,
     loop = false,
     trigger = "hover",
     active,
@@ -37,6 +37,7 @@ export function AnimatedDashboardIcon({
         : trigger === "click"
             ? `.${root}.dashboard-active`
             : `.${root}:hover`;
+    const loopSelector = `.${root}.dashboard-loop`;
     const animationMode = loop ? "infinite" : "forwards";
     const safeDuration = Math.max(0.01, duration);
 
@@ -45,14 +46,17 @@ export function AnimatedDashboardIcon({
             transform-box: fill-box;
             transform-origin: center;
         }
-        ${activationSelector} .dashboard-top {
+        ${activationSelector} .dashboard-top,
+        ${loopSelector} .dashboard-top {
             animation: ${top} ${safeDuration}s cubic-bezier(0.22, 1, 0.36, 1) ${animationMode};
         }
-        ${activationSelector} .dashboard-bl {
+        ${activationSelector} .dashboard-bl,
+        ${loopSelector} .dashboard-bl {
             animation: ${bottomLeft} ${safeDuration + 0.1}s cubic-bezier(0.22, 1, 0.36, 1) ${animationMode};
             animation-delay: ${safeDuration * 0.18}s;
         }
-        ${activationSelector} .dashboard-br {
+        ${activationSelector} .dashboard-br,
+        ${loopSelector} .dashboard-br {
             animation: ${bottomRight} ${safeDuration + 0.2}s cubic-bezier(0.22, 1, 0.36, 1) ${animationMode};
             animation-delay: ${safeDuration * 0.36}s;
         }
@@ -96,7 +100,7 @@ export function AnimatedDashboardIcon({
                 viewBox="0 0 18 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${root}${isActive ? " dashboard-active" : ""}${className ? ` ${className}` : ""}`}
+                className={`${root}${loop ? " dashboard-loop" : ""}${isActive ? " dashboard-active" : ""}${className ? ` ${className}` : ""}`}
                 role={trigger === "click" || isControlled ? "button" : undefined}
                 tabIndex={trigger === "click" || isControlled ? 0 : undefined}
                 aria-pressed={trigger === "click" || isControlled ? isActive : undefined}

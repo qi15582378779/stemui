@@ -197,6 +197,12 @@ input {
     background: transparent !important;
 }
 
+.animated-icon-tile-stage--eye,
+.animated-icon-detail-stage--eye {
+    background: #111827 !important;
+    border-radius: 16px;
+}
+
 .animated-icon-trigger-strip {
     display: flex;
     flex-direction: column;
@@ -213,6 +219,7 @@ input {
 
 .animated-icon-trigger-chip {
     appearance: none;
+    min-height: 36px;
     padding: 7px 10px;
     border: 1px solid rgb(39 30 20 / 0.1);
     border-radius: 999px;
@@ -220,6 +227,11 @@ input {
     color: #6f6254;
     font-size: 12px;
     cursor: pointer;
+}
+
+.animated-icon-trigger-chip:focus-visible {
+    outline: 2px solid #1d4ed8;
+    outline-offset: 2px;
 }
 
 .animated-icon-trigger-chip.is-active {

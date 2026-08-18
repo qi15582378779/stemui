@@ -1,26 +1,43 @@
 "use client";
 
-import { useId, type SVGProps } from "react";
+import { useId, useState, type SVGProps } from "react";
 
 export interface AnimatedLineLinkAttachmentIconProps
     extends Omit<SVGProps<SVGSVGElement>, "width" | "height" | "color"> {
     size?: number;
     color?: string;
     duration?: number;
+    loop?: boolean;
+    trigger?: "hover" | "click";
+    active?: boolean;
 }
 
 export function AnimatedLineLinkAttachmentIcon({
     size = 24,
     color = "currentColor",
     className,
-    duration = 0.6,
+    duration = 1.05,
+    loop = false,
+    trigger = "hover",
+    active,
     style,
+    onClick,
     ...props
 }: AnimatedLineLinkAttachmentIconProps) {
+    const [internalActive, setInternalActive] = useState(false);
+    const isControlled = active !== undefined;
+    const isActive = active ?? internalActive;
     const suffix = useId().replace(/[^a-zA-Z0-9_-]/g, "");
     const root = `link-icon-${suffix}`;
     const top = `link-top-${suffix}`;
     const bottom = `link-bottom-${suffix}`;
+    const safeDuration = Math.max(0.01, duration);
+    const activationSelector = loop
+        ? `.${root}.link-icon-loop`
+        : isControlled || trigger === "click"
+            ? `.${root}.link-icon-active`
+            : `.${root}:hover`;
+    const animationMode = loop ? "infinite" : "forwards";
 
     const css = `
         .${root} { overflow: visible; }
@@ -29,11 +46,11 @@ export function AnimatedLineLinkAttachmentIcon({
             transform-box: view-box;
             transform-origin: center;
         }
-        .${root}:hover .link-top {
-            animation: ${top} ${duration}s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        ${activationSelector} .link-top {
+            animation: ${top} ${safeDuration}s cubic-bezier(0.16, 1, 0.3, 1) ${animationMode};
         }
-        .${root}:hover .link-bottom {
-            animation: ${bottom} ${duration}s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        ${activationSelector} .link-bottom {
+            animation: ${bottom} ${safeDuration}s cubic-bezier(0.16, 1, 0.3, 1) ${animationMode};
         }
         @keyframes ${top} {
             0% { transform: translate(5px, -5px); opacity: 0; }
@@ -46,11 +63,11 @@ export function AnimatedLineLinkAttachmentIcon({
             100% { transform: translate(0, 0); opacity: 1; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .${root}:hover .link-top,
-            .${root}:hover .link-bottom {
-                animation: none;
-                transform: none;
-                opacity: 1;
+            .${root} .link-top,
+            .${root} .link-bottom {
+                animation: none !important;
+                transform: none !important;
+                opacity: 1 !important;
             }
         }
     `;
@@ -66,9 +83,19 @@ export function AnimatedLineLinkAttachmentIcon({
                 fill="none"
                 overflow="visible"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${root}${className ? ` ${className}` : ""}`}
+                className={`${root}${loop ? " link-icon-loop" : ""}${isActive ? " link-icon-active" : ""}${className ? ` ${className}` : ""}`}
+                role={trigger === "click" || isControlled ? "button" : undefined}
+                tabIndex={trigger === "click" || isControlled ? 0 : undefined}
+                aria-pressed={trigger === "click" || isControlled ? isActive : undefined}
+                onClick={(event) => {
+                    if (!isControlled && trigger === "click") {
+                        setInternalActive((current) => !current);
+                    }
+                    onClick?.(event);
+                }}
                 style={{
                     color,
+                    cursor: trigger === "click" || isControlled ? "pointer" : undefined,
                     display: "block",
                     flexShrink: 0,
                     overflow: "visible",

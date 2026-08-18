@@ -1,27 +1,43 @@
 "use client";
 
-import { useId, type SVGProps } from "react";
+import { useId, useState, type SVGProps } from "react";
 
 export interface AnimatedLineArrowUpIconProps
     extends Omit<SVGProps<SVGSVGElement>, "width" | "height" | "color"> {
     size?: number;
     color?: string;
     duration?: number;
+    loop?: boolean;
+    trigger?: "hover" | "click";
+    active?: boolean;
 }
 
 export function AnimatedLineArrowUpIcon({
     size = 14,
     color = "#3D3D3A",
-    duration = 0.9,
+    duration = 1.15,
+    loop = false,
+    trigger = "hover",
+    active,
     className,
     style,
+    onClick,
     ...props
 }: AnimatedLineArrowUpIconProps) {
+    const [internalActive, setInternalActive] = useState(false);
+    const isControlled = active !== undefined;
+    const isActive = active ?? internalActive;
     const suffix = useId().replace(/[^a-zA-Z0-9_-]/g, "");
     const root = `smart-arrow-${suffix}`;
     const shoot = `smart-arrow-shoot-${suffix}`;
     const sparkle = `smart-arrow-sparkle-${suffix}`;
     const safeDuration = Math.max(0.01, duration);
+    const activationSelector = loop
+        ? `.${root}.smart-arrow-loop`
+        : isControlled || trigger === "click"
+            ? `.${root}.smart-arrow-active`
+            : `.${root}:hover`;
+    const animationMode = loop ? "infinite" : "forwards";
 
     const css = `
         .${root} { overflow: visible; }
@@ -30,11 +46,11 @@ export function AnimatedLineArrowUpIcon({
             transform-box: fill-box;
             transform-origin: center;
         }
-        .${root}:hover .smart-arrow-arrow {
-            animation: ${shoot} ${safeDuration}s cubic-bezier(.16,1,.3,1) forwards;
+        ${activationSelector} .smart-arrow-arrow {
+            animation: ${shoot} ${safeDuration}s cubic-bezier(.16,1,.3,1) ${animationMode};
         }
-        .${root}:hover .smart-arrow-star {
-            animation: ${sparkle} ${safeDuration}s cubic-bezier(.25,.1,.25,1) forwards;
+        ${activationSelector} .smart-arrow-star {
+            animation: ${sparkle} ${safeDuration}s cubic-bezier(.25,.1,.25,1) ${animationMode};
         }
         @keyframes ${shoot} {
             0% { transform: translateY(85%) scale(.5); opacity: 0; }
@@ -70,8 +86,17 @@ export function AnimatedLineArrowUpIcon({
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${root}${className ? ` ${className}` : ""}`}
-                style={{ cursor: "pointer", overflow: "visible", ...style }}
+                className={`${root}${loop ? " smart-arrow-loop" : ""}${isActive ? " smart-arrow-active" : ""}${className ? ` ${className}` : ""}`}
+                role={trigger === "click" || isControlled ? "button" : undefined}
+                tabIndex={trigger === "click" || isControlled ? 0 : undefined}
+                aria-pressed={trigger === "click" || isControlled ? isActive : undefined}
+                onClick={(event) => {
+                    if (!isControlled && trigger === "click") {
+                        setInternalActive((current) => !current);
+                    }
+                    onClick?.(event);
+                }}
+                style={{ cursor: trigger === "click" || isControlled ? "pointer" : undefined, overflow: "visible", ...style }}
             >
                 <g className="smart-arrow-star">
                     <path
