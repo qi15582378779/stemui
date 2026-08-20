@@ -252,6 +252,10 @@
       "componentName": "DrawFilePost",
       "hash": "6903ea5329126d8ff0dffcf2e1532412bba768fb0929bb06ba454889edc2343b"
     },
+    "draw_finger_auto.svg": {
+      "componentName": "DrawFingerAuto",
+      "hash": "0f9845f21be67e37f7932552d64fdbbedb9ce42db0359b1a3e05c1e83faa0c3c"
+    },
     "draw_free_plan_g_analysis.svg": {
       "componentName": "DrawFreePlanGAnalysis",
       "hash": "a2a3948449db12e95d4ef2bd47cfc2fb9a6e38cded35dfb3ec11a0ce5ea69ef4"
