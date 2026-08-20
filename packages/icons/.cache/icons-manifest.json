@@ -464,6 +464,10 @@
       "componentName": "EventNothingFeatureAnalysis",
       "hash": "068dbff64cb96306d3e30a6a7ed81cdb0a6b866a3e03ec838e04369e98cc686d"
     },
+    "event=openpage,_feature=auto.svg": {
+      "componentName": "EventOpenpageFeatureAuto",
+      "hash": "8a0ae59877c7b416ac0ba73e6a602b77a7a11ef5261999df5a39aef3e0cf94ea"
+    },
     "event=plugin,_feature=yellow.svg": {
       "componentName": "EventPluginFeatureYellow",
       "hash": "88897fc39840fe5fec8e62d4a85b941bc82515984d198ac02bb0a409b58c7153"

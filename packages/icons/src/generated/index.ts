@@ -114,6 +114,7 @@ export { EventNoReportFeatureAnalysisIcon } from "./EventNoReportFeatureAnalysis
 export { EventNoTimeSlotFeatureYellowIcon } from "./EventNoTimeSlotFeatureYellowIcon";
 export { EventNobodyFeatureYellowIcon } from "./EventNobodyFeatureYellowIcon";
 export { EventNothingFeatureAnalysisIcon } from "./EventNothingFeatureAnalysisIcon";
+export { EventOpenpageFeatureAutoIcon } from "./EventOpenpageFeatureAutoIcon";
 export { EventPluginFeatureYellowIcon } from "./EventPluginFeatureYellowIcon";
 export { EventUnlockFeatureSubscriptionIcon } from "./EventUnlockFeatureSubscriptionIcon";
 export { FillQuestionMarkInformationIcon } from "./FillQuestionMarkInformationIcon";
