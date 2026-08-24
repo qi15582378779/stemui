@@ -1,4 +1,5 @@
 export const recentIconIds = [
+    "DrawCalendarSchedulePlanIcon",
     "EventOpenpageFeatureAutoIcon",
     "DrawFingerAutoIcon",
     "DrawCalendarScheduleIcon",

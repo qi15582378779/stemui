@@ -49,6 +49,7 @@ export { DrawBellNoticeIcon } from "./generated/DrawBellNoticeIcon";
 export { DrawBubbleEngageIcon } from "./generated/DrawBubbleEngageIcon";
 export { DrawBulbCreateIcon } from "./generated/DrawBulbCreateIcon";
 export { DrawCalendarScheduleIcon } from "./generated/DrawCalendarScheduleIcon";
+export { DrawCalendarSchedulePlanIcon } from "./generated/DrawCalendarSchedulePlanIcon";
 export { DrawCalendarScheduleReplyIcon } from "./generated/DrawCalendarScheduleReplyIcon";
 export { DrawCardSubscriptionIcon } from "./generated/DrawCardSubscriptionIcon";
 export { DrawComputerAddIcon } from "./generated/DrawComputerAddIcon";

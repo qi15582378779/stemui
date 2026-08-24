@@ -204,6 +204,10 @@
       "componentName": "DrawCalendarSchedule",
       "hash": "843a4a757c646d019b0045eaa9c4a63db0ea4bfd1ad39d17eac9d37a753c509f"
     },
+    "draw_calendar_schedule_plan.svg": {
+      "componentName": "DrawCalendarSchedulePlan",
+      "hash": "0cb7e93ae98054b7e912b9d49a87252a851b46d96fa200a0d186c119ad9fdae4"
+    },
     "draw_calendar_schedule_reply.svg": {
       "componentName": "DrawCalendarScheduleReply",
       "hash": "8d000e548c906adc4f217912431c722eda02aa90b9196634bd772841a1735c21"
