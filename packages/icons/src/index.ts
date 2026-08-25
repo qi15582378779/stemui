@@ -47,6 +47,7 @@ export { AvatarSocial9Icon } from "./generated/AvatarSocial9Icon";
 export { DrawArrowVerifyIcon } from "./generated/DrawArrowVerifyIcon";
 export { DrawBellNoticeIcon } from "./generated/DrawBellNoticeIcon";
 export { DrawBubbleEngageIcon } from "./generated/DrawBubbleEngageIcon";
+export { DrawBubbleEngageReplyIcon } from "./generated/DrawBubbleEngageReplyIcon";
 export { DrawBulbCreateIcon } from "./generated/DrawBulbCreateIcon";
 export { DrawCalendarScheduleIcon } from "./generated/DrawCalendarScheduleIcon";
 export { DrawCalendarSchedulePlanIcon } from "./generated/DrawCalendarSchedulePlanIcon";
