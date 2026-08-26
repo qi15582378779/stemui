@@ -116,9 +116,9 @@ export { EventNoReportFeatureAnalysisIcon } from "./generated/EventNoReportFeatu
 export { EventNoTimeSlotFeatureYellowIcon } from "./generated/EventNoTimeSlotFeatureYellowIcon";
 export { EventNobodyFeatureYellowIcon } from "./generated/EventNobodyFeatureYellowIcon";
 export { EventNothingFeatureAnalysisIcon } from "./generated/EventNothingFeatureAnalysisIcon";
-export { EventOpenpageFeatureAutoIcon } from "./generated/EventOpenpageFeatureAutoIcon";
 export { EventPluginFeatureYellowIcon } from "./generated/EventPluginFeatureYellowIcon";
 export { EventUnlockFeatureSubscriptionIcon } from "./generated/EventUnlockFeatureSubscriptionIcon";
+export { EventOpenpageFeatureAutoIcon } from "./generated/EventOpenpageFeatureAutoIcon";
 export { FillQuestionMarkInformationIcon } from "./generated/FillQuestionMarkInformationIcon";
 export { FillArrowDownloadIcon } from "./generated/FillArrowDownloadIcon";
 export { FillArrowLoopIcon } from "./generated/FillArrowLoopIcon";
