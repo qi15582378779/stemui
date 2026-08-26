@@ -196,6 +196,10 @@
       "componentName": "DrawBubbleEngage",
       "hash": "da6c074bca9d7652aabba4cf556e628bf45586735d3feb5bc24847a384b9cf1c"
     },
+    "draw_bubble_engage_reply.svg": {
+      "componentName": "DrawBubbleEngageReply",
+      "hash": "005da495c55f96dc1df915d1f5a6446dddf48b31ea03516879f6b62cf4c68b1b"
+    },
     "draw_bulb_create.svg": {
       "componentName": "DrawBulbCreate",
       "hash": "8afe6f1dda7e6e1a4fb98966acc0318a60aef9abca6028189a318a2b75af72da"
@@ -203,6 +207,10 @@
     "draw_calendar_schedule.svg": {
       "componentName": "DrawCalendarSchedule",
       "hash": "843a4a757c646d019b0045eaa9c4a63db0ea4bfd1ad39d17eac9d37a753c509f"
+    },
+    "draw_calendar_schedule_plan.svg": {
+      "componentName": "DrawCalendarSchedulePlan",
+      "hash": "0cb7e93ae98054b7e912b9d49a87252a851b46d96fa200a0d186c119ad9fdae4"
     },
     "draw_calendar_schedule_reply.svg": {
       "componentName": "DrawCalendarScheduleReply",
@@ -251,6 +259,10 @@
     "draw_file_post.svg": {
       "componentName": "DrawFilePost",
       "hash": "6903ea5329126d8ff0dffcf2e1532412bba768fb0929bb06ba454889edc2343b"
+    },
+    "draw_finger_auto.svg": {
+      "componentName": "DrawFingerAuto",
+      "hash": "0f9845f21be67e37f7932552d64fdbbedb9ce42db0359b1a3e05c1e83faa0c3c"
     },
     "draw_free_plan_g_analysis.svg": {
       "componentName": "DrawFreePlanGAnalysis",
@@ -459,6 +471,10 @@
     "event=nothing,_feature=analysis.svg": {
       "componentName": "EventNothingFeatureAnalysis",
       "hash": "068dbff64cb96306d3e30a6a7ed81cdb0a6b866a3e03ec838e04369e98cc686d"
+    },
+    "event=openpage,_feature=auto.svg": {
+      "componentName": "EventOpenpageFeatureAuto",
+      "hash": "8a0ae59877c7b416ac0ba73e6a602b77a7a11ef5261999df5a39aef3e0cf94ea"
     },
     "event=plugin,_feature=yellow.svg": {
       "componentName": "EventPluginFeatureYellow",
@@ -1152,9 +1168,21 @@
       "componentName": "LineYoutubeThumbLike",
       "hash": "9ac6fddb92b144f37726cbfdd313008ffc60d62fe5b8d073bdd00e48a0372017"
     },
+    "logo2_crosoft.svg": {
+      "componentName": "Logo2Crosoft",
+      "hash": "fbfb63e9b2b798475b2d7dd6c8b220ea0ad6ab391aa55cd274cc602494235702"
+    },
+    "logo2_google.svg": {
+      "componentName": "Logo2Google",
+      "hash": "09d6c5bbe85d27a245f91eaff0230d7528cfe821e601c30fcdacea0563856691"
+    },
     "model=anthropic.svg": {
       "componentName": "ModelAnthropic",
       "hash": "9eae13b366049c62466556cb2705897ec71375677e81661f9a67b41664ae13e3"
+    },
+    "model=bing.svg": {
+      "componentName": "ModelBing",
+      "hash": "0b0714abb824933bd1017fb389f28de9105c942cf87e3e478069076dafe1eca9"
     },
     "model=google.svg": {
       "componentName": "ModelGoogle",
@@ -1239,6 +1267,10 @@
     "platform=medium.svg": {
       "componentName": "PlatformMedium",
       "hash": "ae3fbf24a2f6627a8eccf4eeaea7be874fdb758a83b13cfab311c29a7dddbdfb"
+    },
+    "platform=microsoft.svg": {
+      "componentName": "PlatformMicrosoft",
+      "hash": "bb5bb33cdc528af8b063cf80c8a235244074a406448793ec8b0692b4f6ec7c36"
     },
     "platform=official.svg": {
       "componentName": "PlatformOfficial",

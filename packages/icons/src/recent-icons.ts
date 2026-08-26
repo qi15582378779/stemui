@@ -1,4 +1,4 @@
 export const recentIconIds = [
-    "DrawCalendarScheduleIcon",
-    "DrawCalendarScheduleReplyIcon"
+    "Logo2CrosoftIcon",
+    "Logo2GoogleIcon"
 ] as const;

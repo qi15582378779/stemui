@@ -18,3 +18,7 @@ export {
     BlinkingEyeIcon,
     type BlinkingEyeIconProps
 } from "./BlinkingEyeIcon";
+export {
+    LineFileBillIcon,
+    type LineFileBillIconProps
+} from "./LineFileBillIcon";

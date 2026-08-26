@@ -5,7 +5,8 @@ import {
     AnimatedLineArrowUpIcon,
     AnimatedLineLinkAttachmentIcon,
     AnimatedLineListTaskIcon,
-    BlinkingEyeIcon
+    BlinkingEyeIcon,
+    LineFileBillIcon
 } from "@stemui/animated-icons";
 
 const previewSwatches = [
@@ -52,6 +53,14 @@ const animatedIcons = [
         description: "Blink, look left, look right, then return to center.",
         component: BlinkingEyeIcon,
         isBlinkingEye: true
+    },
+    {
+        id: "LineFileBillIcon",
+        label: "Line File Bill",
+        fileName: "LineFileBillIcon.tsx",
+        description: "Hover to send the document rows outward and settle the bill back into place.",
+        component: LineFileBillIcon,
+        isLineFileBill: true
     }
 ];
 
@@ -71,7 +80,9 @@ export function AnimatedIconsPage() {
               trigger: "hover",
               loop: loopEnabled
           }
-        : { trigger: "hover", loop: loopEnabled };
+        : selectedIcon.isLineFileBill
+          ? { loop: loopEnabled }
+          : { trigger: "hover", loop: loopEnabled };
     const staticIconProps = selectedIcon.isBlinkingEye
         ? {
               eyeColor: "#fff",
@@ -79,7 +90,9 @@ export function AnimatedIconsPage() {
               trigger: "hover",
               loop: false
           }
-        : { trigger: "hover", loop: false };
+        : selectedIcon.isLineFileBill
+          ? { loop: false }
+          : { trigger: "hover", loop: false };
 
     return (
         <div className="page-stack">
@@ -125,7 +138,9 @@ export function AnimatedIconsPage() {
                                                       trigger: "hover",
                                                       loop: false
                                                   }
-                                                : { trigger: "hover", loop: false })}
+                                                : icon.isLineFileBill
+                                                  ? { loop: false }
+                                                  : { trigger: "hover", loop: false })}
                                             aria-hidden="true"
                                         />
                                     </span>
@@ -235,6 +250,19 @@ export function AnimatedIconsPage() {
     duration={3.2}
     eyeColor="#fff"
     pupilColor="#333"
+/>`
+                    : selectedIcon.isLineFileBill
+                      ? `import { LineFileBillIcon } from "@stemui/animated-icons";
+
+<LineFileBillIcon />
+
+<LineFileBillIcon loop />
+
+<LineFileBillIcon
+    size={32}
+    color="#7c3aed"
+    loop={false}
+    aria-label="File bill"
 />`
                     : `import { useState } from "react";
 import { AnimatedLineListTaskIcon } from "@stemui/animated-icons";
