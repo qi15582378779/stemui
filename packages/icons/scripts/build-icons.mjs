@@ -463,6 +463,8 @@ await runOnce();
 if (watchMode) {
     let pending = false;
     let lastFingerprint = "";
+    let lastChangeAt = 0;
+    const watchDebounceMs = 750;
 
     const createFingerprint = async () => {
         const files = (await readdir(svgDir)).filter((file) => file.endsWith(".svg")).sort();
@@ -480,12 +482,22 @@ if (watchMode) {
 
     setInterval(async () => {
         const nextFingerprint = await createFingerprint();
-        if (nextFingerprint === lastFingerprint || pending) {
+        if (nextFingerprint !== lastFingerprint) {
+            lastFingerprint = nextFingerprint;
+            lastChangeAt = Date.now();
+            return;
+        }
+
+        if (
+            pending ||
+            lastChangeAt === 0 ||
+            Date.now() - lastChangeAt < watchDebounceMs
+        ) {
             return;
         }
 
         pending = true;
-        lastFingerprint = nextFingerprint;
+        lastChangeAt = 0;
         console.log("[icons:watch] detected svg directory change");
         await runOnce();
         pending = false;

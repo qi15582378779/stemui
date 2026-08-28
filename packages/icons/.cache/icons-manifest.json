@@ -244,6 +244,10 @@
       "componentName": "DrawDevPlanGAnalysis",
       "hash": "31049889a434e2f86fdfc87bada4c71fb563f92c86c98d414e7198af3fc13be6"
     },
+    "draw_dollar_money.svg": {
+      "componentName": "DrawDollarMoney",
+      "hash": "ee8ce0170214c916c87f7e807a11bb5d107296cc3cd7c6113f0d15e91d4fdc43"
+    },
     "draw_earth_growth.svg": {
       "componentName": "DrawEarthGrowth",
       "hash": "cbd7e657586d0e815d07f8faa9fc8863cb629ee7509a12c8e5d0516bcd4cbcd2"
@@ -279,6 +283,14 @@
     "draw_hand_search.svg": {
       "componentName": "DrawHandSearch",
       "hash": "1ce7e47baf7fe4aaa8821e4e984e6f5188bdea62ae12d86fd82f8b77a0c01f0e"
+    },
+    "draw_horn2_campaigns.svg": {
+      "componentName": "DrawHorn2Campaigns",
+      "hash": "65fec13351f5fa278e373fe539a6e211ea71b86e5ca92ae1eef2ece278dc5529"
+    },
+    "draw_horn_campaigns.svg": {
+      "componentName": "DrawHornCampaigns",
+      "hash": "5edce319b9e5929ffe44b8e9194561829f649cf2200be05492164cac7551d841"
     },
     "draw_hourglass_fast.svg": {
       "componentName": "DrawHourglassFast",
@@ -364,6 +376,14 @@
       "componentName": "DrawPencilQuote",
       "hash": "4464840a8f86138a58e8ac2c3df9bfc31cd94666dcfeef8096d0c1c96da67bfd"
     },
+    "draw_people_approved.svg": {
+      "componentName": "DrawPeopleApproved",
+      "hash": "47d87120482c662ffdbe82cddcbe5f0023a5eb933e86937ab604a32b03b09631"
+    },
+    "draw_plane_send.svg": {
+      "componentName": "DrawPlaneSend",
+      "hash": "19fe706e6b133ff360f54259dd5908219f51a56d47a1202e9e16c92f08172184"
+    },
     "draw_pro_plan_c_analysis.svg": {
       "componentName": "DrawProPlanCAnalysis",
       "hash": "d7ae83cfe3d29a443debb6d2545cb6aa174f2ab71e64194d3448205c4f92be5d"
@@ -371,6 +391,10 @@
     "draw_pro_plan_g_analysis.svg": {
       "componentName": "DrawProPlanGAnalysis",
       "hash": "bb24bfda03a1c10e172af14ef3ac48cd4ac3858623d8685936526dc985548534"
+    },
+    "draw_set_manual.svg": {
+      "componentName": "DrawSetManual",
+      "hash": "bb8748203e3554093a8efc3d3fddca3eda83c4f4aa92ca0e4fa90a2bba8dec98"
     },
     "draw_shake_welcome.svg": {
       "componentName": "DrawShakeWelcome",
@@ -387,6 +411,10 @@
     "draw_starter_plan_g_analysis.svg": {
       "componentName": "DrawStarterPlanGAnalysis",
       "hash": "dbf7281f5e493c831809ddc42c909afcdf4847e566fb56c75d470716cf7aabcf"
+    },
+    "draw_switch_on.svg": {
+      "componentName": "DrawSwitchOn",
+      "hash": "b91e22f2188014238cc886bea9ace56af1f3338652a2a57dacb4b6f29d97fb01"
     },
     "draw_upvote👍_analysis.svg": {
       "componentName": "DrawUpvoteAnalysis",
@@ -951,6 +979,10 @@
     "line_medium_thumb_not_interested.svg": {
       "componentName": "LineMediumThumbNotInterested",
       "hash": "a4f382b57422d6228cfd65610e29f94670bb1dfdb52ac50006052a2cf80e2993"
+    },
+    "line_megaphone_compaign.svg": {
+      "componentName": "LineMegaphoneCompaign",
+      "hash": "698a238d4f96df26a1b8d2b76e3e4af3108bb2c83a19f1807443937b7012816d"
     },
     "line_menu_filter.svg": {
       "componentName": "LineMenuFilter",

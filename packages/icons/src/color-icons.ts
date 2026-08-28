@@ -113,6 +113,7 @@ export const colorIconIds = [
     "LineMediumArrowReportIcon",
     "LineMediumTagSaveIcon",
     "LineMediumThumbNotInterestedIcon",
+    "LineMegaphoneCompaignIcon",
     "LineMenuFilterIcon",
     "LineMovieMediaIcon",
     "LinePaperRecordIcon",
