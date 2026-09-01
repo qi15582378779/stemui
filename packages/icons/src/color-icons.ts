@@ -24,6 +24,7 @@ export const colorIconIds = [
     "FillMediumStarMemberOnlyStoryIcon",
     "FillPencileEditIcon",
     "FillShapeCategraryIcon",
+    "FillStarCreditIcon",
     "FillStarMagicIcon",
     "FillSuolianLinkIcon",
     "FillTiktolkArrowBookmarkIcon",

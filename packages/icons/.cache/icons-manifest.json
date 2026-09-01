@@ -372,6 +372,18 @@
       "componentName": "DrawMoneyReceipt",
       "hash": "2345b44e680b3a903e618ff045ec17b549a819683a1d71b2d028c1980ebb2a6e"
     },
+    "draw_orange_bulk.svg": {
+      "componentName": "DrawOrangeBulk",
+      "hash": "e537ddb3942a956ad2f8aaf6729f7b1748c9c84bb6ff9f8f006cd265a89439e4"
+    },
+    "draw_orange_mini.svg": {
+      "componentName": "DrawOrangeMini",
+      "hash": "fd0aaea05ce42db2f370e83863dd2f6d45461ba0eda313d2e039b5a91149ad85"
+    },
+    "draw_orange_scale.svg": {
+      "componentName": "DrawOrangeScale",
+      "hash": "e036031a11801a135155682e0c45fd09b7f6fda0f94bfe32978e24a499d621ac"
+    },
     "draw_pencil_quote.svg": {
       "componentName": "DrawPencilQuote",
       "hash": "4464840a8f86138a58e8ac2c3df9bfc31cd94666dcfeef8096d0c1c96da67bfd"
@@ -611,6 +623,10 @@
     "fill_shape_categrary.svg": {
       "componentName": "FillShapeCategrary",
       "hash": "3a8f2a4710b4653889f0b2b10ed7c8b3f1f4b0f6ad153492851389f6f33b2844"
+    },
+    "fill_star_credit.svg": {
+      "componentName": "FillStarCredit",
+      "hash": "dff117d43c33beb729b9c022020b31b131364a2b6307d02499419454e12c8125"
     },
     "fill_star_magic.svg": {
       "componentName": "FillStarMagic",

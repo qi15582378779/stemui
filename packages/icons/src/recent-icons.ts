@@ -1,10 +1,6 @@
 export const recentIconIds = [
-    "DrawDollarMoneyIcon",
-    "DrawHorn2CampaignsIcon",
-    "DrawHornCampaignsIcon",
-    "DrawPeopleApprovedIcon",
-    "DrawPlaneSendIcon",
-    "DrawSetManualIcon",
-    "DrawSwitchOnIcon",
-    "LineMegaphoneCompaignIcon"
+    "DrawOrangeBulkIcon",
+    "DrawOrangeMiniIcon",
+    "DrawOrangeScaleIcon",
+    "FillStarCreditIcon"
 ] as const;
