@@ -53,6 +53,7 @@ export const colorIconIds = [
     "LineBankBuyIcon",
     "LineBlockModelIcon",
     "LineBookAgentIcon",
+    "LineBookStoryIcon",
     "LineBookmarkTagIcon",
     "LineBubbleInformationIcon",
     "LineBubbleMessageIcon",

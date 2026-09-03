@@ -186,6 +186,7 @@ export { LineBadgeCheckIcon } from "./generated/LineBadgeCheckIcon";
 export { LineBankBuyIcon } from "./generated/LineBankBuyIcon";
 export { LineBlockModelIcon } from "./generated/LineBlockModelIcon";
 export { LineBookAgentIcon } from "./generated/LineBookAgentIcon";
+export { LineBookStoryIcon } from "./generated/LineBookStoryIcon";
 export { LineBookmarkTagIcon } from "./generated/LineBookmarkTagIcon";
 export { LineBubbleInformationIcon } from "./generated/LineBubbleInformationIcon";
 export { LineBubbleMessageIcon } from "./generated/LineBubbleMessageIcon";

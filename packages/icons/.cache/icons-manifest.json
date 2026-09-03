@@ -752,6 +752,10 @@
       "componentName": "LineBookAgent",
       "hash": "ec64a16ef62275aab6d04b29adfde7e9748a53cf3fbeecbc72b180c2fd5186b4"
     },
+    "line_book_story.svg": {
+      "componentName": "LineBookStory",
+      "hash": "5116de8da2b4f032733285b9e8d00a8e2a97c7bdbf23f203e1d0fb4ee477c528"
+    },
     "line_bookmark_tag.svg": {
       "componentName": "LineBookmarkTag",
       "hash": "2b35958fb91f15c90a0197223742cd505fdddcc9014ee1413bc07e211ce294f2"
