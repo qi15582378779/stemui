@@ -256,6 +256,10 @@
       "componentName": "DrawEventSuccess",
       "hash": "8a91dd49a76de5ccfb015b502b2f4ea435b33aa0ea9e2ae8e8a26fb749b2840f"
     },
+    "draw_exclamation_infor.svg": {
+      "componentName": "DrawExclamationInfor",
+      "hash": "89625de3d9d05d3dd32e248e57134256ed0b49ee1041bc3c4830e13dcadd5e85"
+    },
     "draw_eye_new.svg": {
       "componentName": "DrawEyeNew",
       "hash": "c67f347185bc568a86a269d98ecfdeb30b2ce5706d8ac7957bf43e9772f7f59d"

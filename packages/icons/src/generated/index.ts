@@ -62,6 +62,7 @@ export { DrawDevPlanGAnalysisIcon } from "./DrawDevPlanGAnalysisIcon";
 export { DrawDollarMoneyIcon } from "./DrawDollarMoneyIcon";
 export { DrawEarthGrowthIcon } from "./DrawEarthGrowthIcon";
 export { DrawEventSuccessIcon } from "./DrawEventSuccessIcon";
+export { DrawExclamationInforIcon } from "./DrawExclamationInforIcon";
 export { DrawEyeNewIcon } from "./DrawEyeNewIcon";
 export { DrawFilePostIcon } from "./DrawFilePostIcon";
 export { DrawFingerAutoIcon } from "./DrawFingerAutoIcon";
