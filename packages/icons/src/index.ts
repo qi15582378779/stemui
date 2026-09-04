@@ -110,6 +110,7 @@ export { DrawUpvoteAnalysisIcon } from "./generated/DrawUpvoteAnalysisIcon";
 export { EmojiArrowGoalIcon } from "./generated/EmojiArrowGoalIcon";
 export { EmojiBronzeMedalIcon } from "./generated/EmojiBronzeMedalIcon";
 export { EmojiBuleSuggestionIcon } from "./generated/EmojiBuleSuggestionIcon";
+export { EmojiCorrectCancelAllIcon } from "./generated/EmojiCorrectCancelAllIcon";
 export { EmojiCorrectSuccessIcon } from "./generated/EmojiCorrectSuccessIcon";
 export { EmojiExclamationWarningIcon } from "./generated/EmojiExclamationWarningIcon";
 export { EmojiEyeViewIcon } from "./generated/EmojiEyeViewIcon";

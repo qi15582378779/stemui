@@ -448,6 +448,10 @@
       "componentName": "EmojiBuleSuggestion",
       "hash": "69a74a20aa587395782827cc029fad715907c7bcb45e8203910c9048ce90271f"
     },
+    "emoji_correct_cancel_all.svg": {
+      "componentName": "EmojiCorrectCancelAll",
+      "hash": "140e84532e1a0c2d3fd06398d8cfb34a3a698705002b1b317d293e26fa0da6da"
+    },
     "emoji_correct_success.svg": {
       "componentName": "EmojiCorrectSuccess",
       "hash": "4712414282fac41d2d1fbc3d2b9c5e69b68511aa085f24a68732e1dd00a898d1"

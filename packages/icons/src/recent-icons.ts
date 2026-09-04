@@ -1,3 +1,3 @@
 export const recentIconIds = [
-    "DrawExclamationInforIcon"
+    "EmojiCorrectCancelAllIcon"
 ] as const;
