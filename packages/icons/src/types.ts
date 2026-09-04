@@ -14,6 +14,13 @@ export type PlatformIconProps = IconProps & {
     borderWidth?: number;
 };
 
+export type AvatarBorderStyle = "solid" | "dashed";
+
+export type AvatarIconProps = IconProps & {
+    borderStyle?: AvatarBorderStyle;
+    borderColor?: string;
+};
+
 export type ModelIconProps = IconProps & {
     borderWidth?: number;
 };

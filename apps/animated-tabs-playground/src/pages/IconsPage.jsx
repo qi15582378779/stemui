@@ -50,6 +50,8 @@ export function IconsPage() {
     const [activePrefixFilter, setActivePrefixFilter] = useState("all");
     const [platformBorderStyle, setPlatformBorderStyle] = useState("solid");
     const [platformBorderColor, setPlatformBorderColor] = useState("#111111");
+    const [avatarBorderStyle, setAvatarBorderStyle] = useState("solid");
+    const [avatarBorderColor, setAvatarBorderColor] = useState("#111111");
     const [platformBorderWidth, setPlatformBorderWidth] = useState(0.6);
     const [modelBorderWidth, setModelBorderWidth] = useState(1.2);
     const icons = useMemo(
@@ -115,6 +117,7 @@ export function IconsPage() {
         previewSwatches.find((swatch) => swatch.id === activeSwatchId) ?? previewSwatches[0];
     const isPlatformIcon = selectedIcon?.prefixGroup === "platform";
     const isModelIcon = selectedIcon?.prefixGroup === "model";
+    const isAvatarBorderIcon = selectedIcon?.id.startsWith("AvatarSocial");
     const activeBorderWidth = isModelIcon ? modelBorderWidth : platformBorderWidth;
     const borderPreviewProps = isPlatformIcon
         ? {
@@ -124,6 +127,8 @@ export function IconsPage() {
           }
         : isModelIcon
           ? { borderWidth: modelBorderWidth }
+          : isAvatarBorderIcon
+            ? { borderStyle: avatarBorderStyle, borderColor: avatarBorderColor }
           : {};
     const borderWidthInputId = isModelIcon ? "model-border-width" : "platform-border-width";
     const borderWidthLabel = isModelIcon ? "Model border width" : "Platform border width";
@@ -158,6 +163,8 @@ export function IconsPage() {
         ? `size={18} borderStyle="${platformBorderStyle}" borderColor="${platformBorderColor}" borderWidth={${platformBorderWidth}}`
         : isModelIcon
           ? `size={18} borderWidth={${modelBorderWidth}}`
+          : isAvatarBorderIcon
+            ? `size={18} borderStyle="${avatarBorderStyle}" borderColor="${avatarBorderColor}"`
           : supportsColor
             ? 'size={18} color="currentColor"'
             : "size={18}";
@@ -350,6 +357,65 @@ export function IconsPage() {
                                         </div>
                                     </div>
                                     {borderWidthControl}
+                                </div>
+                            ) : null}
+                            {isAvatarBorderIcon ? (
+                                <div className="icon-platform-controls">
+                                    <div className="icon-platform-control-row">
+                                        <span className="icon-row-label">Border style</span>
+                                        <div
+                                            className="icon-segmented-control"
+                                            role="group"
+                                            aria-label="Avatar border style"
+                                        >
+                                            {["solid", "dashed"].map((styleOption) => {
+                                                const isActive = avatarBorderStyle === styleOption;
+
+                                                return (
+                                                    <button
+                                                        key={styleOption}
+                                                        type="button"
+                                                        className={isActive ? "is-active" : ""}
+                                                        onClick={() => setAvatarBorderStyle(styleOption)}
+                                                        aria-pressed={isActive}
+                                                    >
+                                                        {styleOption === "solid" ? "Solid" : "Dashed"}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className="icon-platform-control-row">
+                                        <span className="icon-row-label">Border color</span>
+                                        <div className="icon-border-color-list" role="list">
+                                            {platformBorderColors.map((option) => {
+                                                const isActive = avatarBorderColor === option.color;
+
+                                                return (
+                                                    <button
+                                                        key={option.id}
+                                                        type="button"
+                                                        className={`icon-border-color${isActive ? " is-active" : ""}`}
+                                                        onClick={() => setAvatarBorderColor(option.color)}
+                                                        aria-pressed={isActive}
+                                                        aria-label={`${option.name} avatar border ${option.color}`}
+                                                        title={`${option.name} ${option.color}`}
+                                                    >
+                                                        <span style={{ backgroundColor: option.color }} />
+                                                    </button>
+                                                );
+                                            })}
+                                            <label className="icon-custom-color" title="Custom avatar border color">
+                                                <input
+                                                    type="color"
+                                                    value={avatarBorderColor}
+                                                    onChange={(event) => setAvatarBorderColor(event.target.value)}
+                                                    aria-label="Custom avatar border color"
+                                                />
+                                            </label>
+                                            <code>{avatarBorderColor.toUpperCase()}</code>
+                                        </div>
+                                    </div>
                                 </div>
                             ) : null}
                             {isModelIcon ? (

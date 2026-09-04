@@ -122,6 +122,7 @@ const replaceMonochromePaintWithCurrentColor = (markup) => {
 const shouldUseCurrentColor = (fileName) => /^(line|fill)_/i.test(fileName);
 const isPlatformFile = (fileName) => /^platform=/i.test(fileName);
 const isModelFile = (fileName) => /^model=/i.test(fileName);
+const isAvatarSocialFile = (fileName) => /^avatar_social_/i.test(fileName);
 
 const bindPlatformBorderProps = (body, fileName) => {
     if (!isPlatformFile(fileName)) {
@@ -181,12 +182,43 @@ const bindModelBorderProps = (body, fileName) => {
     return nextBody;
 };
 
+const bindAvatarBorderProps = (body, fileName) => {
+    if (!isAvatarSocialFile(fileName)) {
+        return body;
+    }
+
+    let borderBound = false;
+    const nextBody = body.replace(/<rect\b[^>]*>/i, (element) => {
+        if (!element.includes('stroke="#111111"') || !element.includes('stroke-width="0.916667"')) {
+            return element;
+        }
+
+        borderBound = true;
+        return element
+            .replace('stroke="#111111"', "stroke={borderColor}")
+            .replace(
+                'stroke-width="0.916667"',
+                'stroke-width="0.916667" stroke-dasharray={borderStyle === "dashed" ? "1.8 1.8" : undefined}'
+            );
+    });
+
+    if (!borderBound) {
+        throw new Error(`Avatar border not found in "${fileName}"`);
+    }
+
+    return nextBody;
+};
+
 const bindBorderProps = (body, fileName) => {
     if (isPlatformFile(fileName)) {
         return bindPlatformBorderProps(body, fileName);
     }
 
-    return isModelFile(fileName) ? bindModelBorderProps(body, fileName) : body;
+    if (isModelFile(fileName)) {
+        return bindModelBorderProps(body, fileName);
+    }
+
+    return isAvatarSocialFile(fileName) ? bindAvatarBorderProps(body, fileName) : body;
 };
 
 const extractSvgParts = (source, fileName) => {
@@ -212,11 +244,20 @@ const extractSvgParts = (source, fileName) => {
 const createComponentSource = (componentName, viewBox, body, fileName) => {
     const platformIcon = isPlatformFile(fileName);
     const modelIcon = isModelFile(fileName);
-    const propsType = platformIcon ? "PlatformIconProps" : modelIcon ? "ModelIconProps" : "IconProps";
+    const avatarIcon = isAvatarSocialFile(fileName);
+    const propsType = platformIcon
+        ? "PlatformIconProps"
+        : modelIcon
+          ? "ModelIconProps"
+          : avatarIcon
+            ? "AvatarIconProps"
+            : "IconProps";
     const borderProps = platformIcon
         ? ', borderStyle = "solid", borderColor = "#111111", borderWidth = 0.6'
         : modelIcon
           ? ", borderWidth = 1.2"
+          : avatarIcon
+            ? ', borderStyle = "solid", borderColor = "#111111"'
           : "";
     const overflowAttribute = platformIcon || modelIcon ? '            overflow="visible"\n' : "";
 
