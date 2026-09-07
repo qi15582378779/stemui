@@ -572,6 +572,10 @@
       "componentName": "FillCorrectSuccessful",
       "hash": "e58dd4d6de2fc05576c2816b61e22b4171565114acf71f2a29d2356ae0c7c5f3"
     },
+    "fill_down_arrow_dropdown.svg": {
+      "componentName": "FillDownArrowDropdown",
+      "hash": "26dc3929d290869080d24741e14523f5343033b27b55d586ccc49d72ce3374d0"
+    },
     "fill_exclamation_warning.svg": {
       "componentName": "FillExclamationWarning",
       "hash": "0aba941ba01326d3064cd3d89d73b9f694d13d9dc2c07e1dea2747d44a3f89c2"
@@ -663,6 +667,10 @@
     "fill_triangle_play.svg": {
       "componentName": "FillTrianglePlay",
       "hash": "88f7c089e0260696fffabfd55aa36d94673c36dcf2d965033a1724ebc1d9204e"
+    },
+    "fill_up_arrow_upvote.svg": {
+      "componentName": "FillUpArrowUpvote",
+      "hash": "924c0e504f8e621f7ae53dab4b4e6aca323946b12f705bdd2a4c4d2fe28fa4e6"
     },
     "fill_x_closed.svg": {
       "componentName": "FillXClosed",

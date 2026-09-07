@@ -141,6 +141,7 @@ export { FillBubleChatIcon } from "./generated/FillBubleChatIcon";
 export { FillBulbAiIcon } from "./generated/FillBulbAiIcon";
 export { FillClockTimeIcon } from "./generated/FillClockTimeIcon";
 export { FillCorrectSuccessfulIcon } from "./generated/FillCorrectSuccessfulIcon";
+export { FillDownArrowDropdownIcon } from "./generated/FillDownArrowDropdownIcon";
 export { FillExclamationWarningIcon } from "./generated/FillExclamationWarningIcon";
 export { FillEyeAiPresenceIcon } from "./generated/FillEyeAiPresenceIcon";
 export { FillEyeSeeIcon } from "./generated/FillEyeSeeIcon";
@@ -164,6 +165,7 @@ export { FillTiktolkArrowShareIcon } from "./generated/FillTiktolkArrowShareIcon
 export { FillTiktolkBubbleCommentIcon } from "./generated/FillTiktolkBubbleCommentIcon";
 export { FillTiktolkHeartLikeIcon } from "./generated/FillTiktolkHeartLikeIcon";
 export { FillTrianglePlayIcon } from "./generated/FillTrianglePlayIcon";
+export { FillUpArrowUpvoteIcon } from "./generated/FillUpArrowUpvoteIcon";
 export { FillXClosedIcon } from "./generated/FillXClosedIcon";
 export { FlatStarDislikeIcon } from "./generated/FlatStarDislikeIcon";
 export { FlatStarLikeIcon } from "./generated/FlatStarLikeIcon";

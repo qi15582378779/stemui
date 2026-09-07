@@ -1,3 +1,4 @@
 export const recentIconIds = [
-    "EmojiCorrectCancelAllIcon"
+    "FillDownArrowDropdownIcon",
+    "FillUpArrowUpvoteIcon"
 ] as const;
