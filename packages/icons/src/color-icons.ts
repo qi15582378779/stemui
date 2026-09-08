@@ -71,6 +71,7 @@ export const colorIconIds = [
     "LineCorrectSuccessfulIcon",
     "LineCursorTrafficIcon",
     "LineDataImpressionIcon",
+    "LineDollarPaymentIcon",
     "LineDotMoreIcon",
     "LineDotSwitchIcon",
     "LineDownArrowDropdownIcon",

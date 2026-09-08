@@ -1,0 +1,30 @@
+import type { IconProps } from "../types";
+
+export function LineDollarPaymentIcon({ size = 24, color = "currentColor", title, ...props }: IconProps) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 16 16"
+            fill="none"
+            color={color}
+            aria-hidden={title ? undefined : true}
+            role={title ? "img" : "presentation"}
+            focusable="false"
+            {...props}
+        >
+            {title ? <title>{title}</title> : null}
+            <g clipPath="url(#clip0_10374_435345)">
+<path d="M8.00006 14.4401C11.5568 14.4401 14.4401 11.5568 14.4401 8.00006C14.4401 4.44334 11.5568 1.56006 8.00006 1.56006C4.44334 1.56006 1.56006 4.44334 1.56006 8.00006C1.56006 11.5568 4.44334 14.4401 8.00006 14.4401Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M9.99871 5.11304H7.44491C6.64769 5.11304 6.00146 5.75929 6.00146 6.55649C6.00146 7.35371 6.64769 7.99993 7.44491 7.99993H8.55526C9.35249 7.99993 9.99871 8.64615 9.99871 9.44338C9.99871 10.2406 9.35249 10.8868 8.55526 10.8868H6.00146" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M8 4.22485V4.66899" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M8 11.3311V11.7752" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_10374_435345">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+        </svg>
+    );
+}

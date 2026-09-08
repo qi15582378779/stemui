@@ -206,6 +206,7 @@ export { LineCorrectDoneIcon } from "./generated/LineCorrectDoneIcon";
 export { LineCorrectSuccessfulIcon } from "./generated/LineCorrectSuccessfulIcon";
 export { LineCursorTrafficIcon } from "./generated/LineCursorTrafficIcon";
 export { LineDataImpressionIcon } from "./generated/LineDataImpressionIcon";
+export { LineDollarPaymentIcon } from "./generated/LineDollarPaymentIcon";
 export { LineDotMoreIcon } from "./generated/LineDotMoreIcon";
 export { LineDotSwitchIcon } from "./generated/LineDotSwitchIcon";
 export { LineDownArrowDropdownIcon } from "./generated/LineDownArrowDropdownIcon";
