@@ -80,6 +80,7 @@ export const colorIconIds = [
     "LineExclamationMarkInformationIcon",
     "LineEyePreviewIcon",
     "LineFileBillIcon",
+    "LineFileCompareIcon",
     "LineFileCopyIcon",
     "LineFileFileTransferIcon",
     "LineFileSaveIcon",

@@ -868,6 +868,10 @@
       "componentName": "LineFileBill",
       "hash": "ed497f0a27786d1d4824cc41c3cba3a46a2c4b6fa219d79986597c1b1743e163"
     },
+    "line_file_compare.svg": {
+      "componentName": "LineFileCompare",
+      "hash": "1d578d03d252e29ec2b083e9e3327a561407ef435854586c8d288aaf9dc9bfad"
+    },
     "line_file_copy.svg": {
       "componentName": "LineFileCopy",
       "hash": "afb445db195c16e495a92b76b18161352e4c4d6cba759656cd03af6b6ffbeb8e"

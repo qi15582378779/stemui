@@ -215,6 +215,7 @@ export { LineEnvelopMessageIcon } from "./LineEnvelopMessageIcon";
 export { LineExclamationMarkInformationIcon } from "./LineExclamationMarkInformationIcon";
 export { LineEyePreviewIcon } from "./LineEyePreviewIcon";
 export { LineFileBillIcon } from "./LineFileBillIcon";
+export { LineFileCompareIcon } from "./LineFileCompareIcon";
 export { LineFileCopyIcon } from "./LineFileCopyIcon";
 export { LineFileFileTransferIcon } from "./LineFileFileTransferIcon";
 export { LineFileSaveIcon } from "./LineFileSaveIcon";
