@@ -1,3 +1,4 @@
 export const recentIconIds = [
-    "LineFileCompareIcon"
+    "FillBellNoticeIcon",
+    "LineVideoMediaIcon"
 ] as const;

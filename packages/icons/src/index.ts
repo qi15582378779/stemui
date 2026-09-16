@@ -297,6 +297,7 @@ export { LineTimeHistoryIcon } from "./generated/LineTimeHistoryIcon";
 export { LineTrashDeleteIcon } from "./generated/LineTrashDeleteIcon";
 export { LineUUnderlineIcon } from "./generated/LineUUnderlineIcon";
 export { LineUnlockProIcon } from "./generated/LineUnlockProIcon";
+export { LineVideoMediaIcon } from "./generated/LineVideoMediaIcon";
 export { LineXArrowDownloadIcon } from "./generated/LineXArrowDownloadIcon";
 export { LineXArrowRepostIcon } from "./generated/LineXArrowRepostIcon";
 export { LineXArrowShareIcon } from "./generated/LineXArrowShareIcon";

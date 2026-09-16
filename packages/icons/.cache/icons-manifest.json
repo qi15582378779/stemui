@@ -554,7 +554,7 @@
     },
     "fill_bell_notice.svg": {
       "componentName": "FillBellNotice",
-      "hash": "dfade324f19fc485a7a1b071d46efc67ddcf1732efd79efc7c3bfb98b0a092e9"
+      "hash": "2d744fbd994be4e1ab2e501f304842fbcc4c7f33b2346b8a02994311e3813fc1"
     },
     "fill_buble_chat.svg": {
       "componentName": "FillBubleChat",
@@ -1195,6 +1195,10 @@
     "line_unlock_pro.svg": {
       "componentName": "LineUnlockPro",
       "hash": "799d2003b91c73ef5ab2a669b1c4009400abbfb6528c1fa71a7122e4922f5991"
+    },
+    "line_video_media.svg": {
+      "componentName": "LineVideoMedia",
+      "hash": "c94af273d48acc52f4e49817e325b83b1e24de44949dec5b9dfad914ad5de9b9"
     },
     "line_x_arrow_download.svg": {
       "componentName": "LineXArrowDownload",

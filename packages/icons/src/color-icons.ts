@@ -162,6 +162,7 @@ export const colorIconIds = [
     "LineTrashDeleteIcon",
     "LineUUnderlineIcon",
     "LineUnlockProIcon",
+    "LineVideoMediaIcon",
     "LineXArrowDownloadIcon",
     "LineXArrowRepostIcon",
     "LineXArrowShareIcon",
