@@ -228,6 +228,10 @@
       "componentName": "DrawComputerProject",
       "hash": "ed818bd86cb6f3627b47a899d0ba77890ce304a9799ac28e144bf65ad809a5b0"
     },
+    "draw_control_filter.svg": {
+      "componentName": "DrawControlFilter",
+      "hash": "a349b4430d257e7f795ff9fb9aaf35a2eabbd05f79fa486a6b40b617dc811934"
+    },
     "draw_cursor_quick.svg": {
       "componentName": "DrawCursorQuick",
       "hash": "eccbfba696b6667dbeeae08a4be546a1001a8033200b5c14401ba5166ffc7fca"

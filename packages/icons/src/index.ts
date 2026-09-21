@@ -55,6 +55,7 @@ export { DrawCalendarScheduleReplyIcon } from "./generated/DrawCalendarScheduleR
 export { DrawCardSubscriptionIcon } from "./generated/DrawCardSubscriptionIcon";
 export { DrawComputerAddIcon } from "./generated/DrawComputerAddIcon";
 export { DrawComputerProjectIcon } from "./generated/DrawComputerProjectIcon";
+export { DrawControlFilterIcon } from "./generated/DrawControlFilterIcon";
 export { DrawCursorQuickIcon } from "./generated/DrawCursorQuickIcon";
 export { DrawDataConsoleIcon } from "./generated/DrawDataConsoleIcon";
 export { DrawDevPlanCAnalysisIcon } from "./generated/DrawDevPlanCAnalysisIcon";
