@@ -207,6 +207,7 @@ export { LineCorrectDoneIcon } from "./LineCorrectDoneIcon";
 export { LineCorrectSuccessfulIcon } from "./LineCorrectSuccessfulIcon";
 export { LineCursorTrafficIcon } from "./LineCursorTrafficIcon";
 export { LineDataImpressionIcon } from "./LineDataImpressionIcon";
+export { LineDevHeartReactionIcon } from "./LineDevHeartReactionIcon";
 export { LineDollarPaymentIcon } from "./LineDollarPaymentIcon";
 export { LineDotMoreIcon } from "./LineDotMoreIcon";
 export { LineDotSwitchIcon } from "./LineDotSwitchIcon";
