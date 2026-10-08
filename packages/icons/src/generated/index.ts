@@ -145,6 +145,7 @@ export { FillCorrectSuccessfulIcon } from "./FillCorrectSuccessfulIcon";
 export { FillDownArrowDropdownIcon } from "./FillDownArrowDropdownIcon";
 export { FillExclamationWarningIcon } from "./FillExclamationWarningIcon";
 export { FillEyeAiPresenceIcon } from "./FillEyeAiPresenceIcon";
+export { FillEyeDisableIcon } from "./FillEyeDisableIcon";
 export { FillEyeSeeIcon } from "./FillEyeSeeIcon";
 export { FillEyeSee2Icon } from "./FillEyeSee2Icon";
 export { FillFileHistoryIcon } from "./FillFileHistoryIcon";

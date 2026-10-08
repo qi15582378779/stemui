@@ -12,6 +12,7 @@ export const colorIconIds = [
     "FillDownArrowDropdownIcon",
     "FillExclamationWarningIcon",
     "FillEyeAiPresenceIcon",
+    "FillEyeDisableIcon",
     "FillEyeSeeIcon",
     "FillEyeSee2Icon",
     "FillFileHistoryIcon",
