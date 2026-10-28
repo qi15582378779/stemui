@@ -101,6 +101,7 @@ export { DrawPeopleApprovedIcon } from "./generated/DrawPeopleApprovedIcon";
 export { DrawPlaneSendIcon } from "./generated/DrawPlaneSendIcon";
 export { DrawProPlanCAnalysisIcon } from "./generated/DrawProPlanCAnalysisIcon";
 export { DrawProPlanGAnalysisIcon } from "./generated/DrawProPlanGAnalysisIcon";
+export { DrawPuzzlePlugIcon } from "./generated/DrawPuzzlePlugIcon";
 export { DrawSetManualIcon } from "./generated/DrawSetManualIcon";
 export { DrawShakeWelcomeIcon } from "./generated/DrawShakeWelcomeIcon";
 export { DrawStarCreditIcon } from "./generated/DrawStarCreditIcon";

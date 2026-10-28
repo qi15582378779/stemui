@@ -412,6 +412,10 @@
       "componentName": "DrawProPlanGAnalysis",
       "hash": "bb24bfda03a1c10e172af14ef3ac48cd4ac3858623d8685936526dc985548534"
     },
+    "draw_puzzle_plug.svg": {
+      "componentName": "DrawPuzzlePlug",
+      "hash": "27e81aeed176fe997e70181f6155f4b9eea27bf6beeac6b9db18654d2b5375d3"
+    },
     "draw_set_manual.svg": {
       "componentName": "DrawSetManual",
       "hash": "bb8748203e3554093a8efc3d3fddca3eda83c4f4aa92ca0e4fa90a2bba8dec98"

@@ -1,3 +1,3 @@
 export const recentIconIds = [
-    "LineComputerPcIcon"
+    "DrawPuzzlePlugIcon"
 ] as const;
