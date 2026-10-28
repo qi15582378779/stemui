@@ -824,6 +824,10 @@
       "componentName": "LineClockTime",
       "hash": "55c41befccfab11a724160a0b16643022dfa216e339f5767e9289cf7d16bf164"
     },
+    "line_computer_pc.svg": {
+      "componentName": "LineComputerPc",
+      "hash": "b8f35a23c9b4a5fc6095051df729e7ed21d8336f7d759d26cd9c966b8e3e4908"
+    },
     "line_correct_done.svg": {
       "componentName": "LineCorrectDone",
       "hash": "35cadfef31a3a8e791eab3da2d9d48ca983ea583bb7a0d3f3682c028b57decf4"

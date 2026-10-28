@@ -204,6 +204,7 @@ export { LineCategraryLayoutIcon } from "./LineCategraryLayoutIcon";
 export { LineChevronUpIcon } from "./LineChevronUpIcon";
 export { LineCirculeLoadingIcon } from "./LineCirculeLoadingIcon";
 export { LineClockTimeIcon } from "./LineClockTimeIcon";
+export { LineComputerPcIcon } from "./LineComputerPcIcon";
 export { LineCorrectDoneIcon } from "./LineCorrectDoneIcon";
 export { LineCorrectSuccessfulIcon } from "./LineCorrectSuccessfulIcon";
 export { LineCursorTrafficIcon } from "./LineCursorTrafficIcon";

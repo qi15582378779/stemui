@@ -68,6 +68,7 @@ export const colorIconIds = [
     "LineChevronUpIcon",
     "LineCirculeLoadingIcon",
     "LineClockTimeIcon",
+    "LineComputerPcIcon",
     "LineCorrectDoneIcon",
     "LineCorrectSuccessfulIcon",
     "LineCursorTrafficIcon",
