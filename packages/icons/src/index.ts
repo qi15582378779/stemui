@@ -112,6 +112,7 @@ export { DrawStarCreditIcon } from "./generated/DrawStarCreditIcon";
 export { DrawStarterPlanCAnalysisIcon } from "./generated/DrawStarterPlanCAnalysisIcon";
 export { DrawStarterPlanGAnalysisIcon } from "./generated/DrawStarterPlanGAnalysisIcon";
 export { DrawSwitchOnIcon } from "./generated/DrawSwitchOnIcon";
+export { DrawSwitchOnGreenIcon } from "./generated/DrawSwitchOnGreenIcon";
 export { DrawUpvoteAnalysisIcon } from "./generated/DrawUpvoteAnalysisIcon";
 export { EmojiArrowGoalIcon } from "./generated/EmojiArrowGoalIcon";
 export { EmojiBronzeMedalIcon } from "./generated/EmojiBronzeMedalIcon";

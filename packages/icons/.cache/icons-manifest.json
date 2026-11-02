@@ -456,6 +456,10 @@
       "componentName": "DrawSwitchOn",
       "hash": "b91e22f2188014238cc886bea9ace56af1f3338652a2a57dacb4b6f29d97fb01"
     },
+    "draw_switch_on_green.svg": {
+      "componentName": "DrawSwitchOnGreen",
+      "hash": "34261159f70314bdab8075199a14916118ade3acee2cccefd7f8157504f2a253"
+    },
     "draw_upvote👍_analysis.svg": {
       "componentName": "DrawUpvoteAnalysis",
       "hash": "f1e9ec8586002975e73a4d9a72e6cbb2cbf2e45b6ee45dcc8293dd7f6faeffb3"
