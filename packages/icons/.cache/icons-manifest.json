@@ -380,6 +380,10 @@
       "componentName": "DrawMoneyReceipt",
       "hash": "2345b44e680b3a903e618ff045ec17b549a819683a1d71b2d028c1980ebb2a6e"
     },
+    "draw_multi.svg": {
+      "componentName": "DrawMulti",
+      "hash": "232a9fe229d5857af77bebd6afdb533397814647367d66ce7a4083a44cebca1e"
+    },
     "draw_orange_bulk.svg": {
       "componentName": "DrawOrangeBulk",
       "hash": "e537ddb3942a956ad2f8aaf6729f7b1748c9c84bb6ff9f8f006cd265a89439e4"
@@ -399,6 +403,14 @@
     "draw_people_approved.svg": {
       "componentName": "DrawPeopleApproved",
       "hash": "47d87120482c662ffdbe82cddcbe5f0023a5eb933e86937ab604a32b03b09631"
+    },
+    "draw_people_auto.svg": {
+      "componentName": "DrawPeopleAuto",
+      "hash": "9c409eb1c59dec60ce7b15c8276a6d36f4357468d7c6537f80308f05f2cb87a8"
+    },
+    "draw_people_change.svg": {
+      "componentName": "DrawPeopleChange",
+      "hash": "041ce0258c2c50a2e17fd6a7d8cfa2d18830c2627aeda7e8cba5aee5b69a8a46"
     },
     "draw_plane_send.svg": {
       "componentName": "DrawPlaneSend",
@@ -423,6 +435,10 @@
     "draw_shake_welcome.svg": {
       "componentName": "DrawShakeWelcome",
       "hash": "fa5fc938d7b4dc576009272994477065ea9b3ba7f2e260945920c79acbaba99b"
+    },
+    "draw_single.svg": {
+      "componentName": "DrawSingle",
+      "hash": "5850efa2494b51b5ef7bad1315a8395535fb002aacc9e1b05cc3b0d45545936a"
     },
     "draw_star_credit.svg": {
       "componentName": "DrawStarCredit",
