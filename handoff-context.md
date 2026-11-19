@@ -15,6 +15,8 @@
 - 2026-11-02 本批 Switch 预览从唯一源目录 `/Users/ccbakala/aisee icon github/packages/icons/svg/draw/` 读取 `draw_switch_on.svg` 与 `draw_switch_on_green.svg`。黄色版与现有文件一致，新增绿色版 `DrawSwitchOnGreenIcon`，两枚均标记为近期更新；总计 362 个图标，draw 分类 70 个。图标包和 Playground 构建通过，浏览器已验证两枚图标显示、切换选中及多尺寸预览。沿用 `http://127.0.0.1:4174/`，搜索 `draw_switch` 可仅查看本批两枚。
 - 本次全局 Demo 已导出自包含 HTML，并按 `stemui / main-demo` 稳定系列归档至 Eagle 的 `作品整理 / -AI作品 / 项目类 / stemui / 页面设计`；读取与 SHA256 校验通过，条目 ID 为 `MVYN1MNPD9KZS`。
 - 2026-11-02 用户完成 npm 发布后要求同步远端 `main`。已确认 npm `latest` 为 `@stemui/icons@0.1.46`，已发布包中的两枚 Switch SVG 及绿色版生成组件与本地一致；远端版本号已由 `5a9e0bc` 更新，本次补齐绿色 Switch SVG、React 组件、导出、近期更新标记、图标清单及交接文档。提交前图标包构建、Playground 构建及差异检查通过。
+- 2026-11-19 从唯一源目录的 `packages/icons/svg/social logo/platform=toutiao.svg` 同步新增今日头条图标，生成 `PlatformToutiaoIcon` 并标记近期更新；图标总数 363，platform 分类 29 个。图标包、Playground 构建及差异检查通过；现有预览服务已恢复在 `http://127.0.0.1:4174/`，搜索 `toutiao` 可定位。浏览器已检查 16/20/24px 显示及实线/虚线、边框颜色切换，页面保留默认黑色实线。
+- 2026-11-19 用户认可今日头条图标并要求提交到远端 `main`。本批 SVG、生成组件、两处导出、近期更新标记、图标清单及交接文档随本次提交同步；包版本仍为 `0.1.46`，本次未发布 npm。仅归档已获认可的今日头条 SVG 至 Eagle `作品整理 / -AI作品 / 项目类 / stemui / icon`，条目 `MWMY1MSQKGJAB` 已读取并通过 SHA256 核验。
 
 ## 待确认
 
@@ -24,7 +26,7 @@
 
 ## 未推送
 
-- 无；本批 Switch 相关文件及交接文档随本次提交同步至远端 `main`，版本号为已发布的 `0.1.46`。
+- 无；今日头条图标相关文件及交接文档随本次提交同步至远端 `main`。
 
 ## 下一步
 

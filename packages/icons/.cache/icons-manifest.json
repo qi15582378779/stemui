@@ -1428,6 +1428,10 @@
       "componentName": "PlatformTiktok",
       "hash": "0ac543d04454fda2a3d4b34c852d91660e1f7a635a3b07820f7dc35e66ad2689"
     },
+    "platform=toutiao.svg": {
+      "componentName": "PlatformToutiao",
+      "hash": "b256cd3459a1f1dc518827889ae2d38f6fea1b10c58f5be3226011793ff8ad3c"
+    },
     "platform=tumblr.svg": {
       "componentName": "PlatformTumblr",
       "hash": "8759a2f5fce383c338c2c617223d289ac69b876b5c948a3eb1be51973d662291"

@@ -355,6 +355,7 @@ export { PlatformSubstackIcon } from "./PlatformSubstackIcon";
 export { PlatformTelegramIcon } from "./PlatformTelegramIcon";
 export { PlatformThreadIcon } from "./PlatformThreadIcon";
 export { PlatformTiktokIcon } from "./PlatformTiktokIcon";
+export { PlatformToutiaoIcon } from "./PlatformToutiaoIcon";
 export { PlatformTumblrIcon } from "./PlatformTumblrIcon";
 export { PlatformUnsplashIcon } from "./PlatformUnsplashIcon";
 export { PlatformWikidataIcon } from "./PlatformWikidataIcon";

@@ -1,4 +1,3 @@
 export const recentIconIds = [
-    "DrawSwitchOnGreenIcon",
-    "DrawSwitchOnIcon"
+    "PlatformToutiaoIcon"
 ] as const;
